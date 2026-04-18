@@ -10,7 +10,7 @@ using Random = System.Random;
 namespace Data
 {
     [Serializable]
-    public class Deck
+    public class PlayerCards
     {
         [SerializeField]
         private DeckList deckList;
@@ -22,6 +22,9 @@ namespace Data
         private List<PlayCardData> hand = new List<PlayCardData>();
         
         [SerializeField] 
+        private List<PlayCardData> set = new List<PlayCardData>();
+        
+        [SerializeField] 
         private List<PlayCardData> graveyard = new List<PlayCardData>();
 
 
@@ -31,6 +34,11 @@ namespace Data
             set => hand = value;
         }
         
+        public List<PlayCardData> Set
+        {
+            get => set;
+            set => set = value;
+        }
         
         public void InitializeDeck()
         {
@@ -38,6 +46,7 @@ namespace Data
             deckList = Object.Instantiate<DeckList>(deckList);
             deck = new List<PlayCardData>();
             hand = new List<PlayCardData>();
+            set = new List<PlayCardData>();
             graveyard = new List<PlayCardData>();
             
             foreach (PlayCardData card in deckList.cards)
@@ -63,11 +72,37 @@ namespace Data
             }
         }
 
+        public bool SetCard(PlayCardData setCard)
+        {
+            if (hand.Find(card => card.Equals(setCard)) == null)
+            {
+                return false;
+            }
+            
+            hand.Remove(setCard);
+            set.Add(setCard);
+            
+            return true;
+        }
+
+        public bool UnsetCard(PlayCardData unsetCard)
+        {
+            if (set.Find(card => card.Equals(unsetCard)) == null)
+            {
+                return false;
+            }
+            
+            set.Remove(unsetCard);
+            hand.Add(unsetCard);
+            
+            return true;
+        }
+        
         public void PlayCard(PlayCardData playCard)
         {
             playCard.PlayCard();
             graveyard.Add(playCard);
-            hand.Remove(playCard);
+            set.Remove(playCard);
         }
 
         private void ShuffleGraveyardBack()

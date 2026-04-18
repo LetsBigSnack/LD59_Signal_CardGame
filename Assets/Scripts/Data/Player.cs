@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Data
 {
@@ -7,8 +8,8 @@ namespace Data
         [SerializeField]
         private string playerName;
         
-        [SerializeField]
-        private Deck deck;
+        [FormerlySerializedAs("deck")] [SerializeField]
+        private PlayerCards playerCards;
 
         [SerializeField] 
         private int maxHealth;
@@ -17,10 +18,17 @@ namespace Data
         private int currentHealth;
         
         
-        public Deck Deck { 
-            set => deck = value;
-            get => deck;
+        public PlayerCards PlayerCards { 
+            set => playerCards = value;
+            get => playerCards;
         }
+        
+        public void ResetPlayer()
+        {
+            currentHealth = maxHealth;
+            playerCards.InitializeDeck();
+        }
+        
         
         
     }
