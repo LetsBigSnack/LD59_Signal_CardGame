@@ -21,6 +21,11 @@ namespace ScriptableObjects.BasicCards
             return cardDescription;
         }
 
+        public CardType GetCardType()
+        {
+            return cardType;
+        }
+
         public virtual void Play()
         {
             //TOOD: add effect

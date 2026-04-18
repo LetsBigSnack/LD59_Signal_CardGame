@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Data.Player
   playerName: 
   deck:
-    deckList: {fileID: 11400000, guid: bb940843eb50e025490c6549b379ab0e, type: 2}
+    deckList: {fileID: 0}
     deck: []
     hand: []
     graveyard: []
