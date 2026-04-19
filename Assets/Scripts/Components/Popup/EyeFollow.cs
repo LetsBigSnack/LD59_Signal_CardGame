@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EyeFollow : MonoBehaviour
 {
-    private Vector2 startPosition;
+    private Vector3 startPosition;
     [Header("Restrictions")]
     public float maxX;
     public float maxY;
@@ -29,11 +29,11 @@ public class EyeFollow : MonoBehaviour
             && transform.position.x >= startPosition.x - maxX
             && transform.position.x <= startPosition.x + maxX)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, startPosition, step);
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, step);
         }
     }
 }
