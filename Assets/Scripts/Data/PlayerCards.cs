@@ -55,9 +55,9 @@ namespace Data
             get => graveyard;
         }
 
-        public event Action<PlayCardData> OnDraw;
+        public event Action OnHandChange;
 
-        
+
         public List<PlayCardData> Set
         {
             get => set;
@@ -97,7 +97,7 @@ namespace Data
                 }
                 cardDrawn = deck.Pop();
                 hand.Add(cardDrawn);
-                OnDraw?.Invoke(cardDrawn);
+                OnHandChange?.Invoke();
             }
         }
 
@@ -110,7 +110,9 @@ namespace Data
             
             hand.Remove(setCard);
             set.Add(setCard);
-            
+
+            OnHandChange?.Invoke();
+
             return true;
         }
 
@@ -123,7 +125,9 @@ namespace Data
             
             set.Remove(unsetCard);
             hand.Add(unsetCard);
-            
+
+            OnHandChange?.Invoke();
+
             return true;
         }
         
