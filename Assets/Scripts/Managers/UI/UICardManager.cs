@@ -46,12 +46,12 @@ public class UICardManager : MonoBehaviour
 
     private void OnEnable()
     {
-        player.Deck.OnDraw += CreateCardUI;
+        player.PlayerCards.OnDraw += CreateCardUI;
     }
 
     private void OnDisable()
     {
-        player.Deck.OnDraw -= CreateCardUI;
+        player.PlayerCards.OnDraw -= CreateCardUI;
     }
 
     public Sprite GetSprite(CardType cardType)
@@ -89,13 +89,13 @@ public class UICardManager : MonoBehaviour
     public void OpenDeck()
     {
         window.SetActive(true);
-        collectionView.ShowCards(player.Deck.GetDeckList.cards);
+        collectionView.ShowCards(player.PlayerCards.GetDeckList.cards);
     }
 
     public void OpenGraveyard()
     {
         window.SetActive(true);
-        collectionView.ShowCards(player.Deck.GetGraveyard);
+        collectionView.ShowCards(player.PlayerCards.GetGraveyard);
     }
 
     public void CloseWindow()

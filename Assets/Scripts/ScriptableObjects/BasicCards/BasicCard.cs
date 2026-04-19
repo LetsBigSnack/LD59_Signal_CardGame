@@ -26,7 +26,6 @@ namespace ScriptableObjects.BasicCards
             return cardType;
         }
 
-        public virtual void Play()
         public virtual void Play(GameSlot ownSlot, GameSlot enemySlot)
         {
             //TOOD: add effect
