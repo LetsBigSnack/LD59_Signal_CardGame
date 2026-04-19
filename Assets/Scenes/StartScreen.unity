@@ -238,7 +238,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -437,8 +437,11 @@ MonoBehaviour:
   sfxSource: {fileID: 38917609}
   audioClips:
     clips:
-    - name: 
-      clip: {fileID: 0}
+    - name: click
+      clip: {fileID: 8300000, guid: 935fa61e8b47e684ea6f7dffdce47f0b, type: 3}
+      type: 0
+    - name: rightClick
+      clip: {fileID: 8300000, guid: 7e9414b998728fb489625ec526ab1f98, type: 3}
       type: 0
   bgm: {fileID: 8300000, guid: ae2a5d431883ad44aa310fa2b27505a0, type: 3}
   bgmVolume: 0.05
@@ -664,7 +667,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.3
+  m_Value: 0.05
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1436,8 +1439,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 07da470da680f3a448fcafade2281f80, type: 2}
-  m_sharedMaterial: {fileID: 2160187930094549742, guid: 07da470da680f3a448fcafade2281f80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1610,8 +1613,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SPIONAGE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 07da470da680f3a448fcafade2281f80, type: 2}
-  m_sharedMaterial: {fileID: 2160187930094549742, guid: 07da470da680f3a448fcafade2281f80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2024,8 +2027,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ACE '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 07da470da680f3a448fcafade2281f80, type: 2}
-  m_sharedMaterial: {fileID: 2160187930094549742, guid: 07da470da680f3a448fcafade2281f80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2160,7 +2163,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4803,8 +4806,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 07da470da680f3a448fcafade2281f80, type: 2}
-  m_sharedMaterial: {fileID: 2160187930094549742, guid: 07da470da680f3a448fcafade2281f80, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

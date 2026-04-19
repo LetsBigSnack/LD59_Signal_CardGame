@@ -65,9 +65,32 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlaySound("click");
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            PlaySound("rightClick");
+        }
+    }
+
     public void PlaySound(string soundName)
     {
-        AudioClip clip = audioClips.clips.Find(soundclip =>  soundclip.name == soundName).clip;
+        AudioClass audio = audioClips.clips.Find(soundclip =>  soundclip.name == soundName);
+
+        if(audio.type == SoundType.BGM)
+        {
+            bgmSource.PlayOneShot(audio.clip,bgmVolume);
+        }
+
+        if(audio.type != SoundType.BGM)
+        {
+            sfxSource.PlayOneShot(audio.clip, sfxVolume);
+        }
     }
 
     public void playSFX(AudioClip clip)
