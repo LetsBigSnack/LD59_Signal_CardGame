@@ -15,4 +15,6 @@ MonoBehaviour:
   cardName: Interfere
   cardDescription: Interfere {x}
   cardType: 2
+  cardSprite: {fileID: 0}
+  rarity: 2
   priority: 5

@@ -15,4 +15,6 @@ MonoBehaviour:
   cardName: Hide 3
   cardDescription: Hide {x}
   cardType: 1
+  cardSprite: {fileID: 0}
+  rarity: 2
   defense: 3

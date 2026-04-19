@@ -5,7 +5,7 @@ using Data;
 using Managers;
 using UnityEngine;
 
-public enum GameState
+public enum TurnState
 {
     SettingState,
     RespondingState,
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentTurn;
     [SerializeField] private PlayerSide priority;
     [SerializeField] private int startCardAmount = 7;
-    [SerializeField] private GameState currentState = GameState.SettingState;
+    [SerializeField] private TurnState currentState = TurnState.SettingState;
     
     
     public List<GameSlot> GameSlots
@@ -72,10 +72,10 @@ public class GameManager : MonoBehaviour
         CreateGameSlots();
         currentTurn = 1;
         priority = PlayerSide.Enemy;
-        currentState = GameState.SettingState;
+        currentState = TurnState.SettingState;
         
         _players = new Dictionary<PlayerSide, Player>();
-        _players.Add(PlayerSide.Player,  PlayerManager.Instance.GetPlayer());
+        _players.Add(PlayerSide.Player,  PlayerManager.Instance.Player);
         _players.Add(PlayerSide.Enemy,  EnemyManager.Instance.GetCurrentEnemy());
         
         _players[PlayerSide.Player].ResetPlayer();
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         
         switch (currentState)
         {
-            case GameState.SettingState:
+            case TurnState.SettingState:
                 if (hasEnemyPriority)
                 {
                     EnemyManager.Instance.MakeMove();
@@ -102,14 +102,14 @@ public class GameManager : MonoBehaviour
                 //Anim 
                 ProceedToNextState();
                 break;
-            case GameState.RespondingState:
+            case TurnState.RespondingState:
                 if (!hasEnemyPriority)
                 {
                     EnemyManager.Instance.MakeMove();
                 }
                 ProceedToNextState();
                 break;
-            case GameState.ResolvingState:
+            case TurnState.ResolvingState:
                 ResolveSetCards();
                 ProceedToNextState();
                 break;
@@ -120,28 +120,28 @@ public class GameManager : MonoBehaviour
     {
         switch (currentState)
         {
-            case GameState.SettingState:
+            case TurnState.SettingState:
                 if (_gameSlots.Where(slots => slots.PlayerSide == priority && slots.PlayCardData != null).ToList().Count != 3)
                 {
                     Debug.Log("Not enough cards - Setter");
                     return;
                 }
-                currentState = GameState.RespondingState;
+                currentState = TurnState.RespondingState;
                 //Maybe Change for a nice reveal
                 HandleCurrentState();
                 break;
-            case GameState.RespondingState:
+            case TurnState.RespondingState:
                 if (_gameSlots.Where(slots => slots.PlayerSide != priority && slots.PlayCardData != null).ToList().Count != 3)
                 {
                     Debug.Log("Not enough cards - Responder");
                     return;
                 }
-                currentState = GameState.ResolvingState;
+                currentState = TurnState.ResolvingState;
                 
                 //Maybe Change for a nice reveal
                 HandleCurrentState();
                 break;
-            case GameState.ResolvingState:
+            case TurnState.ResolvingState:
                 
                 RoundOutcome outcome = CheckWinner();
 
@@ -169,17 +169,19 @@ public class GameManager : MonoBehaviour
         currentTurn++;
         CreateGameSlots();
         priority = priority == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player;
-        currentState = GameState.SettingState;
+        currentState = TurnState.SettingState;
     }
 
     private void WinGame()
     {
-        Debug.Log("Player Win");
+        
+        
+        GameStateManager.Instance.ChangeState(GameState.Reward);
     }
 
     private void LooseGame()
     {
-        Debug.Log("Enemy Win");
+        GameStateManager.Instance.ChangeState(GameState.Reward);
     }
     
     public void ResolveSetCards()
