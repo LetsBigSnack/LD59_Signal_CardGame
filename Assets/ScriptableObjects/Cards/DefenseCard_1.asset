@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee81131228e2325f8f4b22098d33bc2, type: 3}
   m_Name: DefenseCard_1
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.BasicCards.DefenseCard
-  cardName: Hide
+  cardName: Hide 1
   cardDescription: Hide {x}
   cardType: 1
+  defense: 1

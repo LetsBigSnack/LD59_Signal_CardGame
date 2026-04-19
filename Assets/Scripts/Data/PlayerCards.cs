@@ -10,7 +10,7 @@ using Random = System.Random;
 namespace Data
 {
     [Serializable]
-    public class Deck
+    public class PlayerCards
     {
         [SerializeField]
         private DeckList deckList;
@@ -20,6 +20,9 @@ namespace Data
         
         [SerializeField] 
         private List<PlayCardData> hand = new List<PlayCardData>();
+        
+        [SerializeField] 
+        private List<PlayCardData> set = new List<PlayCardData>();
         
         [SerializeField] 
         private List<PlayCardData> graveyard = new List<PlayCardData>();
@@ -42,12 +45,20 @@ namespace Data
 
         public event Action<PlayCardData> OnDraw;
 
+        
+        public List<PlayCardData> Set
+        {
+            get => set;
+            set => set = value;
+        }
+        
         public void InitializeDeck()
         {
             
             deckList = Object.Instantiate<DeckList>(deckList);
             deck = new List<PlayCardData>();
             hand = new List<PlayCardData>();
+            set = new List<PlayCardData>();
             graveyard = new List<PlayCardData>();
             
             foreach (PlayCardData card in deckList.cards)
@@ -75,18 +86,60 @@ namespace Data
             }
         }
 
-        public void PlayCard(PlayCardData playCard)
+        public bool SetCard(PlayCardData setCard)
         {
-            playCard.PlayCard();
-            graveyard.Add(playCard);
-            hand.Remove(playCard);
+            if (hand.Find(card => card.Equals(setCard)) == null)
+            {
+                return false;
+            }
+            
+            hand.Remove(setCard);
+            set.Add(setCard);
+            
+            return true;
         }
 
+        public bool UnsetCard(PlayCardData unsetCard)
+        {
+            if (set.Find(card => card.Equals(unsetCard)) == null)
+            {
+                return false;
+            }
+            
+            set.Remove(unsetCard);
+            hand.Add(unsetCard);
+            
+            return true;
+        }
+        
+        public void PlayCard(PlayCardData playCard, GameSlot ownSlot, GameSlot enemySlot)
+        {
+            playCard.PlayCard(ownSlot, enemySlot);
+        }
+
+        public void ResolveCard(PlayCardData playCard)
+        {
+            graveyard.Add(playCard);
+            set.Remove(playCard);
+        }
+        
         private void ShuffleGraveyardBack()
         {
             deck = deck.Concat(graveyard).ToList();
             graveyard = new List<PlayCardData>();
             deck.Shuffle();
+        }
+
+        public void DrawUntil(int untilAmount)
+        {
+            int cardDiff = untilAmount - hand.Count;
+            
+            if (cardDiff <= 0)
+            {
+                return;
+            }
+            
+            Draw(cardDiff);
         }
     }
 }

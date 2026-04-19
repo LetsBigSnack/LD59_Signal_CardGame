@@ -1,3 +1,4 @@
+using Data;
 using UnityEngine;
 
 namespace ScriptableObjects.BasicCards
@@ -7,10 +8,9 @@ namespace ScriptableObjects.BasicCards
     {
         public int damage;
         
-        public override void Play()
+        public override void Play(GameSlot ownSlot, GameSlot enemySlot)
         {
-            //TODO: add mods
-            //TOOD: add effect
+            enemySlot.AddAttack(damage);
         }
     
     }

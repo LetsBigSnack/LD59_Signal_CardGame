@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Data.Player
   playerName: 
-  deck:
-    deckList: {fileID: 0}
+  playerCards:
+    deckList: {fileID: 11400000, guid: bb940843eb50e025490c6549b379ab0e, type: 2}
     deck: []
     hand: []
+    set: []
     graveyard: []
-  maxHealth: 0
+  maxHealth: 10
   currentHealth: 0
