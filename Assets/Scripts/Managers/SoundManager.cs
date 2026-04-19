@@ -65,6 +65,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        bgmSource.volume = bgmVolume;
+        sfxSource.volume = sfxVolume;
+    }
+
     public void Update()
     {
         if (Input.GetMouseButtonDown(0))

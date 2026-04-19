@@ -445,7 +445,7 @@ MonoBehaviour:
       type: 0
   bgm: {fileID: 8300000, guid: ae2a5d431883ad44aa310fa2b27505a0, type: 3}
   bgmVolume: 0.05
-  sfxVolume: 3
+  sfxVolume: 0.05
   dempAmount: 600
 --- !u!114 &38917612
 MonoBehaviour:
