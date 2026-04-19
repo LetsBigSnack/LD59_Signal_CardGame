@@ -158,7 +158,8 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        if (_players[PlayerSide.Player].PlayerCards.SetCard(card))
+        
+        if (_players[side].PlayerCards.SetCard(card))
         { 
             gameSlot.PlayCardData = card;
         }
@@ -175,7 +176,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        if (_players[PlayerSide.Player].PlayerCards.UnsetCard(card))
+        if (_players[side].PlayerCards.UnsetCard(card))
         { 
             gameSlot.PlayCardData = null;
         }
