@@ -28,6 +28,11 @@ namespace Data
             //Add Mods
             return card.GetCardDescription();
         }
+
+        public CardType GetCardType()
+        {
+            return card.GetCardType();
+        }
         
         public void PlayCard(GameSlot ownSlot, GameSlot enemySlot)
         {

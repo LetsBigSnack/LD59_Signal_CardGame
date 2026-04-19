@@ -27,12 +27,24 @@ namespace Data
         [SerializeField] 
         private List<PlayCardData> graveyard = new List<PlayCardData>();
 
+        private PlayCardData cardDrawn;
 
         public List<PlayCardData> Hand
         {
             get => hand;
             set => hand = value;
         }
+        public DeckList GetDeckList
+        {
+            get => deckList;
+        }
+        public List<PlayCardData> GetGraveyard
+        {
+            get => graveyard;
+        }
+
+        public event Action<PlayCardData> OnDraw;
+
         
         public List<PlayCardData> Set
         {
@@ -68,7 +80,9 @@ namespace Data
                 {
                     ShuffleGraveyardBack();
                 }
-                hand.Add(deck.Pop());
+                cardDrawn = deck.Pop();
+                hand.Add(cardDrawn);
+                OnDraw?.Invoke(cardDrawn);
             }
         }
 

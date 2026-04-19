@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6e90c491bf19104294e2c2b3c647d8f
+guid: a342f9e37b4b5dd49a0bb531e5e62476
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   - VCR-JP
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

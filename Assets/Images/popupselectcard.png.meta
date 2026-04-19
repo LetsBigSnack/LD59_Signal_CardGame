@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 82bf0629d24e60b4bb7bd4f7fa981151
+guid: ac20ffcfff1ff474bafff67e4f2ef754
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4698499535716483337
-    second: scrollbar_0
+      213: 387273032507612684
+    second: popupselectcard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scrollbar_0
+      name: popupselectcard_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 90
-        height: 2020
+        width: 640
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90108bb1f6c643140800000000000000
-      internalID: 4698499535716483337
+      spriteID: c0e54bd65cedf5500800000000000000
+      internalID: 387273032507612684
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scrollbar_0: 4698499535716483337
+      popupselectcard_0: 387273032507612684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
