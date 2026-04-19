@@ -9,6 +9,12 @@ namespace Managers
         public static PlayerManager Instance;
 
         [SerializeField] private Player player;
+
+
+        public Player Player
+        {
+            get => player;
+        }
         
         private void Awake()
         {
@@ -23,10 +29,6 @@ namespace Managers
 
         }
 
-        public Player GetPlayer()
-        {
-            return player;
-        }
         
     }
 }

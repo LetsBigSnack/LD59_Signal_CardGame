@@ -14,9 +14,15 @@ namespace Data
         private BasicCard card;
         
         [SerializeField]
-        private List<Modifier> modifiers;
+        private Modifier modifier;
 
 
+        public PlayCardData(BasicCard card, Modifier modifier)
+        {
+            this.card = card;
+            this.modifier = modifier;
+        }
+        
         public string GetCardName()
         {
             //Add Mods

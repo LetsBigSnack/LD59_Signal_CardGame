@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(GameManager))]
-class DecalMeshHelperEditor : Editor {
+class DeckHelper : Editor {
     public override void OnInspectorGUI()
     {
         
@@ -28,8 +28,8 @@ class DecalMeshHelperEditor : Editor {
         if(GUILayout.Button("Start Game"))
             gameManager.StartGame();
 
-        if (GUILayout.Button("Send Signal"))
-            gameManager.SendSignal();
+        if (GUILayout.Button("Handle Current State"))
+            gameManager.HandleCurrentState();
         
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Set Cards", EditorStyles.boldLabel); 
@@ -53,7 +53,7 @@ class DecalMeshHelperEditor : Editor {
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Hand", EditorStyles.boldLabel); 
         EditorGUILayout.Separator();
-        foreach (PlayCardData handCard in PlayerManager.Instance.GetPlayer().PlayerCards.Hand.ToList())
+        foreach (PlayCardData handCard in PlayerManager.Instance.Player.PlayerCards.Hand.ToList())
         {
             
             EditorGUILayout.BeginHorizontal();

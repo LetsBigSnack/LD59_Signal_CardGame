@@ -28,6 +28,12 @@ namespace Managers
         {
             return currentEnemy;
         }
-        
+
+        public void MakeMove()
+        {
+            GameManager.Instance.SetCardToSlot(currentEnemy.PlayerCards.Hand[0], PlayerSide.Enemy, SlotPosition.Position1);
+            GameManager.Instance.SetCardToSlot(currentEnemy.PlayerCards.Hand[0], PlayerSide.Enemy, SlotPosition.Position2);
+            GameManager.Instance.SetCardToSlot(currentEnemy.PlayerCards.Hand[0], PlayerSide.Enemy, SlotPosition.Position3);
+        }
     }
 }

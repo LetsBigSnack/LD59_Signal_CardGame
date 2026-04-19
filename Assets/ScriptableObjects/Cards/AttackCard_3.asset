@@ -15,4 +15,6 @@ MonoBehaviour:
   cardName: Surveil 3
   cardDescription: Surveil {x}
   cardType: 0
+  cardSprite: {fileID: 0}
+  rarity: 2
   damage: 3

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -26,7 +27,12 @@ namespace Data
             set => playerCards = value;
             get => playerCards;
         }
-        
+
+        private void Awake()
+        {
+            playerCards.CloneDeckList();
+        }
+
         public void ResetPlayer()
         {
             currentHealth = maxHealth;

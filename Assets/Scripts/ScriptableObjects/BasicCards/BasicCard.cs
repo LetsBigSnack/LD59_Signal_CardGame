@@ -3,6 +3,13 @@ using UnityEngine;
 
 namespace ScriptableObjects.BasicCards
 {
+    public enum CardRarity
+    {
+        Common,
+        Uncommon,
+        Rare
+    }
+    
     public class BasicCard : ScriptableObject
     {
         [Header("Card Info")]
@@ -10,6 +17,19 @@ namespace ScriptableObjects.BasicCards
         public string cardDescription;
         [SerializeField]
         public CardType cardType;
+        
+        [SerializeField]
+        private Sprite cardSprite;
+        
+        [SerializeField]
+        private CardRarity rarity;
+
+        public CardRarity CardRarity
+        {
+            get => rarity;
+            set => rarity = value;
+        }
+        
         
         public string GetCardName()
         {

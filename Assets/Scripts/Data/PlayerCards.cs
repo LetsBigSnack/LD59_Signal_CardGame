@@ -2,16 +2,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Helpers;
+using Managers;
 using ScriptableObjects.Deck;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = System.Random;
 
+
+
+
 namespace Data
 {
+    
     [Serializable]
     public class PlayerCards
     {
+        
+        [SerializeField]
+        public static int MinDeckCount = 16;
+        
+        
         [SerializeField]
         private DeckList deckList;
         
@@ -34,6 +44,8 @@ namespace Data
             get => hand;
             set => hand = value;
         }
+        
+        //TODO: change name
         public DeckList GetDeckList
         {
             get => deckList;
@@ -51,11 +63,14 @@ namespace Data
             get => set;
             set => set = value;
         }
+
+        public void CloneDeckList()
+        {
+            deckList = Object.Instantiate<DeckList>(deckList);
+        }
         
         public void InitializeDeck()
         {
-            
-            deckList = Object.Instantiate<DeckList>(deckList);
             deck = new List<PlayCardData>();
             hand = new List<PlayCardData>();
             set = new List<PlayCardData>();
@@ -144,6 +159,23 @@ namespace Data
             }
             
             Draw(cardDiff);
+        }
+
+        public void AddToDeck(PlayCardData reward)
+        {
+            deckList.cards.Add(reward);
+        }
+
+        public void RemoveFromDeck(PlayCardData removedCard)
+        {
+            RewardManager.Instance.IsRemoveView = false;
+            if (deckList.cards.Count <= MinDeckCount && !deckList.cards.Contains(removedCard))
+            {
+                return;
+            }
+            deckList.cards.Remove(removedCard);
+            GameStateManager.Instance.ChangeState(GameState.Game);
+            
         }
     }
 }
