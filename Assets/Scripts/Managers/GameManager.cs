@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         
         _players = new Dictionary<PlayerSide, Player>();
-        _players.Add(PlayerSide.Player,  Player.Instance);
+        _players.Add(PlayerSide.Player,  PlayerManager.Instance.GetPlayer());
         _players.Add(PlayerSide.Enemy,  EnemyManager.Instance.GetCurrentEnemy());
         
         CreateGameSlots();

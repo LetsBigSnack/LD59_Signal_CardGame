@@ -5,7 +5,6 @@ namespace Data
 {
     public class Player : MonoBehaviour
     {
-        public static Player Instance;
         
         [SerializeField]
         private string playerName;
@@ -22,18 +21,6 @@ namespace Data
         private bool _isDead;
         
         
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
-        }
         
         public PlayerCards PlayerCards { 
             set => playerCards = value;

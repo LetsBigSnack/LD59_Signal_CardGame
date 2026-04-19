@@ -53,7 +53,7 @@ class DecalMeshHelperEditor : Editor {
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Hand", EditorStyles.boldLabel); 
         EditorGUILayout.Separator();
-        foreach (PlayCardData handCard in Player.Instance.PlayerCards.Hand.ToList())
+        foreach (PlayCardData handCard in PlayerManager.Instance.GetPlayer().PlayerCards.Hand.ToList())
         {
             
             EditorGUILayout.BeginHorizontal();
