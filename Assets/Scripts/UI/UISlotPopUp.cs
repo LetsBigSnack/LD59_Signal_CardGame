@@ -58,8 +58,10 @@ public class UISlotPopUp : MonoBehaviour
     {
         if (currentCard == null) return;
 
-        UISlotManager.Instance.PlaceCard(slotIndex, currentCard);
+        GameManager.Instance.SetCardToSlot(currentCard, PlayerSide.Player, (SlotPosition)slotIndex);
 
         CloseSlotPopUp();
     }
+
+
 }

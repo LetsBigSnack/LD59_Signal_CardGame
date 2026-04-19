@@ -1,5 +1,7 @@
 using Data;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 public class UISlotManager : MonoBehaviour
 {
@@ -7,6 +9,8 @@ public class UISlotManager : MonoBehaviour
 
     [SerializeField]
     private UISlot[] playerSlots;
+    [SerializeField]
+    private UISlot[] enemySlots;
     [SerializeField]
     private GameManager gameManager;
 
@@ -25,38 +29,26 @@ public class UISlotManager : MonoBehaviour
     private void OnEnable()
     {
         gameManager.OnCardRemoved += HandleCardRemoved;
+        gameManager.OnCardAdded += HandleCardAdded;
     }
 
     private void OnDisable()
     {
         gameManager.OnCardRemoved -= HandleCardRemoved;
+        gameManager.OnCardAdded -= HandleCardAdded;
     }
 
-    public void PlaceCard(int slotIndex, PlayCardData card)
+    private void HandleCardAdded(GameSlot gameSlot)
     {
-        if (slotIndex < 0 || slotIndex >= playerSlots.Length)
-            return;
-
-        UISlot uiSlot = playerSlots[slotIndex];
-
-        if (uiSlot.IsOccupied)
-            return;
-
-        GameManager.Instance.SetCardToSlot(card, PlayerSide.Player, (SlotPosition)(slotIndex));
-
-        uiSlot.SetCard(card);
+        GetSlot(gameSlot).SetCard(gameSlot.PlayCardData);
     }
-
     private void HandleCardRemoved(GameSlot gameSlot)
     {
-        if (gameSlot.PlayerSide != PlayerSide.Player)
-            return;
+        GetSlot(gameSlot).ClearSlot();
+    }
 
-        int index = (int)gameSlot.SlotPosition;
-
-        if (index < 0 || index >= playerSlots.Length)
-            return;
-
-        playerSlots[index].ClearSlot();
+    private UISlot GetSlot(GameSlot gameSlot)
+    {
+        return gameSlot.PlayerSide == PlayerSide.Player ? playerSlots[(int)gameSlot.SlotPosition] : enemySlots[(int)gameSlot.SlotPosition];
     }
 }

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int startCardAmount = 7;
 
     public event Action<GameSlot> OnCardRemoved;
+    public event Action<GameSlot> OnCardAdded;
 
     public List<GameSlot> GameSlots
     {
@@ -165,7 +166,9 @@ public class GameManager : MonoBehaviour
         { 
             gameSlot.PlayCardData = card;
         }
-        
+
+        OnCardAdded?.Invoke(gameSlot);
+    
     }
     
     public void UnsetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
