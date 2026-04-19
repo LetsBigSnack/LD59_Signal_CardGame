@@ -237,6 +237,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
+        
         if (_players[side].PlayerCards.SetCard(card))
         { 
             gameSlot.PlayCardData = card;
