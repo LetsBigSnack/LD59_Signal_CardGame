@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 36611636}
   - component: {fileID: 36611638}
   - component: {fileID: 36611637}
+  - component: {fileID: 36611639}
   m_Layer: 5
   m_Name: Life (2)
   m_TagString: Untagged
@@ -269,6 +270,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36611635}
   m_CullTransparentMesh: 1
+--- !u!114 &36611639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36611635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
 --- !u!1 &69103748
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +427,7 @@ GameObject:
   - component: {fileID: 126295840}
   - component: {fileID: 126295842}
   - component: {fileID: 126295841}
+  - component: {fileID: 126295843}
   m_Layer: 5
   m_Name: Life (6)
   m_TagString: Untagged
@@ -477,6 +492,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126295839}
   m_CullTransparentMesh: 1
+--- !u!114 &126295843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126295839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 0}
 --- !u!1001 &136225971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -549,6 +577,7 @@ GameObject:
   - component: {fileID: 136515806}
   - component: {fileID: 136515808}
   - component: {fileID: 136515807}
+  - component: {fileID: 136515809}
   m_Layer: 5
   m_Name: Life (5)
   m_TagString: Untagged
@@ -613,6 +642,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136515805}
   m_CullTransparentMesh: 1
+--- !u!114 &136515809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136515805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 0}
 --- !u!1 &147197446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1355,7 @@ GameObject:
   - component: {fileID: 226201532}
   - component: {fileID: 226201534}
   - component: {fileID: 226201533}
+  - component: {fileID: 226201535}
   m_Layer: 5
   m_Name: Life (3)
   m_TagString: Untagged
@@ -1377,6 +1420,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226201531}
   m_CullTransparentMesh: 1
+--- !u!114 &226201535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226201531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1 &234819424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1568,7 @@ Transform:
   m_Children:
   - {fileID: 176979548}
   - {fileID: 1271636450}
+  - {fileID: 2113782386}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271180105
@@ -1525,6 +1582,7 @@ GameObject:
   - component: {fileID: 271180106}
   - component: {fileID: 271180108}
   - component: {fileID: 271180107}
+  - component: {fileID: 271180109}
   m_Layer: 5
   m_Name: Life (1)
   m_TagString: Untagged
@@ -1589,6 +1647,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271180105}
   m_CullTransparentMesh: 1
+--- !u!114 &271180109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271180105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1 &312212307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1671,7 @@ GameObject:
   - component: {fileID: 312212308}
   - component: {fileID: 312212310}
   - component: {fileID: 312212309}
+  - component: {fileID: 312212311}
   m_Layer: 5
   m_Name: Life (1)
   m_TagString: Untagged
@@ -1664,6 +1736,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312212307}
   m_CullTransparentMesh: 1
+--- !u!114 &312212311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312212307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
 --- !u!1 &376011145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2153,7 @@ GameObject:
   - component: {fileID: 465455557}
   - component: {fileID: 465455559}
   - component: {fileID: 465455558}
+  - component: {fileID: 465455560}
   m_Layer: 5
   m_Name: Life (7)
   m_TagString: Untagged
@@ -2132,6 +2218,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465455556}
   m_CullTransparentMesh: 1
+--- !u!114 &465455560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465455556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,6 +4213,7 @@ GameObject:
   - component: {fileID: 851522164}
   - component: {fileID: 851522166}
   - component: {fileID: 851522165}
+  - component: {fileID: 851522167}
   m_Layer: 5
   m_Name: Life (6)
   m_TagString: Untagged
@@ -4178,6 +4278,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851522163}
   m_CullTransparentMesh: 1
+--- !u!114 &851522167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851522163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
 --- !u!1 &888236785
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,6 +4377,7 @@ GameObject:
   - component: {fileID: 907179726}
   - component: {fileID: 907179728}
   - component: {fileID: 907179727}
+  - component: {fileID: 907179729}
   m_Layer: 5
   m_Name: Life (2)
   m_TagString: Untagged
@@ -4328,6 +4442,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907179725}
   m_CullTransparentMesh: 1
+--- !u!114 &907179729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907179725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1 &926838098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,6 +4467,7 @@ GameObject:
   - component: {fileID: 926838102}
   - component: {fileID: 926838101}
   - component: {fileID: 926838100}
+  - component: {fileID: 926838103}
   m_Layer: 5
   m_Name: Life_container
   m_TagString: Untagged
@@ -4438,6 +4566,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926838098}
   m_CullTransparentMesh: 1
+--- !u!114 &926838103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926838098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29f2287c46eefc469a9f5cd095125bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarController
+  lifeBarElements:
+  - {fileID: 2069319387}
+  - {fileID: 312212311}
+  - {fileID: 36611639}
+  - {fileID: 1039018362}
+  - {fileID: 1425521225}
+  - {fileID: 136515809}
+  - {fileID: 126295843}
+  - {fileID: 465455560}
+  - {fileID: 1918229443}
+  - {fileID: 1460339722}
 --- !u!1 &944076272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,6 +4600,7 @@ GameObject:
   - component: {fileID: 944076273}
   - component: {fileID: 944076275}
   - component: {fileID: 944076274}
+  - component: {fileID: 944076276}
   m_Layer: 5
   m_Name: Life (8)
   m_TagString: Untagged
@@ -4513,6 +4665,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944076272}
   m_CullTransparentMesh: 1
+--- !u!114 &944076276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944076272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
 --- !u!1 &1011066778
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,6 +4690,7 @@ GameObject:
   - component: {fileID: 1011066782}
   - component: {fileID: 1011066781}
   - component: {fileID: 1011066780}
+  - component: {fileID: 1011066783}
   m_Layer: 5
   m_Name: Life_container
   m_TagString: Untagged
@@ -4623,6 +4789,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011066778}
   m_CullTransparentMesh: 1
+--- !u!114 &1011066783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011066778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29f2287c46eefc469a9f5cd095125bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarController
+  lifeBarElements:
+  - {fileID: 1838480328}
+  - {fileID: 271180109}
+  - {fileID: 907179729}
+  - {fileID: 226201535}
+  - {fileID: 1325811908}
+  - {fileID: 1551850574}
+  - {fileID: 851522167}
+  - {fileID: 1194373630}
+  - {fileID: 944076276}
+  - {fileID: 1565946077}
 --- !u!1 &1039018358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,6 +4823,7 @@ GameObject:
   - component: {fileID: 1039018359}
   - component: {fileID: 1039018361}
   - component: {fileID: 1039018360}
+  - component: {fileID: 1039018362}
   m_Layer: 5
   m_Name: Life (3)
   m_TagString: Untagged
@@ -4698,6 +4888,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039018358}
   m_CullTransparentMesh: 1
+--- !u!114 &1039018362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039018358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
 --- !u!114 &1048285813 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7905854770034263064, guid: ec4571c42d3e3633ba36c74c6541b0f1, type: 3}
@@ -4971,8 +5174,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7905854770034263064, guid: ec4571c42d3e3633ba36c74c6541b0f1, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905854770034263064, guid: ec4571c42d3e3633ba36c74c6541b0f1, type: 3}
       propertyPath: playerName
       value: YOUUUUUU
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905854770034263064, guid: ec4571c42d3e3633ba36c74c6541b0f1, type: 3}
+      propertyPath: currentHealth
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5752,6 +5963,7 @@ GameObject:
   - component: {fileID: 1194373627}
   - component: {fileID: 1194373629}
   - component: {fileID: 1194373628}
+  - component: {fileID: 1194373630}
   m_Layer: 5
   m_Name: Life (7)
   m_TagString: Untagged
@@ -5816,6 +6028,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194373626}
   m_CullTransparentMesh: 1
+--- !u!114 &1194373630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194373626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
 --- !u!1 &1202563624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6524,6 +6749,7 @@ GameObject:
   - component: {fileID: 1325811905}
   - component: {fileID: 1325811907}
   - component: {fileID: 1325811906}
+  - component: {fileID: 1325811908}
   m_Layer: 5
   m_Name: Life (4)
   m_TagString: Untagged
@@ -6588,6 +6814,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325811904}
   m_CullTransparentMesh: 1
+--- !u!114 &1325811908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325811904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
 --- !u!1 &1347517503
 GameObject:
   m_ObjectHideFlags: 0
@@ -6901,6 +7140,7 @@ GameObject:
   - component: {fileID: 1425521222}
   - component: {fileID: 1425521224}
   - component: {fileID: 1425521223}
+  - component: {fileID: 1425521225}
   m_Layer: 5
   m_Name: Life (4)
   m_TagString: Untagged
@@ -6965,6 +7205,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425521221}
   m_CullTransparentMesh: 1
+--- !u!114 &1425521225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425521221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 0}
 --- !u!1 &1449290866
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,6 +7503,7 @@ GameObject:
   - component: {fileID: 1460339719}
   - component: {fileID: 1460339721}
   - component: {fileID: 1460339720}
+  - component: {fileID: 1460339722}
   m_Layer: 5
   m_Name: Life (9)
   m_TagString: Untagged
@@ -7314,6 +7568,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460339718}
   m_CullTransparentMesh: 1
+--- !u!114 &1460339722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460339718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 0}
 --- !u!1 &1489301599
 GameObject:
   m_ObjectHideFlags: 0
@@ -7608,6 +7875,7 @@ GameObject:
   - component: {fileID: 1551850571}
   - component: {fileID: 1551850573}
   - component: {fileID: 1551850572}
+  - component: {fileID: 1551850574}
   m_Layer: 5
   m_Name: Life (5)
   m_TagString: Untagged
@@ -7672,6 +7940,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551850570}
   m_CullTransparentMesh: 1
+--- !u!114 &1551850574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551850570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
 --- !u!1 &1565946073
 GameObject:
   m_ObjectHideFlags: 0
@@ -7683,6 +7964,7 @@ GameObject:
   - component: {fileID: 1565946074}
   - component: {fileID: 1565946076}
   - component: {fileID: 1565946075}
+  - component: {fileID: 1565946077}
   m_Layer: 5
   m_Name: Life (9)
   m_TagString: Untagged
@@ -7747,6 +8029,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565946073}
   m_CullTransparentMesh: 1
+--- !u!114 &1565946077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565946073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
 --- !u!1 &1571193674
 GameObject:
   m_ObjectHideFlags: 0
@@ -8837,6 +9132,7 @@ GameObject:
   - component: {fileID: 1838480325}
   - component: {fileID: 1838480327}
   - component: {fileID: 1838480326}
+  - component: {fileID: 1838480328}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -8901,6 +9197,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838480324}
   m_CullTransparentMesh: 1
+--- !u!114 &1838480328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838480324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1001 &1855197857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9198,6 +9507,7 @@ GameObject:
   - component: {fileID: 1918229440}
   - component: {fileID: 1918229442}
   - component: {fileID: 1918229441}
+  - component: {fileID: 1918229443}
   m_Layer: 5
   m_Name: Life (8)
   m_TagString: Untagged
@@ -9262,6 +9572,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918229439}
   m_CullTransparentMesh: 1
+--- !u!114 &1918229443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918229439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 0}
 --- !u!1 &1935563374
 GameObject:
   m_ObjectHideFlags: 0
@@ -9918,6 +10241,7 @@ GameObject:
   - component: {fileID: 2069319384}
   - component: {fileID: 2069319386}
   - component: {fileID: 2069319385}
+  - component: {fileID: 2069319387}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -9982,6 +10306,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069319383}
   m_CullTransparentMesh: 1
+--- !u!114 &2069319387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069319383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
 --- !u!1 &2072019291
 GameObject:
   m_ObjectHideFlags: 0
@@ -10236,6 +10573,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2113782385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113782386}
+  - component: {fileID: 2113782387}
+  m_Layer: 0
+  m_Name: UILifeBarManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2113782386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113782385}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269940798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113782387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113782385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968f8b405ca3b6940afd07c8edbae255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UILifeBarManager
+  lifeBarEnemy: {fileID: 926838103}
+  lifeBarPlayer: {fileID: 1011066783}
 --- !u!1 &2118623808
 GameObject:
   m_ObjectHideFlags: 0
