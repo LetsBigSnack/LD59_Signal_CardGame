@@ -4,25 +4,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class UIDeckManager : MonoBehaviour
+public class UICardManager : MonoBehaviour
 {
-    public static UIDeckManager Instance;
+    public static UICardManager Instance;
 
     [SerializeField]
     private Player player;
 
     [SerializeField]
-    private GameObject cardPrefab;
+    private GameObject cardHandPrefab;
+    [SerializeField]
+    private GameObject cardDeckPrefab;
 
     [SerializeField]
     private Transform handContainer;
 
     [SerializeField]
     private List<CardTypeSprite> cardTypeSprite;
+
+    [SerializeField] 
+    private UICardCollectionView collectionView;
+    [SerializeField] 
+    private GameObject window;
 
     private void Awake()
     {
@@ -58,12 +66,41 @@ public class UIDeckManager : MonoBehaviour
 
     public void CreateCardUI(PlayCardData playCardData)
     {
-        GameObject card = Instantiate(cardPrefab, handContainer);
+        GameObject card = Instantiate(cardHandPrefab, handContainer);
 
         UICard uiCard = card.GetComponent<UICard>();
         Sprite sprite = GetSprite(playCardData.GetCardType());
 
         uiCard.Setup(playCardData, sprite);
+    }
+
+    public GameObject CreateCardUI(PlayCardData playCardData, Transform parent)
+    {
+        GameObject card = Instantiate(cardDeckPrefab, parent);
+
+        UICard uiCard = card.GetComponent<UICard>();
+        Sprite sprite = GetSprite(playCardData.GetCardType());
+
+        uiCard.Setup(playCardData, sprite);
+
+        return card;
+    }
+
+    public void OpenDeck()
+    {
+        window.SetActive(true);
+        collectionView.ShowCards(player.Deck.GetDeckList.cards);
+    }
+
+    public void OpenGraveyard()
+    {
+        window.SetActive(true);
+        collectionView.ShowCards(player.Deck.GetGraveyard);
+    }
+
+    public void CloseWindow()
+    {
+        window.SetActive(false);
     }
 
     [Serializable]

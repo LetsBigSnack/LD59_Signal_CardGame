@@ -31,6 +31,14 @@ namespace Data
             get => hand;
             set => hand = value;
         }
+        public DeckList GetDeckList
+        {
+            get => deckList;
+        }
+        public List<PlayCardData> GetGraveyard
+        {
+            get => graveyard;
+        }
 
         public event Action<PlayCardData> OnDraw;
 

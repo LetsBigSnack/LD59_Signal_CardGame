@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField]
     private TextMeshProUGUI cardNameTxt;
@@ -34,6 +34,16 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField]
     private Canvas cardCanvas;
 
+    private PlayCardData cardData;
+    private bool isHovered;
+    private bool isSelected;
+
+
+    public PlayCardData GetCardData()
+    {
+        return cardData;
+    }
+
     private void Awake()
     {
         originalScale = cardVisual.localScale;
@@ -42,23 +52,28 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Pointer enter");
-        cardCanvas.overrideSorting = true;
-        cardCanvas.sortingOrder = 100;
-
-        cardVisual.localScale = originalScale * hoverScale;
-        cardVisual.localPosition = originalPosition + new Vector3(0, hoverHeight, 0);
+        isHovered = true;
+        UpdateVisual();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        cardVisual.localScale = originalScale;
-        cardVisual.localPosition = originalPosition;
-
-        cardCanvas.overrideSorting = false;
+        isHovered = false;
+        UpdateVisual();
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            UISlotPopUp.Instance.OpenSlotPopup(this, eventData);
+        }
+    }
+
     public void Setup(PlayCardData playCardData, Sprite sprite)
     {
+        cardData = playCardData;
+
         cardNameTxt.text = playCardData.GetCardName();
         cardDiscTxt.text = playCardData.GetCardDescription();
         cardTypeTxt.text = playCardData.GetCardType().ToString();
@@ -66,5 +81,30 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         cardType = playCardData.GetCardType();
 
         cardImg.sprite = sprite;
+    }
+
+    public void SetSelected(bool value)
+    {
+        isSelected = value;
+        UpdateVisual();
+    }
+
+    private void UpdateVisual()
+    {
+        if (isHovered || isSelected)
+        {
+            cardCanvas.overrideSorting = true;
+            cardCanvas.sortingOrder = 100;
+
+            cardVisual.localScale = originalScale * hoverScale;
+            cardVisual.localPosition = originalPosition + new Vector3(0, hoverHeight, 0);
+        }
+        else
+        {
+            cardCanvas.overrideSorting = false;
+
+            cardVisual.localScale = originalScale;
+            cardVisual.localPosition = originalPosition;
+        }
     }
 }
