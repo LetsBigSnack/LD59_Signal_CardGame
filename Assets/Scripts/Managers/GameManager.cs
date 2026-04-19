@@ -5,6 +5,13 @@ using Data;
 using Managers;
 using UnityEngine;
 
+public enum GameState
+{
+    SettingState,
+    RespondingState,
+    ResolvingState
+}
+
 public class GameManager : MonoBehaviour
 {
     
@@ -16,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentTurn;
     [SerializeField] private PlayerSide priority;
     [SerializeField] private int startCardAmount = 7;
+    [SerializeField] private GameState currentState = GameState.SettingState;
+    
     
     public List<GameSlot> GameSlots
     {
@@ -60,23 +69,120 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        CreateGameSlots();
+        currentTurn = 1;
+        priority = PlayerSide.Enemy;
+        currentState = GameState.SettingState;
         
         _players = new Dictionary<PlayerSide, Player>();
         _players.Add(PlayerSide.Player,  PlayerManager.Instance.GetPlayer());
         _players.Add(PlayerSide.Enemy,  EnemyManager.Instance.GetCurrentEnemy());
-        
-        CreateGameSlots();
-        currentTurn = 0;
-        priority = PlayerSide.Player;
         
         _players[PlayerSide.Player].ResetPlayer();
         _players[PlayerSide.Enemy].ResetPlayer();
         
         _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount);
         _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount);
+        
+        HandleCurrentState();
     }
 
-    public void SendSignal()
+
+    public void HandleCurrentState()
+    {
+        bool hasEnemyPriority = priority == PlayerSide.Enemy;
+        
+        switch (currentState)
+        {
+            case GameState.SettingState:
+                if (hasEnemyPriority)
+                {
+                    EnemyManager.Instance.MakeMove();
+                }
+                //Anim 
+                ProceedToNextState();
+                break;
+            case GameState.RespondingState:
+                if (!hasEnemyPriority)
+                {
+                    EnemyManager.Instance.MakeMove();
+                }
+                ProceedToNextState();
+                break;
+            case GameState.ResolvingState:
+                ResolveSetCards();
+                ProceedToNextState();
+                break;
+        }
+    }
+
+    public void ProceedToNextState()
+    {
+        switch (currentState)
+        {
+            case GameState.SettingState:
+                if (_gameSlots.Where(slots => slots.PlayerSide == priority && slots.PlayCardData != null).ToList().Count != 3)
+                {
+                    Debug.Log("Not enough cards - Setter");
+                    return;
+                }
+                currentState = GameState.RespondingState;
+                //Maybe Change for a nice reveal
+                HandleCurrentState();
+                break;
+            case GameState.RespondingState:
+                if (_gameSlots.Where(slots => slots.PlayerSide != priority && slots.PlayCardData != null).ToList().Count != 3)
+                {
+                    Debug.Log("Not enough cards - Responder");
+                    return;
+                }
+                currentState = GameState.ResolvingState;
+                
+                //Maybe Change for a nice reveal
+                HandleCurrentState();
+                break;
+            case GameState.ResolvingState:
+                
+                RoundOutcome outcome = CheckWinner();
+
+                switch (outcome)
+                {
+                    case RoundOutcome.PlayerWin:
+                        WinGame();
+                        break;
+                    case RoundOutcome.EnemyWin:
+                        LooseGame();
+                        break;
+                    case RoundOutcome.NoWin:
+                        Debug.Log("No Win");
+                        NextRound();
+                        break;
+                }
+                break;
+        }
+    }
+
+    private void NextRound()
+    {
+        _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount);
+        _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount);
+        currentTurn++;
+        CreateGameSlots();
+        priority = priority == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player;
+        currentState = GameState.SettingState;
+    }
+
+    private void WinGame()
+    {
+        Debug.Log("Player Win");
+    }
+
+    private void LooseGame()
+    {
+        Debug.Log("Enemy Win");
+    }
+    
+    public void ResolveSetCards()
     {
         List<GameSlot> stack = _gameSlots
             .OrderBy(slot => slot.PlayCardData == null)
@@ -118,34 +224,7 @@ public class GameManager : MonoBehaviour
             _players[gameSlot.PlayerSide].PlayerCards.ResolveCard(gameSlot.PlayCardData);
             
         }
-
-
-        RoundOutcome outcome = CheckWinner();
-
-        switch (outcome)
-        {
-            case RoundOutcome.PlayerWin:
-                Debug.Log("Player Win");
-                //Do Something
-                break;
-            case RoundOutcome.EnemyWin:
-                //Do Something
-                Debug.Log("Enemy Win");
-                break;
-        }
         
-        
-        //End Turn and Draw Cards
-
-        _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount);
-        _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount);
-        currentTurn++;
-        
-        //Create new Slots
-
-        CreateGameSlots();
-        
-        Debug.Log(stack.Count);
     }
 
     public void SetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
@@ -158,7 +237,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        if (_players[PlayerSide.Player].PlayerCards.SetCard(card))
+        if (_players[side].PlayerCards.SetCard(card))
         { 
             gameSlot.PlayCardData = card;
         }
@@ -175,7 +254,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        if (_players[PlayerSide.Player].PlayerCards.UnsetCard(card))
+        if (_players[side].PlayerCards.UnsetCard(card))
         { 
             gameSlot.PlayCardData = null;
         }

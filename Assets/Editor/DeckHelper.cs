@@ -28,8 +28,8 @@ class DecalMeshHelperEditor : Editor {
         if(GUILayout.Button("Start Game"))
             gameManager.StartGame();
 
-        if (GUILayout.Button("Send Signal"))
-            gameManager.SendSignal();
+        if (GUILayout.Button("Handle Current State"))
+            gameManager.HandleCurrentState();
         
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Set Cards", EditorStyles.boldLabel); 

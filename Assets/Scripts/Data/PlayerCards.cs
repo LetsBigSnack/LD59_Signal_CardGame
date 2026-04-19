@@ -7,8 +7,12 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = System.Random;
 
+
+
+
 namespace Data
 {
+    
     [Serializable]
     public class PlayerCards
     {
