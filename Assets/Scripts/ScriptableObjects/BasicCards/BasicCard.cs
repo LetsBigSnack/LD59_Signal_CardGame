@@ -21,7 +21,7 @@ namespace ScriptableObjects.BasicCards
             return cardDescription;
         }
 
-        public virtual void Play()
+        public virtual void Play(GameSlot ownSlot, GameSlot enemySlot)
         {
             //TOOD: add effect
         }

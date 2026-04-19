@@ -5,6 +5,8 @@ namespace Data
 {
     public class Player : MonoBehaviour
     {
+        public static Player Instance;
+        
         [SerializeField]
         private string playerName;
         
@@ -17,6 +19,21 @@ namespace Data
         [SerializeField] 
         private int currentHealth;
         
+        private bool _isDead;
+        
+        
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+        }
         
         public PlayerCards PlayerCards { 
             set => playerCards = value;
@@ -28,8 +45,21 @@ namespace Data
             currentHealth = maxHealth;
             playerCards.InitializeDeck();
         }
-        
-        
-        
+
+
+        public void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+            
+            if (currentHealth <= 0)
+            {
+                _isDead = true;
+            }
+        }
+
+        public bool IsDead()
+        {
+            return _isDead;
+        }
     }
 }

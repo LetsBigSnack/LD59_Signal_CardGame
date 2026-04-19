@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Data;
+using Managers;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -26,9 +27,9 @@ class DecalMeshHelperEditor : Editor {
         
         if(GUILayout.Button("Start Game"))
             gameManager.StartGame();
-        
+
         if (GUILayout.Button("Send Signal"))
-            gameManager.StartGame();
+            gameManager.SendSignal();
         
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Set Cards", EditorStyles.boldLabel); 
@@ -52,7 +53,7 @@ class DecalMeshHelperEditor : Editor {
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Hand", EditorStyles.boldLabel); 
         EditorGUILayout.Separator();
-        foreach (PlayCardData handCard in gameManager.Player.PlayerCards.Hand.ToList())
+        foreach (PlayCardData handCard in Player.Instance.PlayerCards.Hand.ToList())
         {
             
             EditorGUILayout.BeginHorizontal();
@@ -60,29 +61,29 @@ class DecalMeshHelperEditor : Editor {
             GUILayout.Label(handCard.GetCardName());
             
             if (GUILayout.Button("Slot 1"))
-                gameManager.SetCardToSlot(handCard, PlayerSide.Player1, SlotPosition.Position1);
+                gameManager.SetCardToSlot(handCard, PlayerSide.Player, SlotPosition.Position1);
             if (GUILayout.Button("Slot 2"))
-                gameManager.SetCardToSlot(handCard, PlayerSide.Player1, SlotPosition.Position2);
+                gameManager.SetCardToSlot(handCard, PlayerSide.Player, SlotPosition.Position2);
             if (GUILayout.Button("Slot 3"))
-                gameManager.SetCardToSlot(handCard, PlayerSide.Player1, SlotPosition.Position3);
+                gameManager.SetCardToSlot(handCard, PlayerSide.Player, SlotPosition.Position3);
             EditorGUILayout.EndHorizontal();
         }
         
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Enemy Hand", EditorStyles.boldLabel); 
         EditorGUILayout.Separator();
-        foreach (PlayCardData handCard in gameManager.Enemy.PlayerCards.Hand.ToList())
+        foreach (PlayCardData handCard in EnemyManager.Instance.GetCurrentEnemy().PlayerCards.Hand.ToList())
         {
             EditorGUILayout.BeginHorizontal();
 
             GUILayout.Label(handCard.GetCardName());
             
             if (GUILayout.Button("Slot 1"))
-                gameManager.SetCardToSlot(handCard, PlayerSide.Player2, SlotPosition.Position1);
+                gameManager.SetCardToSlot(handCard, PlayerSide.Enemy, SlotPosition.Position1);
             if (GUILayout.Button("Slot 2"))
-                gameManager.SetCardToSlot(handCard, PlayerSide.Player2, SlotPosition.Position2);
+                gameManager.SetCardToSlot(handCard, PlayerSide.Enemy, SlotPosition.Position2);
             if (GUILayout.Button("Slot 3"))
-                gameManager.SetCardToSlot(handCard, PlayerSide.Player2, SlotPosition.Position3);
+                gameManager.SetCardToSlot(handCard, PlayerSide.Enemy, SlotPosition.Position3);
             EditorGUILayout.EndHorizontal();
         }
         

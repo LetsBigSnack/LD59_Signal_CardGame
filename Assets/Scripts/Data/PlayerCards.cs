@@ -98,18 +98,34 @@ namespace Data
             return true;
         }
         
-        public void PlayCard(PlayCardData playCard)
+        public void PlayCard(PlayCardData playCard, GameSlot ownSlot, GameSlot enemySlot)
         {
-            playCard.PlayCard();
+            playCard.PlayCard(ownSlot, enemySlot);
+        }
+
+        public void ResolveCard(PlayCardData playCard)
+        {
             graveyard.Add(playCard);
             set.Remove(playCard);
         }
-
+        
         private void ShuffleGraveyardBack()
         {
             deck = deck.Concat(graveyard).ToList();
             graveyard = new List<PlayCardData>();
             deck.Shuffle();
+        }
+
+        public void DrawUntil(int untilAmount)
+        {
+            int cardDiff = untilAmount - hand.Count;
+            
+            if (cardDiff <= 0)
+            {
+                return;
+            }
+            
+            Draw(cardDiff);
         }
     }
 }

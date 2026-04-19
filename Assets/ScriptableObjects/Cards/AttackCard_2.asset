@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f980bfb687e4ebeb77cc1b313f8b2b, type: 3}
   m_Name: AttackCard_2
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.BasicCards.AttackCard
-  cardName: Surveil
+  cardName: Surveil 2
   cardDescription: Surveil {x}
+  cardType: 0
   damage: 2
