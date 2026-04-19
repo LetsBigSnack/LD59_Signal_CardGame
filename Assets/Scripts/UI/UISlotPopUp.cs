@@ -56,9 +56,9 @@ public class UISlotPopUp : MonoBehaviour
 
     public void AddToSlot(int slotIndex)
     {
-        Debug.Log($"Add {currentCard.GetCardName()} to slot {slotIndex}");
+        if (currentCard == null) return;
 
-        // TODO: your slot logic here
+        UISlotManager.Instance.PlaceCard(slotIndex, currentCard);
 
         CloseSlotPopUp();
     }

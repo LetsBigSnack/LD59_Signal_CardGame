@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentTurn;
     [SerializeField] private PlayerSide priority;
     [SerializeField] private int startCardAmount = 7;
-    
+
+    public event Action<GameSlot> OnCardRemoved;
+
     public List<GameSlot> GameSlots
     {
         get => _gameSlots;
@@ -108,15 +110,15 @@ public class GameManager : MonoBehaviour
         foreach (GameSlot gameSlot in stack)
         {
             gameSlot.ResolveTurn();
-            
-            
+
             if (gameSlot.PlayCardData == null)
             {
                 continue;
             }
             
             _players[gameSlot.PlayerSide].PlayerCards.ResolveCard(gameSlot.PlayCardData);
-            
+
+            OnCardRemoved?.Invoke(gameSlot);
         }
 
 

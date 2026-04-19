@@ -20,17 +20,14 @@ public class UICardManager : MonoBehaviour
     private GameObject cardHandPrefab;
     [SerializeField]
     private GameObject cardDeckPrefab;
+    [SerializeField]
+    private GameObject cardSlotPrefab;
 
     [SerializeField]
     private Transform handContainer;
 
     [SerializeField]
     private List<CardTypeSprite> cardTypeSprite;
-
-    [SerializeField] 
-    private UICardCollectionView collectionView;
-    [SerializeField] 
-    private GameObject window;
 
     private void Awake()
     {
@@ -46,12 +43,12 @@ public class UICardManager : MonoBehaviour
 
     private void OnEnable()
     {
-        player.PlayerCards.OnDraw += CreateCardUI;
+        player.PlayerCards.OnHandChange += RefreshHandUI;
     }
 
     private void OnDisable()
     {
-        player.PlayerCards.OnDraw -= CreateCardUI;
+        player.PlayerCards.OnHandChange -= RefreshHandUI;
     }
 
     public Sprite GetSprite(CardType cardType)
@@ -86,21 +83,30 @@ public class UICardManager : MonoBehaviour
         return card;
     }
 
-    public void OpenDeck()
+    public GameObject CreateSlotCardUI(PlayCardData playCardData, Transform parent)
     {
-        window.SetActive(true);
-        collectionView.ShowCards(player.PlayerCards.GetDeckList.cards);
+        GameObject card = Instantiate(cardSlotPrefab, parent);
+
+        UICard uiCard = card.GetComponent<UICard>();
+        Sprite sprite = GetSprite(playCardData.GetCardType());
+
+        uiCard.Setup(playCardData, sprite);
+
+        return card;
     }
 
-    public void OpenGraveyard()
-    {
-        window.SetActive(true);
-        collectionView.ShowCards(player.PlayerCards.GetGraveyard);
-    }
 
-    public void CloseWindow()
+    public void RefreshHandUI()
     {
-        window.SetActive(false);
+        foreach (Transform child in handContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (PlayCardData card in player.PlayerCards.Hand)
+        {
+            CreateCardUI(card);
+        }
     }
 
     [Serializable]
