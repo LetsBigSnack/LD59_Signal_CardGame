@@ -8,9 +8,4 @@ public class StartScreenPopupItem : MonoBehaviour
     {
         Destroy(gameObject, destroyTime);
     }
-
-    public void OnDestroy()
-    {
-        PopupSpawnManager.Instance.SpawnPopupOnScreen();
-    }
 }

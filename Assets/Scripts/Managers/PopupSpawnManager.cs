@@ -1,8 +1,5 @@
-using JetBrains.Annotations;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PopupSpawnManager : MonoBehaviour
 {
@@ -15,6 +12,8 @@ public class PopupSpawnManager : MonoBehaviour
 
     [Header("PopupPrefab")]
     public GameObject spawnPrefab;
+
+    public GameObject currentPopup;
 
     public void Awake()
     {
@@ -42,6 +41,14 @@ public class PopupSpawnManager : MonoBehaviour
         );
     }
 
+    public void Update()
+    {
+        if(currentPopup == null)
+        {
+            SpawnPopupOnScreen();
+        }
+    }
+
     public void SpawnPopupOnScreen()
     {
         RectTransform randomRect = GetRandomSpawnArea();
@@ -58,7 +65,8 @@ public class PopupSpawnManager : MonoBehaviour
         if (isOverlapping)
         {
             Vector3 worldPoint = randomRect.TransformPoint(randomPoint);
-            Instantiate(spawnPrefab, worldPoint, Quaternion.identity, targetCanvas.transform);
+            GameObject newPopup = Instantiate(spawnPrefab, worldPoint, Quaternion.identity, targetCanvas.transform);
+            currentPopup = newPopup;
         }
     }
 
