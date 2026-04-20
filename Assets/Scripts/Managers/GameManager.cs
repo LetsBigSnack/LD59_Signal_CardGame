@@ -216,8 +216,6 @@ public class GameManager : MonoBehaviour
 
     private void WinGame()
     {
-        
-        
         GameStateManager.Instance.ChangeState(GameState.Reward);
     }
 

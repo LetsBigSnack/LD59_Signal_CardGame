@@ -50,20 +50,24 @@ namespace Data
 
         public void GetRandomCard(List<CardChance> chances, List<PlayCardData> handCards, List<PlayCardData> cards)
         {
-            foreach (CardChance chance in chances)
+            while (true)
             {
-                float rng = Random.Range(0f, 1f);
-
-                if (rng < chance.Chance)
+                foreach (CardChance chance in chances)
                 {
-                    PlayCardData cardData = handCards.FirstOrDefault(c => c.Card.cardType == chance.CardType && !cards.Contains(c));
-                    if (cardData != null)
+                    float rng = Random.Range(0f, 1f);
+
+                    if (rng < chance.Chance)
                     {
-                        cards.Add(cardData);
+                        PlayCardData cardData = handCards.FirstOrDefault(c => c.Card.cardType == chance.CardType && !cards.Contains(c));
+                        if (cardData != null)
+                        {
+                            cards.Add(cardData);
+                            return;
+                        }
                     }
                 }
-                    
             }
+            
         }
         
         public List<PlayCardData> RespondCards(List<GameSlot> gameSlots)
