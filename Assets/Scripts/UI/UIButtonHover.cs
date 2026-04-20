@@ -5,6 +5,10 @@ public class UIButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     [SerializeField] private GameObject hoverImage;
 
+    public void Start()
+    {
+        hoverImage.SetActive(false);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         hoverImage.SetActive(true);

@@ -7,6 +7,7 @@ namespace Managers
     public enum GameState
     {
         Title,
+        Tutorial,
         Game,
         Pause,
         Reward,
@@ -48,6 +49,8 @@ namespace Managers
             switch (currentGameState)
             {
                 case GameState.Title:
+                    break;
+                case GameState.Tutorial:
                     break;
                 case GameState.Game:
                     GameManager.Instance.StartGame();
