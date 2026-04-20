@@ -64,8 +64,8 @@ namespace Data
                     }
                     InterfereCard currentCard = (InterfereCard)this.card;
                     InterfereCard otherCard = (InterfereCard)otherCardData.card;
-                    
-                    return currentCard.priority.CompareTo(otherCard.priority);
+                    int prioT = otherCard.priority.CompareTo(currentCard.priority);
+                    return prioT;
                 case CardType.Defense:
                     if (this.card.cardType == CardType.Interfere)
                     {

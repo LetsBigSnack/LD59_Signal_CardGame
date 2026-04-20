@@ -71,7 +71,7 @@ namespace Data
         public void ResolveTurn()
         {
             
-            if (ownModifierType == ModifierType.Firewall || attack > 0)
+            if (ownModifierType == ModifierType.Firewall && attack > 0)
             {
                 int blockedDamage = defense - Mathf.Max(defense - attack, 0);
                 GameManager.Instance.GetOppositePlayer(playerSide).TakeDamage(blockedDamage);

@@ -305,6 +305,7 @@ public class GameManager : MonoBehaviour
         //Discard Hand
         _players[PlayerSide.Player].PlayerCards.DiscardHand();
         _players[PlayerSide.Enemy].PlayerCards.DiscardHand();
+        
         //Draw Card
         foreach (GameSlot gameSlot in stack)
         {
