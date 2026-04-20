@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         EnemyManager.Instance.CreateNewEnemy();
         
         CreateGameSlots();
-        
+        _cardDrawModifiers = new Dictionary<PlayerSide, int>();
         _cardDrawModifiers.Add(PlayerSide.Player, 0);
         _cardDrawModifiers.Add(PlayerSide.Enemy, 0);
         
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnemyManager.Instance.MakeMove(_gameSlots, false);
                 }
-                //ProceedToNextState();
+                ProceedToNextState();
                 break;
             case TurnState.ResolvingState:
                 ResolveSetCards();
@@ -183,8 +183,8 @@ public class GameManager : MonoBehaviour
         _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Enemy]);
         currentTurn++;
         CreateGameSlots();
-        _cardDrawModifiers.Add(PlayerSide.Player, 0);
-        _cardDrawModifiers.Add(PlayerSide.Enemy, 0);
+        _cardDrawModifiers[PlayerSide.Enemy] = 0;
+        _cardDrawModifiers[PlayerSide.Player] = 0;
         priority = priority == PlayerSide.Player ? PlayerSide.Enemy :  PlayerSide.Player;
         OnPriorityChanged?.Invoke(priority);
         currentState = TurnState.SettingState;
