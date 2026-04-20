@@ -60,7 +60,7 @@ namespace Managers
         {
             CleanRewards();
             hasReward = false;
-            GameStateManager.Instance.ChangeState(GameState.Remove);
+            GameStateManager.Instance.ChangeState(GameState.Game);
         }
         
         public void SelectReward(PlayCardData reward)

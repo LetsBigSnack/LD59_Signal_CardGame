@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public event Action<GameSlot> OnCardRemoved;
     public event Action<GameSlot> OnCardAdded;
+    public event Action<PlayerSide> OnPriorityChanged;
 
     public List<GameSlot> GameSlots
     {
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("I HAVE RISEN");
         if (Instance == null)
         {
             Instance = this;
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
         CreateGameSlots();
         currentTurn = 1;
         priority = PlayerSide.Enemy;
+        OnPriorityChanged?.Invoke(priority);
         currentState = TurnState.SettingState;
         
         _players = new Dictionary<PlayerSide, Player>();
@@ -173,6 +176,7 @@ public class GameManager : MonoBehaviour
         currentTurn++;
         CreateGameSlots();
         priority = priority == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player;
+        OnPriorityChanged?.Invoke(priority);
         currentState = TurnState.SettingState;
     }
 
