@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Managers;
 using ScriptableObjects.Deck;
 using UnityEngine;
@@ -15,11 +16,11 @@ namespace Data
             PlayerCards.CloneDeckList();
         }
         
-        public void MakeMove(GameSlot own, GameSlot opponent, bool isSetter)
+        public List<PlayCardData> MakeMove(List<GameSlot> gameSlots, bool isSetter)
         {
-            
-            
-            
+
+            return null;
+
         }
         
     }

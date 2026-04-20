@@ -57,8 +57,11 @@ namespace Managers
 
         //TODO: dont create enemy instances -> fill current enemy script with new data (keep event actions alive)
 
-        public void MakeMove()
+        public void MakeMove(List<GameSlot> gameSlots, bool isSetter)
         {
+
+            List<PlayCardData> cardChoicePos1 = currentEnemy.MakeMove(gameSlots, isSetter);
+            
             GameManager.Instance.SetCardToSlot(currentEnemy.PlayerCards.Hand[0], PlayerSide.Enemy, SlotPosition.Position1);
             GameManager.Instance.SetCardToSlot(currentEnemy.PlayerCards.Hand[0], PlayerSide.Enemy, SlotPosition.Position2);
             GameManager.Instance.SetCardToSlot(currentEnemy.PlayerCards.Hand[0], PlayerSide.Enemy, SlotPosition.Position3);

@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
             case TurnState.SettingState:
                 if (hasEnemyPriority)
                 {
-                    EnemyManager.Instance.MakeMove();
+                    EnemyManager.Instance.MakeMove(_gameSlots, true);
                 }
                 //Anim 
                 ProceedToNextState();
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
             case TurnState.RespondingState:
                 if (!hasEnemyPriority)
                 {
-                    EnemyManager.Instance.MakeMove();
+                    EnemyManager.Instance.MakeMove(_gameSlots, false);
                 }
                 ProceedToNextState();
                 break;
