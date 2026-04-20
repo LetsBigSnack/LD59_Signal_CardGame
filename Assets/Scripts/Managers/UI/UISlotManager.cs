@@ -18,6 +18,8 @@ public class UISlotManager : MonoBehaviour
     [SerializeField]
     private List<GameSlot> enemyCardQueue;
 
+    private Coroutine animCoroutine;
+
     private void Awake()
     {
         if (Instance == null)
@@ -49,7 +51,11 @@ public class UISlotManager : MonoBehaviour
             enemyCardQueue.Add(gameSlot);
             if (enemyCardQueue.Count == 3)
             {
-
+                if(animCoroutine == null)
+                {
+                    animCoroutine = StartCoroutine(PlaySlotAnimations());
+                }
+                
             }
         }
 
@@ -65,7 +71,15 @@ public class UISlotManager : MonoBehaviour
         return gameSlot.PlayerSide == PlayerSide.Player ? playerSlots[(int)gameSlot.SlotPosition] : enemySlots[(int)gameSlot.SlotPosition];
     }
 
-    /*private IEnumerator PlaySlotAnimations()
+    private IEnumerator PlaySlotAnimations()
     {
-    }*/
+        for (int i = 0;  i < enemyCardQueue.Count; i++)
+        {
+            GetSlot(enemyCardQueue[i]).SetCard(enemyCardQueue[i].PlayCardData);
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        GameManager.Instance.ProceedToNextState();
+        animCoroutine = null;
+    }
 }

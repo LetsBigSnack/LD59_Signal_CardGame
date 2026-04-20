@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnemyManager.Instance.MakeMove();
                 }
-                ProceedToNextState();
+                //ProceedToNextState();
                 break;
             case TurnState.ResolvingState:
                 ResolveSetCards();

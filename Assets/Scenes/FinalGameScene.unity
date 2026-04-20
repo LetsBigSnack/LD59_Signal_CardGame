@@ -3027,7 +3027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 271234820}
         m_TargetAssemblyTypeName: UISlot, Assembly-CSharp
         m_MethodName: ReturnCardToHand
         m_Mode: 1
@@ -3907,7 +3907,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1439996626}
         m_TargetAssemblyTypeName: UISlot, Assembly-CSharp
         m_MethodName: ReturnCardToHand
         m_Mode: 1
@@ -5777,7 +5777,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1703769494}
         m_TargetAssemblyTypeName: UISlot, Assembly-CSharp
         m_MethodName: ReturnCardToHand
         m_Mode: 1
