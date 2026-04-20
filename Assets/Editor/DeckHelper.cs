@@ -29,7 +29,7 @@ class DeckHelper : Editor {
             gameManager.StartGame();
 
         if (GUILayout.Button("Handle Current State"))
-            gameManager.HandleCurrentState();
+            GameManager.Instance.ProceedToNextState();
         
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Player Set Cards", EditorStyles.boldLabel); 

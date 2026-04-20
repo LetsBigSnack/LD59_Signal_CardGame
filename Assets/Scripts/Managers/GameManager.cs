@@ -33,7 +33,9 @@ public class GameManager : MonoBehaviour
     public event Action<GameSlot> OnCardAdded;
     
     public event Action<PlayerSide> OnPriorityChanged;
-
+    
+    [SerializeField] private bool allowPartial = false;
+    
     public List<GameSlot> GameSlots
     {
         get => _gameSlots;
@@ -155,7 +157,7 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case TurnState.SettingState:
-                if (_gameSlots.Where(slots => slots.PlayerSide == priority && slots.PlayCardData != null).ToList().Count != 3)
+                if (!allowPartial && _gameSlots.Where(slots => slots.PlayerSide == priority && slots.PlayCardData != null).ToList().Count != 3)
                 {
                     Debug.Log("Not enough cards - Setter");
                     return;
@@ -165,7 +167,7 @@ public class GameManager : MonoBehaviour
                 HandleCurrentState();
                 break;
             case TurnState.RespondingState:
-                if (_gameSlots.Where(slots => slots.PlayerSide != priority && slots.PlayCardData != null).ToList().Count != 3)
+                if (!allowPartial & _gameSlots.Where(slots => slots.PlayerSide != priority && slots.PlayCardData != null).ToList().Count != 3)
                 {
                     Debug.Log("Not enough cards - Responder");
                     return;
@@ -266,7 +268,7 @@ public class GameManager : MonoBehaviour
                 
                 _players[gameSlot.PlayerSide].PlayerCards.PlayCard(gameSlot.PlayCardData, gameSlot, oppositeSlot);
 
-                if (gameSlot.PlayCardData.GetType() == typeof(InterfereCard))
+                if (gameSlot.PlayCardData.Card.GetType() == typeof(InterfereCard))
                 {
                     InterfereCard interfereCard = (InterfereCard)gameSlot.PlayCardData.Card;
                     if (priority == gameSlot.PlayerSide)

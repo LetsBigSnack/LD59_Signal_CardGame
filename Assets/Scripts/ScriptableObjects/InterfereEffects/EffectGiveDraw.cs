@@ -13,7 +13,7 @@ namespace ScriptableObjects.InterfereEffects
         
         public override void ApplyEffect(GameSlot ownSlot, GameSlot enemySlot)
         {
-            ownSlot.AddCardDraw(draw);
+            enemySlot.AddCardDraw(draw);
         }
     }
 }

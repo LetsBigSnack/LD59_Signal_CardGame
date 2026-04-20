@@ -71,9 +71,10 @@ namespace Data
         public void ResolveTurn()
         {
             
-            if (ownModifierType == ModifierType.Firewall)
+            if (ownModifierType == ModifierType.Firewall || attack > 0)
             {
-                GameManager.Instance.GetOppositePlayer(playerSide).TakeDamage(attack);
+                int blockedDamage = defense - Mathf.Max(defense - attack, 0);
+                GameManager.Instance.GetOppositePlayer(playerSide).TakeDamage(blockedDamage);
             }
             
             int damage = oppositeModifierType == ModifierType.Backdoor? attack : attack - defense;
@@ -88,7 +89,7 @@ namespace Data
                 GameManager.Instance.Players[playerSide].TakeDamage(damage);
                 if (oppositeModifierType == ModifierType.Phising)
                 {
-                    GameManager.Instance.GetOppositePlayer(playerSide).HealLife(damage);
+                    oppositeGameSlot.AddHeal(damage);
                 }
             }
             else

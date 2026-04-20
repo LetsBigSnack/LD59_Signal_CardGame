@@ -12,7 +12,7 @@ namespace ScriptableObjects.InterfereEffects
         
         public override void ApplyEffect(GameSlot ownSlot, GameSlot enemySlot)
         {
-            ownSlot.AddHeal(heal);
+            enemySlot.AddHeal(heal);
         }
     }
 }

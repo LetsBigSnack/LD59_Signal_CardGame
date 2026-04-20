@@ -89,6 +89,12 @@ namespace Data
 
             foreach (PlayCardData oppCard in oppCards)
             {
+                if (oppCard == null || oppCard.Card == null)
+                {
+                    GetRandomCard(chances, handCards, cards);
+                    continue;
+                }
+                
                 if (oppCard.GetCardType() == CardType.Attack)
                 {
 
