@@ -12349,6 +12349,7 @@ MonoBehaviour:
   sendText: Send Signal
   showResultText: Resolve
   text: {fileID: 1347517505}
+  button: {fileID: 1205504630}
 --- !u!1 &1213934852
 GameObject:
   m_ObjectHideFlags: 0

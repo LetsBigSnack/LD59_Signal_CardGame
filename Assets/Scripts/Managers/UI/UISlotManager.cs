@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
+using System;
+using JetBrains.Annotations;
 
 public class UISlotManager : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class UISlotManager : MonoBehaviour
     private List<GameSlot> enemyCardQueue;
 
     private Coroutine animCoroutine;
+
+    public event Action<bool> OnAnimStateChanged;
 
     private void Awake()
     {
@@ -75,16 +79,16 @@ public class UISlotManager : MonoBehaviour
 
     private IEnumerator PlaySlotAnimations()
     {
+        OnAnimStateChanged?.Invoke(true);
         for (int i = 0;  i < enemyCardQueue.Count; i++)
         {
             GetSlot(enemyCardQueue[i]).SetCard(enemyCardQueue[i].PlayCardData);
             yield return new WaitForSeconds(0.3f);
         }
-
-        yield return new WaitForSeconds(5);
         enemyCardQueue.Clear();
         animCoroutine = null;
    
         GameManager.Instance.ProceedToNextState();
+        OnAnimStateChanged?.Invoke(false);
     }
 }

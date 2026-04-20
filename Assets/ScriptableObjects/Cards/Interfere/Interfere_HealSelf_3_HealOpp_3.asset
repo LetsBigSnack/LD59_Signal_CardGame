@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6331890d09a0d6421a465f76c67a0e26, type: 3}
   m_Name: Interfere_HealSelf_3_HealOpp_3
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.BasicCards.InterfereCard
-  cardName: Interfere
-  cardDescription: Interfere the enemy card infront.
+  cardName: Interfere 1
+  cardDescription: Interfere Card in the Opponents slot
   cardType: 2
-  cardSprite: {fileID: 21300000, guid: d102135bba5476e449e3eec889b3e81a, type: 3}
+  cardSprite: {fileID: 21300000, guid: 19b15c3a9747ffc458c80af91fc74b3d, type: 3}
   rarity: 3
   priority: 1
   SetEffect: {fileID: 11400000, guid: 4ae978a7440745d0a9491552e7c0a23e, type: 2}
