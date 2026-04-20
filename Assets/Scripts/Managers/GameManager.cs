@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+
+        EnemyManager.Instance.CreateNewEnemy();
+        
         CreateGameSlots();
         
         _cardDrawModifiers.Add(PlayerSide.Player, 0);

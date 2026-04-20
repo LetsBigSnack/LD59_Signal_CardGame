@@ -49,6 +49,7 @@ namespace Data
         public DeckList GetDeckList
         {
             get => deckList;
+            set => deckList = value;
         }
         public List<PlayCardData> GetGraveyard
         {

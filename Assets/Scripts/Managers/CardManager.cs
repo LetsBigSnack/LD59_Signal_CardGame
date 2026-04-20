@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 using ScriptableObjects.BasicCards;
+using ScriptableObjects.Deck;
 using ScriptableObjects.Modifier;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -95,13 +96,27 @@ namespace Managers
             if (GetsModifier())
             {
                 ModifierCategory modCat = modifierCategories.First(cat => cat.CardType == baseCard.cardType);
-                baseMod = modCat.Modifiers.OrderBy(card => Guid.NewGuid()).First();
+                baseMod = modCat.Modifiers.OrderBy(card => Guid.NewGuid()).FirstOrDefault();
             }
             
             PlayCardData cardPlay = new PlayCardData(baseCard, baseMod);
             
             return cardPlay;
             
+        }
+
+        public DeckList CreateDeck(int size)
+        {
+            List<PlayCardData> deck = new List<PlayCardData>();
+            DeckList deckList = ScriptableObject.CreateInstance<DeckList>();
+            for (int i = 0; i < size; i++)
+            {
+                deck.Add(GetRandomPlayCard());
+            }
+            
+            deckList.cards = deck;
+            
+            return deckList;
         }
         
         

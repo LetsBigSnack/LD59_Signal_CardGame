@@ -1,10 +1,21 @@
+using System;
 using System.Collections.Generic;
 using Data;
+using ScriptableObjects.Deck;
 using UnityEditor.Toolbars;
 using UnityEngine;
 
 namespace Managers
 {
+
+    public enum EnemyPlayStyle
+    {
+        Balanced,
+        Aggressive,
+        Defensive,
+        Interfering
+    }
+    
     public class EnemyManager : MonoBehaviour
     {
         public static EnemyManager Instance;
@@ -19,12 +30,26 @@ namespace Managers
             {
                 Destroy(gameObject);
             }
-
         }
         
-        [SerializeField] private List<Player> enemyList;
-        [SerializeField] private Player currentEnemy;
-        
+       [SerializeField] private Enemy currentEnemy;
+
+        public void CreateNewEnemy()
+        {
+            DeckList newDeckList =
+                CardManager.Instance.CreateDeck(PlayerManager.Instance.Player.PlayerCards.GetDeckList.cards.Count);
+            EnemyPlayStyle newStyle = GetRandomPlaystyle();
+            currentEnemy.SetSettings(newStyle, newDeckList);
+            
+        }
+
+        private EnemyPlayStyle GetRandomPlaystyle()
+        {
+            EnemyPlayStyle[] styles = (EnemyPlayStyle[])System.Enum.GetValues(typeof(EnemyPlayStyle));
+            return styles[UnityEngine.Random.Range(0, styles.Length)];
+        }
+
+
         public Player GetCurrentEnemy()
         {
             return currentEnemy;
