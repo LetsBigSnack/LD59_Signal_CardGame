@@ -34,7 +34,7 @@ namespace Data
         public string GetCardDescription()
         {
             //Add Mods
-            return modifier == null ? card.GetCardName() : modifier.modDescription + "\n" + card.GetCardDescription();
+            return modifier == null ? card.GetCardDescription() : modifier.modDescription + "\n" + card.GetCardDescription();
         }
 
         public CardType GetCardType()

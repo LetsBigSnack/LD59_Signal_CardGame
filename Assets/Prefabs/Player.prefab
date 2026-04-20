@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3508763288611185194}
-  - component: {fileID: 7905854770034263064}
+  - component: {fileID: 8049321533286525135}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7905854770034263064
+--- !u!114 &8049321533286525135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,12 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49ac394a35c40309515fe1961960c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Data.Player
-  playerName: 
+  playerName: You
+  playerSide: 0
   playerCards:
     deckList: {fileID: 11400000, guid: bb940843eb50e025490c6549b379ab0e, type: 2}
     deck: []
     hand: []
     set: []
     graveyard: []
-  maxHealth: 1
+  maxHealth: 10
   currentHealth: 0
