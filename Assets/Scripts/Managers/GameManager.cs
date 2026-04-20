@@ -59,6 +59,16 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    public PlayerSide GetPriority()
+    {
+        return priority;
+    }
+
+    public TurnState GetTurnState()
+    {
+        return currentState;
+    }
     
     private void CreateGameSlots()
     {
@@ -113,16 +123,17 @@ public class GameManager : MonoBehaviour
                 if (hasEnemyPriority)
                 {
                     EnemyManager.Instance.MakeMove(_gameSlots, true);
+                    return;
                 }
-                //Anim 
                 ProceedToNextState();
                 break;
             case TurnState.RespondingState:
                 if (!hasEnemyPriority)
                 {
                     EnemyManager.Instance.MakeMove(_gameSlots, false);
+                    return;
                 }
-                ProceedToNextState();
+                //ProceedToNextState();
                 break;
             case TurnState.ResolvingState:
                 ResolveSetCards();
@@ -170,14 +181,14 @@ public class GameManager : MonoBehaviour
                         break;
                     case RoundOutcome.NoWin:
                         Debug.Log("No Win");
-                        NextRound();
+                        //NextRound();
                         break;
                 }
                 break;
         }
     }
 
-    private void NextRound()
+    public void NextRound()
     {
         _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Player]);
         _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Enemy]);
@@ -188,6 +199,7 @@ public class GameManager : MonoBehaviour
         priority = priority == PlayerSide.Player ? PlayerSide.Enemy :  PlayerSide.Player;
         OnPriorityChanged?.Invoke(priority);
         currentState = TurnState.SettingState;
+        HandleCurrentState();
     }
 
     private void WinGame()

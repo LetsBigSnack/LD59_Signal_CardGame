@@ -11194,6 +11194,7 @@ GameObject:
   - component: {fileID: 1205504631}
   - component: {fileID: 1205504630}
   - component: {fileID: 1205504633}
+  - component: {fileID: 1205504634}
   m_Layer: 5
   m_Name: End_turn_btn
   m_TagString: Untagged
@@ -11266,9 +11267,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1374361731}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HandleCurrentState
+      - m_Target: {fileID: 1205504634}
+        m_TargetAssemblyTypeName: UIProceedToNextStep, Assembly-CSharp
+        m_MethodName: ProceedToNextStep
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11329,6 +11330,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 147197446}
+--- !u!114 &1205504634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205504628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daecc791f8bd1604d93ae9b9fb558ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  sendText: Send Signal
+  showResultText: Resolve
+  text: {fileID: 1347517505}
 --- !u!1 &1213934852
 GameObject:
   m_ObjectHideFlags: 0
@@ -18976,6 +18992,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1397221977602589982, guid: 93f3224951dbdc8d6a6484bb3953ebf9, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397221977602589982, guid: 93f3224951dbdc8d6a6484bb3953ebf9, type: 3}
+      propertyPath: playerSide
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6502346628281487232, guid: 93f3224951dbdc8d6a6484bb3953ebf9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 856.78064

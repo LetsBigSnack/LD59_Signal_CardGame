@@ -21,7 +21,8 @@ namespace Data
         
         [SerializeField] 
         private int currentHealth;
-        
+
+        [SerializeField]
         private bool _isDead;
 
         public event Action<PlayerSide, int> OnLifeChanged;
