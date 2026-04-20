@@ -8,20 +8,14 @@ public class UICardAdd : UICard
     [SerializeField]
     public GameObject button;
 
-    private bool hasBeenClicked = false;
-
     public override void OnPointerEnter(PointerEventData eventData)
     {
-        if (hasBeenClicked) return;
         button.SetActive(true);
     }
 
     public void Update()
     {
-        if (hasBeenClicked)
-        {
-            button.SetActive(false);
-        }
+        button.SetActive(false);
     }
 
     public override void OnPointerExit(PointerEventData eventData)
@@ -32,6 +26,5 @@ public class UICardAdd : UICard
     public void SelectCardToAddToDeck()
     {
         RewardManager.Instance.SelectReward(GetCardData());
-        hasBeenClicked = true;
     }
 }
