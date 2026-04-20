@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
                 {
                     EnemyManager.Instance.MakeMove(_gameSlots, false);
                 }
-                ProceedToNextState();
+                //ProceedToNextState();
                 break;
             case TurnState.ResolvingState:
                 ResolveSetCards();
