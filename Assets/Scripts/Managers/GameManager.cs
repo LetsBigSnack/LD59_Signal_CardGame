@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
 
     private void LooseGame()
     {
-        GameStateManager.Instance.ChangeState(GameState.Reward);
+        GameStateManager.Instance.ChangeState(GameState.Loose);
     }
     
     public void ResolveSetCards()
