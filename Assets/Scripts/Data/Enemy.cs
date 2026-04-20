@@ -11,7 +11,7 @@ namespace Data
     public class Enemy : Player
     {
         [SerializeField] private EnemyPlayStyleSettings _enemyPlayStyle;
-        [SerializeField] private int dangerHealth;
+        [SerializeField] private int dangerHealth = 4;
         
         public void SetSettings(EnemyPlayStyleSettings newStyle, DeckList deckList)
         {
@@ -41,17 +41,20 @@ namespace Data
             List<PlayCardData> cards = new List<PlayCardData>();
             List<CardChance> chances = _enemyPlayStyle.CardChances.ToList();
             chances = chances.OrderBy(c=> Guid.NewGuid()).ToList();
-
-            while (cards.Count < 3)
+            
+            int tries = 0;
+            
+            while (cards.Count < 3 || tries < 100)
             {
                 foreach (CardChance chance in chances)
                 {
+                    tries++;
                     float rng = Random.Range(0f, 1f);
 
                     if (rng < chance.Chance)
                     {
-                        PlayCardData cardData = handCards.FirstOrDefault(c => c.Card.cardType == chance.CardType);
-                        if (cardData != null && !cards.Contains(cardData))
+                        PlayCardData cardData = handCards.FirstOrDefault(c => c.Card.cardType == chance.CardType && !cards.Contains(c));
+                        if (cardData != null)
                         {
                             cards.Add(cardData);
                         }
@@ -65,7 +68,10 @@ namespace Data
         
         public List<PlayCardData> RespondCards(List<GameSlot> gameSlots)
         {
-            
+            if (CurrentHealth > dangerHealth)
+            {
+                return  SetCards(gameSlots);
+            }
             
             
             List<PlayCardData> handCards = PlayerCards.Hand.OrderBy(c=> Guid.NewGuid()).ToList();
