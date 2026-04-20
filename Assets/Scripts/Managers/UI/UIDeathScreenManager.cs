@@ -28,4 +28,10 @@ public class UIDeathScreenManager : MonoBehaviour
             this.deathScreen.SetActive(false);
         }
     }
+
+    public void Continue()
+    {
+        GameStateManager.Instance.ChangeState(GameState.Game);
+        GameManager.Instance.StartGame();
+    }
 }
