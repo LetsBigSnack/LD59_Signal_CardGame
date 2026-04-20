@@ -16254,8 +16254,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UICardCollectionView
   contentContainer: {fileID: 1333637169}
-  player: {fileID: 0}
-  enemy: {fileID: 0}
+  player: {fileID: 388696490}
+  enemy: {fileID: 3508763288253556211}
   uiContainerWindow: {fileID: 1553718505}
   windowTitle: {fileID: 318481217}
   isRemovable: 1
@@ -20998,7 +20998,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1397221977602589982, guid: 93f3224951dbdc8d6a6484bb3953ebf9, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1397221977602589982, guid: 93f3224951dbdc8d6a6484bb3953ebf9, type: 3}
       propertyPath: playerSide

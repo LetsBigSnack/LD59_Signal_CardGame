@@ -13,11 +13,6 @@ public class UICardAdd : UICard
         button.SetActive(true);
     }
 
-    public void Update()
-    {
-        button.SetActive(false);
-    }
-
     public override void OnPointerExit(PointerEventData eventData)
     {
         button.SetActive(false);
