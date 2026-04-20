@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Data;
+using UnityEditor.Toolbars;
 using UnityEngine;
 
 namespace Managers
@@ -28,6 +29,8 @@ namespace Managers
         {
             return currentEnemy;
         }
+
+        //TODO: dont create enemy instances -> fill current enemy script with new data (keep event actions alive)
 
         public void MakeMove()
         {

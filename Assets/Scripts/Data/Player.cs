@@ -9,7 +9,10 @@ namespace Data
         
         [SerializeField]
         private string playerName;
-        
+
+        [SerializeField]
+        private PlayerSide playerSide;
+
         [FormerlySerializedAs("deck")] [SerializeField]
         private PlayerCards playerCards;
 
@@ -20,7 +23,8 @@ namespace Data
         private int currentHealth;
         
         private bool _isDead;
-        
+
+        public event Action<PlayerSide, int> OnLifeChanged;
         
         
         public PlayerCards PlayerCards { 
@@ -36,6 +40,7 @@ namespace Data
         public void ResetPlayer()
         {
             currentHealth = maxHealth;
+            OnLifeChanged?.Invoke(playerSide, currentHealth);
             playerCards.InitializeDeck();
         }
 
@@ -43,6 +48,8 @@ namespace Data
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
+
+            OnLifeChanged?.Invoke(playerSide, currentHealth);
             
             if (currentHealth <= 0)
             {
