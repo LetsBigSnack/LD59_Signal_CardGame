@@ -15,7 +15,7 @@ public class UIProceedToNextStep : MonoBehaviour
 
     private void Update()
     {
-        if (IsEnemyResolvingState())
+        if (IsAcceptState())
         {
             text.text = showResultText;
         } else
@@ -26,17 +26,11 @@ public class UIProceedToNextStep : MonoBehaviour
 
     public void ProceedToNextStep()
     {
-        if(IsEnemyResolvingState())
-        {
-            GameManager.Instance.NextRound();
-        } else
-        {
-            GameManager.Instance.ProceedToNextState();
-        }
+        GameManager.Instance.ProceedToNextState();
     }
 
-    public bool IsEnemyResolvingState()
+    public bool IsAcceptState()
     {
-        return GameManager.Instance.GetPriority() == PlayerSide.Player && GameManager.Instance.GetTurnState() == TurnState.ResolvingState;
+        return GameManager.Instance.GetTurnState() == TurnState.AcceptState;
     }
 }

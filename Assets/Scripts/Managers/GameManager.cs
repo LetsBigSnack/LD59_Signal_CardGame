@@ -11,6 +11,7 @@ public enum TurnState
 {
     SettingState,
     RespondingState,
+    AcceptState,
     ResolvingState
 }
 
@@ -135,6 +136,13 @@ public class GameManager : MonoBehaviour
                 }
                 //ProceedToNextState();
                 break;
+            case TurnState.AcceptState:
+                if (priority != PlayerSide.Player)
+                {
+                    ProceedToNextState();
+                }
+                ProceedToNextState();
+                break;
             case TurnState.ResolvingState:
                 ResolveSetCards();
                 ProceedToNextState();
@@ -162,15 +170,19 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Not enough cards - Responder");
                     return;
                 }
-                currentState = TurnState.ResolvingState;
+                currentState = TurnState.AcceptState;
+                if (priority != PlayerSide.Player)
+                {
+                    HandleCurrentState();
+                }
+                break;
+            case TurnState.AcceptState:
                 
-                //Maybe Change for a nice reveal
+                currentState = TurnState.ResolvingState;
                 HandleCurrentState();
                 break;
             case TurnState.ResolvingState:
-                
                 RoundOutcome outcome = CheckWinner();
-
                 switch (outcome)
                 {
                     case RoundOutcome.PlayerWin:
@@ -181,7 +193,7 @@ public class GameManager : MonoBehaviour
                         break;
                     case RoundOutcome.NoWin:
                         Debug.Log("No Win");
-                        //NextRound();
+                        NextRound();
                         break;
                 }
                 break;
