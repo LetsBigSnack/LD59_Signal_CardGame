@@ -9,7 +9,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private GameObject button;
     [SerializeField] private bool canHover = false;
     
-    public PlayCardData cardData;
+    private PlayCardData cardData;
 
     private UICard currentCardUI;
 
