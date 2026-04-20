@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 678839237177136372}
   - component: {fileID: 1662387171520346364}
   - component: {fileID: 4484207799213329434}
+  - component: {fileID: 8558709673659372786}
   m_Layer: 5
   m_Name: Card_deck_container
   m_TagString: Untagged
@@ -236,6 +237,7 @@ MonoBehaviour:
   hoverScale: 1.8
   hoverHeight: 148
   cardCanvas: {fileID: 4484207799213329434}
+  canHover: 1
 --- !u!223 &4484207799213329434
 Canvas:
   m_ObjectHideFlags: 0
@@ -259,6 +261,28 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &8558709673659372786
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166737497419168108}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2dde3df41c3e2246b90dfb22ff6d004, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7842553418682819150
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +310,7 @@ RectTransform:
   m_GameObject: {fileID: 7842553418682819150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4296311544457009131}

@@ -1664,7 +1664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &186313130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1680,9 +1680,9 @@ RectTransform:
   - {fileID: 1202563625}
   m_Father: {fileID: 2118623809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 940, y: -24}
   m_SizeDelta: {x: 288, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186313131
@@ -11826,14 +11826,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISlotManager
   playerSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 271234820}
+  - {fileID: 1703769494}
+  - {fileID: 1439996626}
   enemySlots:
   - {fileID: 209269722}
   - {fileID: 535008120}
   - {fileID: 1141419858}
   gameManager: {fileID: 1374361731}
+  enemyCardQueue: []
 --- !u!1 &1277396637
 GameObject:
   m_ObjectHideFlags: 0
@@ -12698,9 +12699,9 @@ RectTransform:
   - {fileID: 1449290867}
   m_Father: {fileID: 2118623809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 72, y: -24}
   m_SizeDelta: {x: 144, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410444802
@@ -15484,9 +15485,9 @@ RectTransform:
   - {fileID: 376011146}
   m_Father: {fileID: 2118623809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1808, y: -26}
   m_SizeDelta: {x: 144, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794965897
@@ -18483,7 +18484,6 @@ GameObject:
   - component: {fileID: 2118623809}
   - component: {fileID: 2118623812}
   - component: {fileID: 2118623811}
-  - component: {fileID: 2118623810}
   m_Layer: 5
   m_Name: Name_container
   m_TagString: Untagged
@@ -18513,32 +18513,6 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: -45}
   m_SizeDelta: {x: 1880, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2118623810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118623808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 1
-  m_Spacing: 652
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &2118623811
 MonoBehaviour:
   m_ObjectHideFlags: 0

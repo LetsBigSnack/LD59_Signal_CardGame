@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("I HAVE RISEN");
         if (Instance == null)
         {
             Instance = this;
@@ -254,7 +253,6 @@ public class GameManager : MonoBehaviour
         }
 
         OnCardAdded?.Invoke(gameSlot);
-    
     }
     
     public void UnsetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)

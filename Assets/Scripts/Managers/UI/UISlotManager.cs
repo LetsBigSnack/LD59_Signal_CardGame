@@ -2,6 +2,7 @@ using Data;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections;
 
 public class UISlotManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class UISlotManager : MonoBehaviour
     private UISlot[] enemySlots;
     [SerializeField]
     private GameManager gameManager;
+
+    [SerializeField]
+    private List<GameSlot> enemyCardQueue;
 
     private void Awake()
     {
@@ -40,6 +44,15 @@ public class UISlotManager : MonoBehaviour
 
     private void HandleCardAdded(GameSlot gameSlot)
     {
+        if(gameSlot.PlayerSide == PlayerSide.Enemy)
+        {
+            enemyCardQueue.Add(gameSlot);
+            if (enemyCardQueue.Count == 3)
+            {
+
+            }
+        }
+
         GetSlot(gameSlot).SetCard(gameSlot.PlayCardData);
     }
     private void HandleCardRemoved(GameSlot gameSlot)
@@ -51,4 +64,8 @@ public class UISlotManager : MonoBehaviour
     {
         return gameSlot.PlayerSide == PlayerSide.Player ? playerSlots[(int)gameSlot.SlotPosition] : enemySlots[(int)gameSlot.SlotPosition];
     }
+
+    /*private IEnumerator PlaySlotAnimations()
+    {
+    }*/
 }
