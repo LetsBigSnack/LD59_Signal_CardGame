@@ -10,6 +10,11 @@ namespace ScriptableObjects.InterfereEffects
         [SerializeField]
         private int prioTurns;
         
+        public override string GetEffectDescription()
+        {
+            return base.GetEffectDescription().Replace("{x}", Mathf.Abs(prioTurns).ToString());
+        }
+        
         public override void ApplyEffect(GameSlot ownSlot, GameSlot enemySlot)
         {
             ownSlot.AddPrio(prioTurns);
