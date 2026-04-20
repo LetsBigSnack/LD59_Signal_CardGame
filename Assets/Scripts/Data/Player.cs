@@ -40,6 +40,7 @@ namespace Data
         public void ResetPlayer()
         {
             currentHealth = maxHealth;
+            _isDead = false;
             OnLifeChanged?.Invoke(playerSide, currentHealth);
             playerCards.InitializeDeck();
         }
