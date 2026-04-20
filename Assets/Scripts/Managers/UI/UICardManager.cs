@@ -3,10 +3,7 @@ using ScriptableObjects.Deck;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class UICardManager : MonoBehaviour
@@ -68,7 +65,7 @@ public class UICardManager : MonoBehaviour
         GameObject card = Instantiate(cardHandPrefab, handContainer);
 
         UICard uiCard = card.GetComponent<UICard>();
-        Sprite sprite = GetSprite(playCardData.GetCardType());
+        Sprite sprite = playCardData.Card.GetCardSprite();
 
         uiCard.Setup(playCardData, sprite);
     }
@@ -78,7 +75,7 @@ public class UICardManager : MonoBehaviour
         GameObject card = Instantiate(isRemovable? cardDeckRemoveablePrefab : cardDeckPrefab, parent);
 
         UICard uiCard = card.GetComponent<UICard>();
-        Sprite sprite = GetSprite(playCardData.GetCardType());
+        Sprite sprite = playCardData.Card.GetCardSprite(); ;
 
         uiCard.Setup(playCardData, sprite);
 
@@ -90,7 +87,7 @@ public class UICardManager : MonoBehaviour
         GameObject card = Instantiate(cardSlotPrefab, parent);
 
         UICard uiCard = card.GetComponent<UICard>();
-        Sprite sprite = GetSprite(playCardData.GetCardType());
+        Sprite sprite = playCardData.Card.GetCardSprite();
 
         uiCard.Setup(playCardData, sprite);
 
