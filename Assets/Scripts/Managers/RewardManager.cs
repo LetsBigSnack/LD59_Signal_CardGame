@@ -48,6 +48,11 @@ namespace Managers
 
         public void GenerateRewards()
         {
+            if (hasReward)
+            {
+                return;
+            }
+            
             for (int i = 0; i < rewardAmount; i++)
             {
                 currentRewards.Add(CardManager.Instance.GetRandomPlayCard());
