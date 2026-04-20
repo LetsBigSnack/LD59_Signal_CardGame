@@ -44,5 +44,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd15c12fdac4801830dbefedaab7d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Managers.EnemyManager
-  enemyList: []
+  SettingsList:
+  - playStyle: 0
+    cardChances:
+    - cardType: 0
+      chance: 0.4
+    - cardType: 1
+      chance: 0.4
+    - cardType: 2
+      chance: 0.2
+  - playStyle: 1
+    cardChances:
+    - cardType: 0
+      chance: 0.55
+    - cardType: 1
+      chance: 0.25
+    - cardType: 2
+      chance: 0.2
+  - playStyle: 2
+    cardChances:
+    - cardType: 0
+      chance: 0.25
+    - cardType: 1
+      chance: 0.55
+    - cardType: 2
+      chance: 0.2
+  - playStyle: 3
+    cardChances:
+    - cardType: 0
+      chance: 0.35
+    - cardType: 1
+      chance: 0.35
+    - cardType: 2
+      chance: 0.3
   currentEnemy: {fileID: 0}
