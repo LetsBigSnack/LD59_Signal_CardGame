@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1 &69103748
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 0}
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
 --- !u!1001 &136225971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 0}
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
 --- !u!1 &147197446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1 &376011145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 0}
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,6 +3626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIPlayerCardSlots
   panel: {fileID: 1816875753}
   clickBlocker: {fileID: 1235004030}
+  offset: {x: 75, y: -50, z: 0}
 --- !u!223 &773204064
 Canvas:
   m_ObjectHideFlags: 0
@@ -4900,7 +4901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!114 &1048285813 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7905854770034263064, guid: ec4571c42d3e3633ba36c74c6541b0f1, type: 3}
@@ -5187,7 +5188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7905854770034263064, guid: ec4571c42d3e3633ba36c74c6541b0f1, type: 3}
       propertyPath: currentHealth
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7221,7 +7222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 0}
+  color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
 --- !u!1 &1449290866
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,7 +7585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 0}
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
 --- !u!1 &1489301599
 GameObject:
   m_ObjectHideFlags: 0
@@ -9588,7 +9589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 0}
+  color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
 --- !u!1 &1935563374
 GameObject:
   m_ObjectHideFlags: 0
@@ -10322,7 +10323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7310900fbfeb24a9ad745856e48bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
-  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 0}
+  color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
 --- !u!1 &2072019291
 GameObject:
   m_ObjectHideFlags: 0

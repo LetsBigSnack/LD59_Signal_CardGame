@@ -66,7 +66,7 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            UISlotPopUp.Instance.OpenSlotPopup(this, eventData);
+            UISlotPopUp.Instance.OpenSlotPopup(this, gameObject.transform.position);
         }
     }
 
