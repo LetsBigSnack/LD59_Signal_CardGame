@@ -21,6 +21,8 @@ namespace Managers
         [SerializeField] private GameState initialGameState;
         [SerializeField] private GameState currentGameState;
 
+        public event Action<GameState> OnGameStateChanged;
+
         private void Awake()
         {
             if (Instance == null)
@@ -64,6 +66,7 @@ namespace Managers
         public void ChangeState(GameState newState)
         {
             currentGameState = newState;
+            OnGameStateChanged?.Invoke(currentGameState);
             HandleGameState();
         }
     }

@@ -7,7 +7,7 @@ public class UILifeBarController : MonoBehaviour
     public List<UILifeBarElement> lifeBarElements;
 
     public void SetCurrentHealth(int amount)
-    {
+    { 
         for (int i = 0; i < lifeBarElements.Count - amount; i++)
         {
             lifeBarElements[i].setEmpty(true);

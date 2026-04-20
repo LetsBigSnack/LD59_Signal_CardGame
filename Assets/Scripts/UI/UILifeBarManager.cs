@@ -28,9 +28,10 @@ public class UILifeBarManager : MonoBehaviour
         if (side == PlayerSide.Player)
         {
             lifeBarPlayer.SetCurrentHealth(health);
-            return;
         }
-
-        lifeBarEnemy.SetCurrentHealth(health);
+        else
+        {
+            lifeBarEnemy.SetCurrentHealth(health);
+        }            
     }
 }

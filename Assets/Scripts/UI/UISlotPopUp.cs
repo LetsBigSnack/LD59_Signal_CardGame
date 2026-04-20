@@ -1,6 +1,7 @@
 using Data;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class UISlotPopUp : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class UISlotPopUp : MonoBehaviour
     private GameObject panel;
     [SerializeField]
     private UIClickBlocker clickBlocker;
+    [SerializeField]
+    public Vector3 offset;
 
     private PlayCardData currentCard;
     private UICard currentUICard;
@@ -26,7 +29,7 @@ public class UISlotPopUp : MonoBehaviour
         }
     }
 
-    public void OpenSlotPopup(UICard uiCard, PointerEventData eventData)
+    public void OpenSlotPopup(UICard uiCard, Vector3 pos)
     {
         currentCard = uiCard.GetCardData();
         currentUICard = uiCard;
@@ -37,7 +40,8 @@ public class UISlotPopUp : MonoBehaviour
 
         clickBlocker.OnClicked = CloseSlotPopUp;
 
-        panel.transform.position = eventData.position;
+        RectTransform rect = panel.GetComponent<RectTransform>();
+        rect.position = pos + offset;
     }
 
     public void CloseSlotPopUp()

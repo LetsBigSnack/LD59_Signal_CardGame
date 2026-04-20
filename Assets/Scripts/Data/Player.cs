@@ -49,7 +49,7 @@ namespace Data
         {
             currentHealth -= damage;
 
-            OnLifeChanged?.Invoke(playerSide, currentHealth);
+            OnLifeChanged?.Invoke(playerSide, currentHealth < 0 ? 0 : currentHealth);
             
             if (currentHealth <= 0)
             {

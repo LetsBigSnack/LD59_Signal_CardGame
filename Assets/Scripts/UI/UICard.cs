@@ -38,6 +38,9 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     private bool isHovered;
     private bool isSelected;
 
+    [SerializeField]
+    private bool canHover = true;
+
 
     public PlayCardData GetCardData()
     {
@@ -50,13 +53,13 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         originalPosition = cardVisual.localPosition;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         isHovered = true;
         UpdateVisual();
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         isHovered = false;
         UpdateVisual();
@@ -66,7 +69,7 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            UISlotPopUp.Instance.OpenSlotPopup(this, eventData);
+            UISlotPopUp.Instance.OpenSlotPopup(this, gameObject.transform.position);
         }
     }
 
@@ -91,6 +94,8 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     private void UpdateVisual()
     {
+        if (!canHover) return;
+
         if (isHovered || isSelected)
         {
             cardCanvas.overrideSorting = true;
