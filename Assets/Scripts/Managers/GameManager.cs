@@ -266,6 +266,8 @@ public class GameManager : MonoBehaviour
                 GameSlot oppositeSlot = _gameSlots.FirstOrDefault(s =>
                     s.SlotPosition == gameSlot.SlotPosition && s.PlayerSide != gameSlot.PlayerSide);
                 
+                gameSlot.OppositeGameSlot = oppositeSlot;
+                
                 _players[gameSlot.PlayerSide].PlayerCards.PlayCard(gameSlot.PlayCardData, gameSlot, oppositeSlot);
 
                 if (gameSlot.PlayCardData.Card.GetType() == typeof(InterfereCard))
@@ -299,7 +301,10 @@ public class GameManager : MonoBehaviour
 
             OnCardRemoved?.Invoke(gameSlot);
         }
-        
+
+        //Discard Hand
+        _players[PlayerSide.Player].PlayerCards.DiscardHand();
+        _players[PlayerSide.Enemy].PlayerCards.DiscardHand();
         //Draw Card
         foreach (GameSlot gameSlot in stack)
         {

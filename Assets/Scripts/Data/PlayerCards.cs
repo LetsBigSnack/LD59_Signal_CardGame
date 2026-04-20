@@ -178,5 +178,14 @@ namespace Data
             GameStateManager.Instance.ChangeState(GameState.Game);
             
         }
+
+        public void DiscardHand()
+        {
+            foreach (PlayCardData handCard in hand.ToList())
+            {
+                graveyard.Add(handCard);
+                hand.Remove(handCard);
+            }
+        }
     }
 }

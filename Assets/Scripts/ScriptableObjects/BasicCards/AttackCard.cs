@@ -7,6 +7,11 @@ namespace ScriptableObjects.BasicCards
     public class AttackCard : BasicCard
     {
         public int damage;
+
+        public override string GetCardDescription()
+        {
+            return base.GetCardDescription().Replace("{x}", damage.ToString());
+        }
         
         public override void Play(GameSlot ownSlot, GameSlot enemySlot)
         {

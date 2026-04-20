@@ -9,7 +9,10 @@ namespace ScriptableObjects.InterfereEffects
         
         [SerializeField]
         private int heal;
-        
+        public override string GetEffectDescription()
+        {
+            return base.GetEffectDescription().Replace("{x}", Mathf.Abs(heal).ToString());
+        }
         public override void ApplyEffect(GameSlot ownSlot, GameSlot enemySlot)
         {
             enemySlot.AddHeal(heal);

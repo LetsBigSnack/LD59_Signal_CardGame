@@ -11,6 +11,11 @@ namespace ScriptableObjects.InterfereEffects
         [SerializeField]
         private int draw;
         
+        public override string GetEffectDescription()
+        {
+            return base.GetEffectDescription().Replace("{x}", Mathf.Abs(draw).ToString());
+        }
+        
         public override void ApplyEffect(GameSlot ownSlot, GameSlot enemySlot)
         {
             enemySlot.AddCardDraw(draw);

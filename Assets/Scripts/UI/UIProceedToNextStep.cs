@@ -50,6 +50,11 @@ public class UIProceedToNextStep : MonoBehaviour
 
     public void HandleAnimStateChanged(bool animating)
     {
+        if (button == null)
+        {
+            return;
+        }
+        
         if (animating)
         {
             button.interactable = false;
