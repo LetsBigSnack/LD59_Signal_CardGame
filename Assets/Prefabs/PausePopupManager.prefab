@@ -701,7 +701,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9032935282607947162, guid: b2bb64edebcc6294c91f33b2fd58bfcf, type: 3}
         m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -710,7 +710,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: StartScene
+          m_StringArgument: StartScreen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1829223394215748030
@@ -2479,7 +2479,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_TargetDisplay: 0
 --- !u!114 &2987873323187713648
 MonoBehaviour:
@@ -2757,6 +2757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   pauseMenu: {fileID: 68562617006951774}
   canvas: {fileID: 3687167558964024509}
+  mainMenuButton: {fileID: 871105989386056481}
+  posCam: {fileID: 0}
 --- !u!1 &6595684929827812869
 GameObject:
   m_ObjectHideFlags: 0

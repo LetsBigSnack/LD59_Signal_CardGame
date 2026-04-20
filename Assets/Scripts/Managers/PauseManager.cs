@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
     public static PauseManager Instance;
     public GameObject pauseMenu;
     public Canvas canvas;
+    public GameObject mainMenuButton;
+    public Camera posCam;
 
     public void Awake()
     {
@@ -19,6 +22,10 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        gameObject.GetComponent<Canvas>().worldCamera = posCam;
+    }
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -29,6 +36,14 @@ public class PauseManager : MonoBehaviour
                 return;
             } 
             OpenMenu();
+        }
+
+        mainMenuButton.GetComponent<Button>().interactable = !IsStartScreen();
+
+        if(posCam == null)
+        {
+            posCam = GameObject.Find("PostCam").GetComponent<Camera>();
+            gameObject.GetComponent<Canvas>().worldCamera = posCam;
         }
     }
     public void OpenMenu()
@@ -41,5 +56,10 @@ public class PauseManager : MonoBehaviour
     {
         canvas.GetComponent<GraphicRaycaster>().enabled = false;
         pauseMenu.SetActive(false);
+    }
+
+    private bool IsStartScreen()
+    {
+        return UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "StartScreen";
     }
 }
