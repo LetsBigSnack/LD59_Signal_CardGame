@@ -6,7 +6,7 @@ public class UILifeBarElement : MonoBehaviour
 {
     [Header("StartColor")]
     public Color color;
-    private Color empty = new Color(1, 0, 0, 1);
+    private Color empty = new Color32(6, 22, 15, 255);
 
     public void setEmpty(bool isEmpty)
     {
