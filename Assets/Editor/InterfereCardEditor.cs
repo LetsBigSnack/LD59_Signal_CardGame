@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 using Data;
 using ScriptableObjects.BasicCards;
 using ScriptableObjects.InterfereEffects;
@@ -8,6 +9,13 @@ using ScriptableObjects.InterfereEffects;
 [CustomEditor(typeof(InterfereCardCreator))]
 public class InterfereCardCreatorEditor : Editor
 {
+    public Sprite prio1;
+    public Sprite prio2;
+    public Sprite prio3;
+    public Sprite prio4;
+
+    private Dictionary<int, Sprite> prioSprites = new Dictionary<int, Sprite>();
+
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -22,6 +30,11 @@ public class InterfereCardCreatorEditor : Editor
 
     private void CreateAssets(InterfereCardCreator creator)
     {
+        prioSprites.Add(1, prio1);
+        prioSprites.Add(2, prio2);
+        prioSprites.Add(3, prio3);
+        prioSprites.Add(4, prio4);
+
         string folderPath = "Assets/ScriptableObjects/Cards/Interfere";
         EnsureFolderExists("Assets", "ScriptableObjects");
         EnsureFolderExists("Assets/ScriptableObjects", "Cards");
@@ -49,7 +62,7 @@ public class InterfereCardCreatorEditor : Editor
                  asset.SetEffect = setEffect;
                 asset.RespondEffect = respondEffect;
                 asset.cardType = CardType.Interfere;
-                asset.cardName = "Interfere";
+                
                 asset.cardDescription = "Interfere Card in the Opponents slot";
                 asset.CardRarity = CardRarity.Legendary;
                 //TODO: add Sprite
@@ -76,7 +89,8 @@ public class InterfereCardCreatorEditor : Editor
                        
                         break;
                 }
-                
+                asset.cardName = "Interfere " + asset.priority;
+                asset.SetCardSprite(prioSprites[asset.priority]);
                 string fileName = $"Interfere_{setEffect.name}_{respondEffect.name}.asset";
                 string fullPath = Path.Combine(folderPath, fileName);
                 string uniquePath = AssetDatabase.GenerateUniqueAssetPath(fullPath);
