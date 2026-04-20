@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Interfere_HealSelf_1_HealOpp_3
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.BasicCards.InterfereCard
   cardName: Interfere
-  cardDescription: Interfere Card in the Opponents slot
+  cardDescription: Interfere the enemy card infront.
   cardType: 2
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: adc71bd5c70390542b6c948d2ba00c9a, type: 3}
   rarity: 3
   priority: 3
   SetEffect: {fileID: 11400000, guid: 0d9d993c7f009a7c399bddf0ab581ff5, type: 2}

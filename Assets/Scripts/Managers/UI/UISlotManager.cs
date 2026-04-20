@@ -46,20 +46,22 @@ public class UISlotManager : MonoBehaviour
 
     private void HandleCardAdded(GameSlot gameSlot)
     {
-        if(gameSlot.PlayerSide == PlayerSide.Enemy)
+        if (gameSlot.PlayerSide == PlayerSide.Enemy)
         {
             enemyCardQueue.Add(gameSlot);
             if (enemyCardQueue.Count == 3)
             {
-                if(animCoroutine == null)
+                if (animCoroutine == null)
                 {
                     animCoroutine = StartCoroutine(PlaySlotAnimations());
                 }
-                
+
             }
         }
-
-        GetSlot(gameSlot).SetCard(gameSlot.PlayCardData);
+        else
+        {
+            GetSlot(gameSlot).SetCard(gameSlot.PlayCardData);
+        }   
     }
     private void HandleCardRemoved(GameSlot gameSlot)
     {
@@ -79,7 +81,10 @@ public class UISlotManager : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
 
-        GameManager.Instance.ProceedToNextState();
+        yield return new WaitForSeconds(5);
+        enemyCardQueue.Clear();
         animCoroutine = null;
+   
+        GameManager.Instance.ProceedToNextState();
     }
 }

@@ -8,6 +8,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private SlotPosition slotPosition;
     [SerializeField] private GameObject button;
     [SerializeField] private bool canHover = false;
+    
     private PlayCardData cardData;
 
     private UICard currentCardUI;
@@ -41,7 +42,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if(canHover && cardData != null)
         {
-            GameManager.Instance.Players[PlayerSide.Player].PlayerCards.UnsetCard(cardData);
+            GameManager.Instance.UnsetCardToSlot(cardData,PlayerSide.Player, slotPosition);
             ClearSlot();
             cardData = null;
             this.button.SetActive(false);
@@ -54,13 +55,17 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         if (cardData != null)
         {
-            this.button.SetActive(true);
+            button.SetActive(true);
+        }
+        else
+        {
+            button.SetActive(false);
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if(!canHover) return;
-        this.button.SetActive(false);
+        button.SetActive(false);
     }
 }

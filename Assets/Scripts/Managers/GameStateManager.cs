@@ -59,6 +59,8 @@ namespace Managers
                     break;
                 case GameState.Remove:
                     break;
+                case GameState.Loose:
+                    break;
             }
             
         }

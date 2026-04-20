@@ -11,6 +11,7 @@ public enum TurnState
 {
     SettingState,
     RespondingState,
+    AcceptState,
     ResolvingState
 }
 
@@ -58,6 +59,16 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    public PlayerSide GetPriority()
+    {
+        return priority;
+    }
+
+    public TurnState GetTurnState()
+    {
+        return currentState;
     }
     
     private void CreateGameSlots()
@@ -113,14 +124,22 @@ public class GameManager : MonoBehaviour
                 if (hasEnemyPriority)
                 {
                     EnemyManager.Instance.MakeMove(_gameSlots, true);
+                    return;
                 }
-                //Anim 
                 ProceedToNextState();
                 break;
             case TurnState.RespondingState:
                 if (!hasEnemyPriority)
                 {
                     EnemyManager.Instance.MakeMove(_gameSlots, false);
+                    return;
+                }
+                //ProceedToNextState();
+                break;
+            case TurnState.AcceptState:
+                if (priority != PlayerSide.Player)
+                {
+                    ProceedToNextState();
                 }
                 ProceedToNextState();
                 break;
@@ -151,15 +170,19 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Not enough cards - Responder");
                     return;
                 }
-                currentState = TurnState.ResolvingState;
+                currentState = TurnState.AcceptState;
+                if (priority != PlayerSide.Player)
+                {
+                    HandleCurrentState();
+                }
+                break;
+            case TurnState.AcceptState:
                 
-                //Maybe Change for a nice reveal
+                currentState = TurnState.ResolvingState;
                 HandleCurrentState();
                 break;
             case TurnState.ResolvingState:
-                
                 RoundOutcome outcome = CheckWinner();
-
                 switch (outcome)
                 {
                     case RoundOutcome.PlayerWin:
@@ -177,7 +200,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NextRound()
+    public void NextRound()
     {
         _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Player]);
         _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Enemy]);
@@ -188,6 +211,7 @@ public class GameManager : MonoBehaviour
         priority = priority == PlayerSide.Player ? PlayerSide.Enemy :  PlayerSide.Player;
         OnPriorityChanged?.Invoke(priority);
         currentState = TurnState.SettingState;
+        HandleCurrentState();
     }
 
     private void WinGame()
@@ -199,7 +223,7 @@ public class GameManager : MonoBehaviour
 
     private void LooseGame()
     {
-        GameStateManager.Instance.ChangeState(GameState.Reward);
+        GameStateManager.Instance.ChangeState(GameState.Loose);
     }
     
     public void ResolveSetCards()

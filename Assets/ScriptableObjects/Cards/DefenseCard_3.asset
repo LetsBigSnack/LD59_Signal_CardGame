@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DefenseCard_3
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.BasicCards.DefenseCard
   cardName: Hide 3
-  cardDescription: Hide {x}
+  cardDescription: Block 3 Damage.
   cardType: 1
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 5ae431a7bb7606b4aa383b99eba52699, type: 3}
   rarity: 2
   defense: 3

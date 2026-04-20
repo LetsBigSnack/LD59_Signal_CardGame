@@ -47,6 +47,11 @@ namespace ScriptableObjects.BasicCards
             return cardType;
         }
 
+        public Sprite GetCardSprite()
+        {
+            return cardSprite;
+        }
+
         public virtual void Play(GameSlot ownSlot, GameSlot enemySlot)
         {
             //TOOD: add effect
