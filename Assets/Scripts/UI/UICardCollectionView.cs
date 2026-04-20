@@ -15,6 +15,8 @@ public class UICardCollectionView : MonoBehaviour
     private GameObject uiContainerWindow;
     [SerializeField]
     private TextMeshProUGUI windowTitle;
+    [SerializeField]
+    private bool isRemovable = false;
 
     public void ShowCards(List<PlayCardData> cards)
     {
@@ -22,7 +24,7 @@ public class UICardCollectionView : MonoBehaviour
 
         foreach (PlayCardData card in cards)
         {
-            UICardManager.Instance.CreateCardUI(card, contentContainer);
+            UICardManager.Instance.CreateCardUI(card, contentContainer, isRemovable);
         }
     }
 

@@ -22,6 +22,8 @@ public class UICardManager : MonoBehaviour
     private GameObject cardDeckPrefab;
     [SerializeField]
     private GameObject cardSlotPrefab;
+    [SerializeField]
+    private GameObject cardDeckRemoveablePrefab;
 
     [SerializeField]
     private Transform handContainer;
@@ -71,9 +73,9 @@ public class UICardManager : MonoBehaviour
         uiCard.Setup(playCardData, sprite);
     }
 
-    public GameObject CreateCardUI(PlayCardData playCardData, Transform parent)
+    public GameObject CreateCardUI(PlayCardData playCardData, Transform parent, bool isRemovable = false)
     {
-        GameObject card = Instantiate(cardDeckPrefab, parent);
+        GameObject card = Instantiate(isRemovable? cardDeckRemoveablePrefab : cardDeckPrefab, parent);
 
         UICard uiCard = card.GetComponent<UICard>();
         Sprite sprite = GetSprite(playCardData.GetCardType());

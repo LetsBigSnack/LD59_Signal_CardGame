@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace Managers
         [SerializeField] private bool isRemoveView = false;
         [SerializeField] private List<PlayCardData> currentRewards;
         [SerializeField] private int rewardAmount = 3;
+
+        public event Action<List<PlayCardData>> OnRewardsChanged;
 
         public List<PlayCardData> CurrentRewards
         {
@@ -50,6 +53,7 @@ namespace Managers
                 currentRewards.Add(CardManager.Instance.GetRandomPlayCard());
             }
             hasReward = true;
+            OnRewardsChanged?.Invoke(currentRewards);
         }
 
         public void SkipReward()
