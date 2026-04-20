@@ -49,6 +49,11 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
+    public void Update()
+    {
+        if(button != null && cardData == null) button.SetActive(false);
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(!canHover) return;
