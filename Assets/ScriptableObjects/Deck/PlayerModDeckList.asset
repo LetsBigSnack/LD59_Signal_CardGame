@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918743ea35b0a897c8bff1b9d33a4a57, type: 3}
+  m_Name: PlayerModDeckList
+  m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.Deck.DeckList
+  cards:
+  - card: {fileID: 11400000, guid: 859ae75277684fe26ad5a6f490b2d412, type: 2}
+    modifier: {fileID: 11400000, guid: 6d23941c82c97b4f7a1025f54ed8f4b9, type: 2}
+  - card: {fileID: 11400000, guid: 859ae75277684fe26ad5a6f490b2d412, type: 2}
+    modifier: {fileID: 11400000, guid: 6d23941c82c97b4f7a1025f54ed8f4b9, type: 2}
+  - card: {fileID: 11400000, guid: 859ae75277684fe26ad5a6f490b2d412, type: 2}
+    modifier: {fileID: 11400000, guid: 35c95cda547e3ad3bafaa098175c3e3e, type: 2}
+  - card: {fileID: 11400000, guid: 859ae75277684fe26ad5a6f490b2d412, type: 2}
+    modifier: {fileID: 11400000, guid: 3a0a256ce2cb155b1ae03a9da83fdb18, type: 2}
+  - card: {fileID: 11400000, guid: 39113e19488fbe3398e716d71b891259, type: 2}
+    modifier: {fileID: 11400000, guid: 3a0a256ce2cb155b1ae03a9da83fdb18, type: 2}
+  - card: {fileID: 11400000, guid: 39113e19488fbe3398e716d71b891259, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: 39113e19488fbe3398e716d71b891259, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: 8d6d9090e2ad606b5832d79b757e01c5, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: 8d6d9090e2ad606b5832d79b757e01c5, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: 95e25f819eab986bf83ab91329b39bb3, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: 95e25f819eab986bf83ab91329b39bb3, type: 2}
+    modifier: {fileID: 11400000, guid: 22ac23d2c97b7880aa311ce7382d0135, type: 2}
+  - card: {fileID: 11400000, guid: 95e25f819eab986bf83ab91329b39bb3, type: 2}
+    modifier: {fileID: 11400000, guid: 22ac23d2c97b7880aa311ce7382d0135, type: 2}
+  - card: {fileID: 11400000, guid: 95e25f819eab986bf83ab91329b39bb3, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: f0f2e8c79851dfccba1b3d21a782b9af, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: f0f2e8c79851dfccba1b3d21a782b9af, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: f0f2e8c79851dfccba1b3d21a782b9af, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: 92449306ed39e9c159103760b78bd2dc, type: 2}
+    modifier: {fileID: 11400000, guid: 3eafe9a05dea201878f4c357ae74af2a, type: 2}
+  - card: {fileID: 11400000, guid: 92449306ed39e9c159103760b78bd2dc, type: 2}
+    modifier: {fileID: 11400000, guid: 3eafe9a05dea201878f4c357ae74af2a, type: 2}
+  - card: {fileID: 11400000, guid: c57a261ad55b12babadb3b1cd0683c62, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: c57a261ad55b12babadb3b1cd0683c62, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: c57a261ad55b12babadb3b1cd0683c62, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: c57a261ad55b12babadb3b1cd0683c62, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: c57a261ad55b12babadb3b1cd0683c62, type: 2}
+    modifier: {fileID: 0}
+  - card: {fileID: 11400000, guid: c57a261ad55b12babadb3b1cd0683c62, type: 2}
+    modifier: {fileID: 0}

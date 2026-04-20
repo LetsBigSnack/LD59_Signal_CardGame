@@ -43,10 +43,11 @@ namespace Managers
         [SerializeField] private List<BasicCard> basicCards;
 
         [SerializeField] private float commonChance = 0.6f;
-        [SerializeField] private float uncommonChance = 0.3f;
+        [SerializeField] private float uncommonChance = 0.25f;
         [SerializeField] private float rareChance = 0.1f;
-        
-        
+        [SerializeField] private float legendaryChance = 0.05f;
+        [SerializeField] private float modifierChance = 0.5f;
+            
         
         private void Awake()
         {
@@ -69,8 +70,16 @@ namespace Managers
 
             if (roll < commonChance + uncommonChance)
                 return CardRarity.Uncommon;
+            
+            if (roll < commonChance + uncommonChance + rareChance)
+                return CardRarity.Rare;
+            
+            return CardRarity.Legendary;
+        }
 
-            return CardRarity.Rare;
+        private bool GetsModifier()
+        {
+            return Random.value < modifierChance;
         }
         
         public PlayCardData GetRandomPlayCard()
@@ -81,10 +90,14 @@ namespace Managers
                 .OrderBy(card => Guid.NewGuid())
                 .First();
 
-            ModifierCategory modCat = modifierCategories.First(cat => cat.CardType == baseCard.cardType);
+            Modifier baseMod = null;
             
-            Modifier baseMod = modCat.Modifiers.OrderBy(card => Guid.NewGuid()).First();
-
+            if (GetsModifier())
+            {
+                ModifierCategory modCat = modifierCategories.First(cat => cat.CardType == baseCard.cardType);
+                baseMod = modCat.Modifiers.OrderBy(card => Guid.NewGuid()).First();
+            }
+            
             PlayCardData cardPlay = new PlayCardData(baseCard, baseMod);
             
             return cardPlay;

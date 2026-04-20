@@ -15,8 +15,11 @@ namespace Data
         
         [SerializeField]
         private Modifier modifier;
-
-
+        
+        public Modifier Modifier { get => modifier; set => modifier = value; }
+        
+        public BasicCard Card { get => card; set => card = value; }
+        
         public PlayCardData(BasicCard card, Modifier modifier)
         {
             this.card = card;
@@ -25,14 +28,13 @@ namespace Data
         
         public string GetCardName()
         {
-            //Add Mods
-            return card.GetCardName();
+            return modifier == null ? card.GetCardName() : modifier.ModName + " " + card.GetCardName();
         }
         
         public string GetCardDescription()
         {
             //Add Mods
-            return card.GetCardDescription();
+            return modifier == null ? card.GetCardName() : modifier.modDescription + "\n" + card.GetCardDescription();
         }
 
         public CardType GetCardType()

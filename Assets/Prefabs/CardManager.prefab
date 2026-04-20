@@ -47,10 +47,14 @@ MonoBehaviour:
   modifierCategories:
   - cardType: 0
     modifiers:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 6d23941c82c97b4f7a1025f54ed8f4b9, type: 2}
+    - {fileID: 11400000, guid: 3a0a256ce2cb155b1ae03a9da83fdb18, type: 2}
+    - {fileID: 11400000, guid: 35c95cda547e3ad3bafaa098175c3e3e, type: 2}
   - cardType: 1
     modifiers:
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 6d23941c82c97b4f7a1025f54ed8f4b9, type: 2}
+    - {fileID: 11400000, guid: 22ac23d2c97b7880aa311ce7382d0135, type: 2}
+    - {fileID: 11400000, guid: 3eafe9a05dea201878f4c357ae74af2a, type: 2}
   - cardType: 2
     modifiers:
     - {fileID: 0}

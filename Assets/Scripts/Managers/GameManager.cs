@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Data;
 using Managers;
+using ScriptableObjects.BasicCards;
+using ScriptableObjects.Modifier;
 using UnityEngine;
 
 public enum TurnState
@@ -19,16 +21,18 @@ public class GameManager : MonoBehaviour
     
     private List<GameSlot> _gameSlots;
     private Dictionary<PlayerSide, Player>  _players = new Dictionary<PlayerSide, Player>();
+    private Dictionary<PlayerSide, int> _cardDrawModifiers = new Dictionary<PlayerSide, int>();
+    
     
     [SerializeField] private int currentTurn;
     [SerializeField] private PlayerSide priority;
     [SerializeField] private int startCardAmount = 7;
     [SerializeField] private TurnState currentState = TurnState.SettingState;
-    
-    
-
     public event Action<GameSlot> OnCardRemoved;
     public event Action<GameSlot> OnCardAdded;
+    
+    
+    
 
     public List<GameSlot> GameSlots
     {
@@ -74,7 +78,11 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         CreateGameSlots();
-        currentTurn = 1;
+        
+        _cardDrawModifiers.Add(PlayerSide.Player, 0);
+        _cardDrawModifiers.Add(PlayerSide.Enemy, 0);
+        
+        currentTurn = 0;
         priority = PlayerSide.Enemy;
         currentState = TurnState.SettingState;
         
@@ -168,11 +176,13 @@ public class GameManager : MonoBehaviour
 
     private void NextRound()
     {
-        _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount);
-        _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount);
+        _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Player]);
+        _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Enemy]);
         currentTurn++;
         CreateGameSlots();
-        priority = priority == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player;
+        _cardDrawModifiers.Add(PlayerSide.Player, 0);
+        _cardDrawModifiers.Add(PlayerSide.Enemy, 0);
+        priority = priority == PlayerSide.Player ? PlayerSide.Enemy :  PlayerSide.Player;
         currentState = TurnState.SettingState;
     }
 
@@ -196,11 +206,29 @@ public class GameManager : MonoBehaviour
             .ThenBy(orderedGameSlot => orderedGameSlot.PlayerSide != priority)
             .ToList();
         
-        //Apply Effect
+        //Apply Modifiers
+        
         foreach (GameSlot gameSlot in stack)
         {
-            //TODO: expand for the unblocked modifier
-            if (!gameSlot.IsBlocked)
+            
+            if (gameSlot.PlayCardData == null || gameSlot.PlayCardData.Modifier == null)
+            {
+                continue;
+            }
+            
+            GameSlot oppositeSlot = _gameSlots.FirstOrDefault(s =>
+                s.SlotPosition == gameSlot.SlotPosition && s.PlayerSide != gameSlot.PlayerSide);
+            
+            gameSlot.OwnModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
+            if (oppositeSlot != null)
+            {
+                oppositeSlot.OppositeModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
+            }
+        }
+        
+        foreach (GameSlot gameSlot in stack)
+        {
+            if (!gameSlot.IsBlocked || gameSlot.OwnModifierType == ModifierType.Encrypted)
             {
                 if (gameSlot.PlayCardData == null)
                 {
@@ -211,6 +239,19 @@ public class GameManager : MonoBehaviour
                     s.SlotPosition == gameSlot.SlotPosition && s.PlayerSide != gameSlot.PlayerSide);
                 
                 _players[gameSlot.PlayerSide].PlayerCards.PlayCard(gameSlot.PlayCardData, gameSlot, oppositeSlot);
+
+                if (gameSlot.PlayCardData.GetType() == typeof(InterfereCard))
+                {
+                    InterfereCard interfereCard = (InterfereCard)gameSlot.PlayCardData.Card;
+                    if (priority == gameSlot.PlayerSide)
+                    {
+                        interfereCard.SetPlay(gameSlot, oppositeSlot);
+                    }
+                    else
+                    {
+                        interfereCard.RespondPlay(gameSlot, oppositeSlot);
+                    }
+                }
                 
             }
         }
@@ -230,6 +271,23 @@ public class GameManager : MonoBehaviour
 
             OnCardRemoved?.Invoke(gameSlot);
         }
+        
+        //Draw Card
+        foreach (GameSlot gameSlot in stack)
+        {
+            _cardDrawModifiers[gameSlot.PlayerSide] += gameSlot.CardDraw;
+        }
+        
+        //Heal
+        
+        foreach (GameSlot gameSlot in stack)
+        {
+            if (gameSlot.Heal > 0)
+            {
+                _players[gameSlot.PlayerSide].HealLife(gameSlot.Heal);
+            }
+        }
+
         
     }
 
@@ -274,8 +332,8 @@ public class GameManager : MonoBehaviour
     private RoundOutcome CheckWinner()
     {
         
-        Player current = _players[PlayerSide.Player];
-        Player opponent = _players[priority == PlayerSide.Player ? PlayerSide.Player : PlayerSide.Enemy];
+        Player current = _players[priority];
+        Player opponent = _players[priority == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player];
 
 
         if (opponent.IsDead())
@@ -289,6 +347,12 @@ public class GameManager : MonoBehaviour
         }
         
         return RoundOutcome.NoWin;
+    }
+
+    public Player GetOppositePlayer(PlayerSide side)
+    {
+        Player opponent = _players[side == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player];
+        return opponent;
     }
 
 }

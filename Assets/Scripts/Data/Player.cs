@@ -54,5 +54,26 @@ namespace Data
         {
             return _isDead;
         }
+
+        public void HealLife(int life)
+        {
+            currentHealth += life;
+            
+            if (currentHealth >= maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            
+            if (currentHealth > 0)
+            {
+                _isDead = false;
+            }
+            
+            if (currentHealth <= 0)
+            {
+                _isDead = true;
+            }
+            
+        }
     }
 }

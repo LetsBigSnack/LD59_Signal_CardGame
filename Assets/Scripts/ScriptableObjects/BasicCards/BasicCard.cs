@@ -7,7 +7,8 @@ namespace ScriptableObjects.BasicCards
     {
         Common,
         Uncommon,
-        Rare
+        Rare,
+        Legendary
     }
     
     public class BasicCard : ScriptableObject
