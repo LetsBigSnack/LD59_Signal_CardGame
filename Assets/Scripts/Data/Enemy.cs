@@ -28,10 +28,7 @@ namespace Data
                 return SetCards(gameSlots);
             }
             
-            
-            
-            
-            return null;
+            return RespondCards(gameSlots);
 
         }
 
@@ -42,28 +39,31 @@ namespace Data
             List<CardChance> chances = _enemyPlayStyle.CardChances.ToList();
             chances = chances.OrderBy(c=> Guid.NewGuid()).ToList();
             
-            int tries = 0;
             
-            while (cards.Count < 3 || tries < 100)
+            while (cards.Count < 3)
             {
-                foreach (CardChance chance in chances)
-                {
-                    tries++;
-                    float rng = Random.Range(0f, 1f);
-
-                    if (rng < chance.Chance)
-                    {
-                        PlayCardData cardData = handCards.FirstOrDefault(c => c.Card.cardType == chance.CardType && !cards.Contains(c));
-                        if (cardData != null)
-                        {
-                            cards.Add(cardData);
-                        }
-                    }
-                    
-                }
+                GetRandomCard(chances, handCards, cards);
             }
             
             return cards;
+        }
+
+        public void GetRandomCard(List<CardChance> chances, List<PlayCardData> handCards, List<PlayCardData> cards)
+        {
+            foreach (CardChance chance in chances)
+            {
+                float rng = Random.Range(0f, 1f);
+
+                if (rng < chance.Chance)
+                {
+                    PlayCardData cardData = handCards.FirstOrDefault(c => c.Card.cardType == chance.CardType && !cards.Contains(c));
+                    if (cardData != null)
+                    {
+                        cards.Add(cardData);
+                    }
+                }
+                    
+            }
         }
         
         public List<PlayCardData> RespondCards(List<GameSlot> gameSlots)
@@ -72,14 +72,44 @@ namespace Data
             {
                 return  SetCards(gameSlots);
             }
-            
-            
+           
             List<PlayCardData> handCards = PlayerCards.Hand.OrderBy(c=> Guid.NewGuid()).ToList();
             List<PlayCardData> cards = new List<PlayCardData>();
             List<CardChance> chances = _enemyPlayStyle.CardChances.ToList();
             chances = chances.OrderBy(c=> Guid.NewGuid()).ToList();
+
+
+            //Look at the Slots and if attack choose Defend or Interfere
             
-            
+            List<PlayCardData> oppCards = gameSlots.Where(c => c.PlayerSide == PlayerSide.Player).OrderBy(ob => ob.SlotPosition).Select(a => a.PlayCardData).ToList();
+
+            foreach (PlayCardData oppCard in oppCards)
+            {
+                if (oppCard.GetCardType() == CardType.Attack)
+                {
+
+                    List<PlayCardData> possibleCards = handCards
+                        .Where(c => (c.Card.cardType == CardType.Defense || c.Card.cardType == CardType.Interfere) &&
+                                    !cards.Contains(c)).ToList();
+                    
+                    possibleCards.OrderBy(c=> Guid.NewGuid()).ToList();
+                    
+                    PlayCardData chosenCard = possibleCards.FirstOrDefault();
+                    
+                    if(chosenCard != null)
+                    {
+                        cards.Add(chosenCard);
+                    }
+                    else
+                    {
+                        GetRandomCard(chances, handCards, cards);
+                    }
+                }
+                else
+                {
+                    GetRandomCard(chances, handCards, cards);
+                }
+            }
             
             return cards;
         }
