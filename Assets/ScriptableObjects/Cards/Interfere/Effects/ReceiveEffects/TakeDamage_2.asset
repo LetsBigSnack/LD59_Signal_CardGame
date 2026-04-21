@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableObjects.InterfereEffects.EffectGetHeal
   effectDescription: Lose {x} Signal
   tier: 3
-  heal: 2
+  heal: -2

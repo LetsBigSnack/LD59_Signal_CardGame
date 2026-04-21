@@ -65,9 +65,17 @@ public class UICardManager : MonoBehaviour
         GameObject card = Instantiate(cardHandPrefab, handContainer);
 
         UICard uiCard = card.GetComponent<UICard>();
-        Sprite sprite = playCardData.Card.GetCardSprite();
+        try {
+            Sprite sprite = playCardData.Card.GetCardSprite();
+            uiCard.Setup(playCardData, sprite);
+        }
+        catch(Exception e)
+        {
+            Debug.Log(playCardData.Card.name);
+        }
+        
 
-        uiCard.Setup(playCardData, sprite);
+   
     }
 
     public GameObject CreateCardUI(PlayCardData playCardData, Transform parent, bool isRemovable = false)
