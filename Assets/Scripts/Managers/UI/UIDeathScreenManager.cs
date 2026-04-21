@@ -34,4 +34,9 @@ public class UIDeathScreenManager : MonoBehaviour
         GameStateManager.Instance.ChangeState(GameState.Game);
         GameManager.Instance.StartGame();
     }
+
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StartScreen");
+    }
 }
