@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TurnState currentState = TurnState.SettingState;
     public event Action<GameSlot> OnCardRemoved;
     public event Action<GameSlot> OnCardAdded;
+    public event Action<ResolveObject> OnResolve;
     
     public event Action<PlayerSide> OnPriorityChanged;
     
@@ -254,6 +255,8 @@ public class GameManager : MonoBehaviour
             }
         }
         
+        //Stack Resolve
+        
         foreach (GameSlot gameSlot in stack)
         {
             if (!gameSlot.IsBlocked || gameSlot.OwnModifierType == ModifierType.Encrypted)
@@ -386,6 +389,11 @@ public class GameManager : MonoBehaviour
     {
         Player opponent = _players[side == PlayerSide.Player ? PlayerSide.Enemy : PlayerSide.Player];
         return opponent;
+    }
+
+    public void AddToResolveQueue(ResolveObject resolveObject)
+    {
+        OnResolve?.Invoke(resolveObject);
     }
 
 }

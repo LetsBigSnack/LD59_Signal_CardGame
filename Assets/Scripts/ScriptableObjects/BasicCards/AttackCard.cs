@@ -16,6 +16,14 @@ namespace ScriptableObjects.BasicCards
         public override void Play(GameSlot ownSlot, GameSlot enemySlot)
         {
             enemySlot.AddAttack(damage);
+            
+            // type attack --> number --> own, opposite
+            // type defend --> number --> own, oppo
+            // type attack_resolve --> number owm oppo
+            // type defende_resolve --> number own oppo
+            
+            
+            
         }
     
     }
