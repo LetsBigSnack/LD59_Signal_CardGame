@@ -37,6 +37,7 @@ namespace ScriptableObjects.BasicCards
         public virtual void RespondPlay(GameSlot ownSlot, GameSlot opponent)
         {
             RespondEffect.ApplyEffect(ownSlot, opponent);
+            
         }
     }
 }

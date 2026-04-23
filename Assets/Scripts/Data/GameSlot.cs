@@ -86,6 +86,8 @@ namespace Data
             
             if (damage > 0)
             {
+                // own (opposite) opposite ich bin 
+                
                 GameManager.Instance.Players[playerSide].TakeDamage(damage);
                 if (oppositeModifierType == ModifierType.Phising)
                 {

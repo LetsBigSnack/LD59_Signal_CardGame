@@ -26,7 +26,7 @@ namespace Data
         private bool _isDead;
 
         public event Action<PlayerSide, int> OnLifeChanged;
-
+        
         public int CurrentHealth
         {
             get => currentHealth;
