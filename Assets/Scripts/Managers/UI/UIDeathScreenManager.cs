@@ -28,4 +28,15 @@ public class UIDeathScreenManager : MonoBehaviour
             this.deathScreen.SetActive(false);
         }
     }
+
+    public void Continue()
+    {
+        GameStateManager.Instance.ChangeState(GameState.Game);
+        GameManager.Instance.StartGame();
+    }
+
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StartScreen");
+    }
 }
