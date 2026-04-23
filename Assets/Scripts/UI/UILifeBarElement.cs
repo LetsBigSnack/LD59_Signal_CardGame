@@ -10,7 +10,14 @@ public class UILifeBarElement : MonoBehaviour
 
     public void setEmpty(bool isEmpty)
     {
-        Image image = gameObject.GetComponent<Image>();
-        image.color = isEmpty? empty : color;
+        if (isEmpty)
+        {
+            gameObject.GetComponent<Animator>().Play("LifeBarFlicker");
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().Play("LifeBarBase");
+        }
+        
     }
 }

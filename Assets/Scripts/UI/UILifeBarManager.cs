@@ -1,6 +1,5 @@
 using UnityEngine;
 using Data;
-using System.Collections.Generic;
 using Managers;
 
 public class UILifeBarManager : MonoBehaviour
@@ -28,10 +27,12 @@ public class UILifeBarManager : MonoBehaviour
         if (side == PlayerSide.Player)
         {
             lifeBarPlayer.SetCurrentHealth(health);
+            Debug.Log(side + "|" + health);
         }
         else
         {
             lifeBarEnemy.SetCurrentHealth(health);
+            Debug.Log(side + "|" + health);
         }            
     }
 }

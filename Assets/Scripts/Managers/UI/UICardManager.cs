@@ -1,6 +1,7 @@
 using Data;
 using ScriptableObjects.Deck;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -24,6 +25,9 @@ public class UICardManager : MonoBehaviour
 
     [SerializeField]
     private Transform handContainer;
+
+    [SerializeField]
+    private float drawSpeed = 0.1f;
 
     [SerializeField]
     private List<CardTypeSprite> cardTypeSprite;
@@ -60,9 +64,14 @@ public class UICardManager : MonoBehaviour
         return cardTypeSpriteHelper.sprite;
     }
 
-    public void CreateCardUI(PlayCardData playCardData)
+    public void CreateCardUI(PlayCardData playCardData, bool playAnim)
     {
         GameObject card = Instantiate(cardHandPrefab, handContainer);
+        if (playAnim)
+        {
+            SoundManager.Instance.PlaySound("cardDraw");
+            card.GetComponentInChildren<Animator>().Play("HandFlip");
+        }
 
         UICard uiCard = card.GetComponent<UICard>();
         try {
@@ -103,17 +112,10 @@ public class UICardManager : MonoBehaviour
     }
 
 
-    public void RefreshHandUI()
+    public void RefreshHandUI(bool isNewHand)
     {
-        foreach (Transform child in handContainer)
-        {
-            Destroy(child.gameObject);
-        }
 
-        foreach (PlayCardData card in player.PlayerCards.Hand)
-        {
-            CreateCardUI(card);
-        }
+            StartCoroutine(DrawCards(isNewHand));
     }
 
     [Serializable]
@@ -121,5 +123,19 @@ public class UICardManager : MonoBehaviour
     {
         public CardType cardType;
         public Sprite sprite;
+    }
+
+    public IEnumerator DrawCards(bool playAnim)
+    {
+        foreach (Transform child in handContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (PlayCardData card in player.PlayerCards.Hand.ToList())
+        {
+            CreateCardUI(card, playAnim);
+            yield return new WaitForSeconds(playAnim? drawSpeed : 0);
+        }
     }
 }
