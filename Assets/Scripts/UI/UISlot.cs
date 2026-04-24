@@ -40,9 +40,8 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void ReturnCardToHand()
     {
-        if(canHover && cardData != null)
+        if(canHover && cardData != null && GameManager.Instance.UnsetCardToSlot(cardData,PlayerSide.Player, slotPosition))
         {
-            GameManager.Instance.UnsetCardToSlot(cardData,PlayerSide.Player, slotPosition);
             ClearSlot();
             cardData = null;
             this.button.SetActive(false);

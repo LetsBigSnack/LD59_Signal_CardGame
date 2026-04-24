@@ -355,22 +355,26 @@ public class GameManager : MonoBehaviour
         OnCardAdded?.Invoke(gameSlot);
     }
     
-    public void UnsetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
+    public bool UnsetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
     {
-
+        if (currentState == TurnState.AcceptState)
+        {
+            return false;
+        }
         GameSlot gameSlot = _gameSlots.FirstOrDefault(slot => slot.SlotPosition == position && slot.PlayerSide == side);
 
         if (gameSlot == null || gameSlot.PlayCardData == null)
         {
-            return;
+            return false;
         }
         
         if (_players[side].PlayerCards.UnsetCard(card))
         {
             OnCardRemoved?.Invoke(gameSlot);
             gameSlot.PlayCardData = null;
+            return true;
         }
-        
+        return false;
     }
     
 
