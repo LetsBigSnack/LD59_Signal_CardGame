@@ -12,7 +12,7 @@ namespace Testing
         private List<ResolveObject> queueElements = new List<ResolveObject>();
 
         [SerializeField] private float timeToResolveCard = 0.4f;
-        
+        [SerializeField] private float timeAfterResolve = 0.5f;
         public void Awake()
         {
             GameManager.Instance.OnResolve += AddToResolveQueue;
@@ -67,6 +67,7 @@ namespace Testing
                 }
                 yield return new WaitForSeconds(timeToResolveCard);
             }
+            yield return new WaitForSeconds(timeAfterResolve);
             GameManager.Instance.ProceedToNextState();
             Debug.Log("Ending cool animation");
         }

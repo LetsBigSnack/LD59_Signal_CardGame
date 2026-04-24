@@ -2679,6 +2679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 209269719}
   slotPosition: 0
+  playerSide: 0
   button: {fileID: 0}
   canHover: 0
 --- !u!1 &226201531
@@ -3096,6 +3097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 850251843}
   slotPosition: 0
+  playerSide: 0
   button: {fileID: 347327002}
   canHover: 1
 --- !u!1 &284380258
@@ -5744,6 +5746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 535008117}
   slotPosition: 1
+  playerSide: 0
   button: {fileID: 0}
   canHover: 0
 --- !u!1 &538684492
@@ -7567,6 +7570,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636405113}
   m_CullTransparentMesh: 1
+--- !u!1 &639792224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639792226}
+  - component: {fileID: 639792225}
+  m_Layer: 0
+  m_Name: TestQueue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &639792225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639792224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ed9c86c71543a192dac9305836a130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Testing.QueueTest
+  queueElements: []
+  timeToResolveCard: 0.4
+  timeAfterResolve: 0.5
+--- !u!4 &639792226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639792224}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 963.41736, y: 544.1007, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670659295
 GameObject:
   m_ObjectHideFlags: 0
@@ -12428,6 +12478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 1141419855}
   slotPosition: 2
+  playerSide: 0
   button: {fileID: 0}
   canHover: 0
 --- !u!1 &1141944138
@@ -15098,6 +15149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 763797944}
   slotPosition: 2
+  playerSide: 0
   button: {fileID: 421206664}
   canHover: 1
 --- !u!1 &1449290866
@@ -17730,6 +17782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 2019424306}
   slotPosition: 1
+  playerSide: 0
   button: {fileID: 598256361}
   canHover: 1
 --- !u!1 &1725325436
@@ -24476,3 +24529,4 @@ SceneRoots:
   - {fileID: 710776313}
   - {fileID: 1896575239}
   - {fileID: 1685468658}
+  - {fileID: 639792226}

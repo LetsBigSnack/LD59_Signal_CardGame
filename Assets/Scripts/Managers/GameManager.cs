@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
     {
         this._gameSlots = new List<GameSlot>();
         
+
+        
         _gameSlots.Add(new GameSlot(SlotPosition.Position1, PlayerSide.Player));
         _gameSlots.Add(new GameSlot(SlotPosition.Position2, PlayerSide.Player));
         _gameSlots.Add(new GameSlot(SlotPosition.Position3, PlayerSide.Player));
@@ -86,6 +88,11 @@ public class GameManager : MonoBehaviour
         _gameSlots.Add(new GameSlot(SlotPosition.Position1, PlayerSide.Enemy));
         _gameSlots.Add(new GameSlot(SlotPosition.Position2, PlayerSide.Enemy));
         _gameSlots.Add(new GameSlot(SlotPosition.Position3, PlayerSide.Enemy));
+
+        foreach (GameSlot slot in _gameSlots)
+        {
+            OnCardRemoved?.Invoke(slot);
+        }
         
     }
 
@@ -302,8 +309,6 @@ public class GameManager : MonoBehaviour
             }
             
             _players[gameSlot.PlayerSide].PlayerCards.ResolveCard(gameSlot.PlayCardData);
-
-            OnCardRemoved?.Invoke(gameSlot);
         }
 
         //Discard Hand
