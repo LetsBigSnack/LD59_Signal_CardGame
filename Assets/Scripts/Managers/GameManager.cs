@@ -248,7 +248,7 @@ public class GameManager : MonoBehaviour
         foreach (GameSlot gameSlot in stack)
         {
             
-            if (gameSlot.PlayCardData == null || gameSlot.PlayCardData.Modifier == null)
+            if (gameSlot.PlayCardData == null)
             {
                 continue;
             }
@@ -256,13 +256,12 @@ public class GameManager : MonoBehaviour
             GameSlot oppositeSlot = _gameSlots.FirstOrDefault(s =>
                 s.SlotPosition == gameSlot.SlotPosition && s.PlayerSide != gameSlot.PlayerSide);
             
-            
-            gameSlot.OwnModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
+            gameSlot.OwnModifierType = gameSlot.PlayCardData.Modifier == null? ModifierType.None : gameSlot.PlayCardData.Modifier.ModifierType;
             
             if (oppositeSlot != null)
             {
                 gameSlot.OppositeGameSlot = oppositeSlot;
-                oppositeSlot.OppositeModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
+                oppositeSlot.OppositeModifierType = gameSlot.PlayCardData.Modifier == null? ModifierType.None : gameSlot.PlayCardData.Modifier.ModifierType;
             }
             else
             {
