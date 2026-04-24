@@ -27,12 +27,12 @@ public class UILifeBarManager : MonoBehaviour
         if (side == PlayerSide.Player)
         {
             lifeBarPlayer.SetCurrentHealth(health);
-            Debug.Log(side + "|" + health);
+            //Debug.Log(side + "|" + health);
         }
         else
         {
             lifeBarEnemy.SetCurrentHealth(health);
-            Debug.Log(side + "|" + health);
+            //Debug.Log(side + "|" + health);
         }            
     }
 }

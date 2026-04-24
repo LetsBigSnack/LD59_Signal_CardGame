@@ -324,6 +324,10 @@ public class GameManager : MonoBehaviour
         //Draw Card
         foreach (GameSlot gameSlot in stack)
         {
+            if (gameSlot.CardDraw <= 0)
+            {
+                continue;
+            }
             _cardDrawModifiers[gameSlot.PlayerSide] += gameSlot.CardDraw;
             AddToResolveQueue(new ResolveObject(ResolveType.CardDraw, gameSlot.CardDraw, gameSlot, gameSlot.OppositeGameSlot));
         }

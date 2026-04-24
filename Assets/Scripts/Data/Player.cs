@@ -70,7 +70,6 @@ namespace Data
         public void HealLife(int life)
         {
             currentHealth += life;
-            Debug.Log("currenthealth " + currentHealth + " life " +  life);
             if (currentHealth >= maxHealth)
             {
                 currentHealth = maxHealth;

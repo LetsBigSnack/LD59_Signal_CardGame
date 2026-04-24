@@ -18,7 +18,6 @@ public class UIPriorityManager : MonoBehaviour
 
     public void OnEnable()
     {
-        Debug.Log("TEST");
         GameManager.Instance.OnPriorityChanged += HandlePriorityChanged;
     }
 

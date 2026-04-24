@@ -34,7 +34,6 @@ namespace Testing
             {
                 queueElements.Clear();
             }
-            Debug.Log(finished);
         }
 
         IEnumerator StartCoolAnimation()
@@ -46,24 +45,24 @@ namespace Testing
                 switch (resolveObject.ResolveType)
                 {
                     case ResolveType.Interfere:
-                        Debug.Log("Interfere");
+                        Debug.Log($"Side: {resolveObject.OwnSlot.PlayerSide.ToString()} | Slot: {resolveObject.OwnSlot.SlotPosition.ToString()}  is Interfere Side: {resolveObject.OppositeSlot.PlayerSide.ToString()} | Slot: {resolveObject.OppositeSlot.SlotPosition.ToString()} with priority {resolveObject.Number}");
                         break;
                     case ResolveType.Defend:
-                        Debug.Log("Defend");
+                        Debug.Log($"Side: {resolveObject.OwnSlot.PlayerSide.ToString()} | Slot: {resolveObject.OwnSlot.SlotPosition.ToString()}  is Defending for {resolveObject.Number}");
                         break;
                     case ResolveType.Attack:
-                        Debug.Log("Attack");
+                        Debug.Log($"Side: {resolveObject.OwnSlot.PlayerSide.ToString()} | Slot: {resolveObject.OwnSlot.SlotPosition.ToString()}  is Attacking for {resolveObject.Number}");
                         break;
                     case ResolveType.Damage:
-                        Debug.Log("Damage");
                         GameManager.Instance.Players[resolveObject.OwnSlot.PlayerSide].TakeDamage(resolveObject.Number);
+                        Debug.Log($"Side: {resolveObject.OwnSlot.PlayerSide.ToString()} | Slot: {resolveObject.OwnSlot.SlotPosition.ToString()}  is Taking Damage for {resolveObject.Number}");
                         break;
                     case ResolveType.Heal:
-                        Debug.Log("Heal");
                         GameManager.Instance.Players[resolveObject.OwnSlot.PlayerSide].HealLife(resolveObject.Number);
+                        Debug.Log($"Side: {resolveObject.OwnSlot.PlayerSide.ToString()} | Slot: {resolveObject.OwnSlot.SlotPosition.ToString()}  is Healing for {resolveObject.Number}");
                         break;
                     case ResolveType.CardDraw:
-                        Debug.Log("CardDraw");
+                        Debug.Log($"Side: {resolveObject.OwnSlot.PlayerSide.ToString()} | Slot: {resolveObject.OwnSlot.SlotPosition.ToString()}  is Drawing Card for {resolveObject.Number}");
                         break;
                 }
                 yield return new WaitForSeconds(timeToResolveCard);
