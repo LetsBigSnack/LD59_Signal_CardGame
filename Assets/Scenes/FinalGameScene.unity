@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1345288613}
+  disableHoverOnResolve: 0
 --- !u!1 &99339237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 451800912}
+  disableHoverOnResolve: 0
 --- !u!114 &117231750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3990,6 +3992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1499189545}
+  disableHoverOnResolve: 0
 --- !u!114 &320393015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4296,6 +4299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1519496672}
+  disableHoverOnResolve: 0
 --- !u!114 &347327006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5035,6 +5039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 122472868}
+  disableHoverOnResolve: 0
 --- !u!1 &409702803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 896577590}
+  disableHoverOnResolve: 0
 --- !u!114 &421206668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6670,6 +6676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1099932794}
+  disableHoverOnResolve: 0
 --- !u!1 &573946290
 GameObject:
   m_ObjectHideFlags: 0
@@ -7273,6 +7280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 135027417}
+  disableHoverOnResolve: 0
 --- !u!114 &598256365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7742,6 +7750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1141944138}
+  disableHoverOnResolve: 0
 --- !u!114 &625331515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8342,6 +8351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 848830289}
+  disableHoverOnResolve: 0
 --- !u!114 &684728336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8929,7 +8939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &773204061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11746,6 +11756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 954065015}
+  disableHoverOnResolve: 0
 --- !u!114 &1057537064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12189,7 +12200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SLOTS
+  m_text: Slots
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b74e2e65f197a694f867c8da5c5286eb, type: 2}
   m_sharedMaterial: {fileID: 2239514168665762105, guid: b74e2e65f197a694f867c8da5c5286eb, type: 2}
@@ -12772,6 +12783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1910083033}
+  disableHoverOnResolve: 0
 --- !u!1 &1140394641
 GameObject:
   m_ObjectHideFlags: 0
@@ -13917,6 +13929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 147197446}
+  disableHoverOnResolve: 0
 --- !u!114 &1205504634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13931,8 +13944,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   sendText: Send Signal
   showResultText: Resolve
+  resolvingText: Resolving...
   text: {fileID: 1347517505}
   button: {fileID: 1205504630}
+  _currentTextIndex: 0
+  _currentTime: 0
+  _textTime: 0.25
 --- !u!1 &1213934852
 GameObject:
   m_ObjectHideFlags: 0
@@ -17764,6 +17781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 157586764}
+  disableHoverOnResolve: 0
 --- !u!1 &1630336494
 GameObject:
   m_ObjectHideFlags: 0
@@ -17988,6 +18006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 442895478}
+  disableHoverOnResolve: 0
 --- !u!1 &1647459931
 GameObject:
   m_ObjectHideFlags: 0
@@ -18211,6 +18230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 883672170}
+  disableHoverOnResolve: 0
 --- !u!1001 &1685468658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18863,6 +18883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1534793360}
+  disableHoverOnResolve: 0
 --- !u!114 &1770058179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19429,7 +19450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1816875754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19711,6 +19732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1725325436}
+  disableHoverOnResolve: 0
 --- !u!1 &1828423980
 GameObject:
   m_ObjectHideFlags: 0
@@ -20340,6 +20362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1968974987}
+  disableHoverOnResolve: 0
 --- !u!1001 &1896575239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22658,6 +22681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 846817610}
+  disableHoverOnResolve: 0
 --- !u!1 &2104737659
 GameObject:
   m_ObjectHideFlags: 0
