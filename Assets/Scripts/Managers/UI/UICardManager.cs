@@ -114,7 +114,6 @@ public class UICardManager : MonoBehaviour
 
     public void RefreshHandUI(bool isNewHand)
     {
-
             StartCoroutine(DrawCards(isNewHand));
     }
 
