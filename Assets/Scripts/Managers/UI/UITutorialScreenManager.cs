@@ -65,6 +65,7 @@ public class UITutorialScreenManager : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("Starting game");
         Destroy(gameObject);
         GameStateManager.Instance.ChangeState(GameState.Game);
     }

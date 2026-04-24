@@ -126,6 +126,7 @@ public class UICardManager : MonoBehaviour
 
     public IEnumerator DrawCards(bool playAnim)
     {
+        Debug.Log(DateTime.Now);
         foreach (Transform child in handContainer)
         {
             Destroy(child.gameObject);

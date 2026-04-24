@@ -32,7 +32,6 @@ public class UIDeathScreenManager : MonoBehaviour
     public void Continue()
     {
         GameStateManager.Instance.ChangeState(GameState.Game);
-        GameManager.Instance.StartGame();
     }
 
     public void MainMenu()

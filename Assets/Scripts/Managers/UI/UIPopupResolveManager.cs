@@ -85,6 +85,12 @@ public class UIPopupResolveManager : MonoBehaviour
     {
         Debug.Log("Starting cool animation");
 
+        queueElements = queueElements
+            .OrderBy(element => element.OwnSlot.SlotPosition)
+            .ThenBy(element => element.ResolveType)
+            .ThenBy(element => element.OwnSlot.PlayerSide != GameManager.Instance.GetPriority())
+            .ToList();
+        
         foreach (ResolveObject resolveObject in queueElements)
         {
             ResolveSlot slot = slots.FirstOrDefault(slot => slot.side == resolveObject.OwnSlot.PlayerSide && slot.position == resolveObject.OwnSlot.SlotPosition);

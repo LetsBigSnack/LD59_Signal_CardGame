@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        
+        Debug.Log("Starting Game");
         OnResolveFinished?.Invoke(false);
         EnemyManager.Instance.CreateNewEnemy();
         
