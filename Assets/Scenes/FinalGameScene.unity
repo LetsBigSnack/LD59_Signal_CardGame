@@ -20348,86 +20348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 246043920652648506, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_text
-      value: Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 746127210991158672, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746127210991158672, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746127210991158672, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849394079176752627, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849394079176752627, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849394079176752627, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3081840611257220485, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_text
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: audioClips.clips.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: audioClips.clips.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4c65d57e66757004f84e032081878cee, type: 3}
-    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: audioClips.clips.Array.data[4].name
-      value: resolve
-      objectReference: {fileID: 0}
-    - target: {fileID: 3286608789039637131, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3286608789039637131, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4025148081658376191, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4025148081658376191, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1685468659}
-    - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: StartScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012111987168083885, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012111987168083885, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5418815282858870683, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_Name
       value: PausePopupManager
@@ -20510,18 +20434,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5651061540866395615, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500527934163539476, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500527934163539476, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500527934163539476, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
