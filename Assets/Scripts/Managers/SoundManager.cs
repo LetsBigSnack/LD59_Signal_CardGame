@@ -84,16 +84,20 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(string soundName)
+    public void PlaySound(string soundName, bool randomizePitch = false)
     {
         AudioClass audio = audioClips.clips.Find(soundclip =>  soundclip.name == soundName);
+        sfxSource.pitch = 1;
+        if (randomizePitch)
+        {
+            sfxSource.pitch = Random.Range(1.1f, 1.2f);
+        }
 
         if(audio.type == SoundType.BGM)
         {
             bgmSource.PlayOneShot(audio.clip,bgmVolume);
-        }
-
-        if(audio.type != SoundType.BGM)
+        } 
+        else
         {
             sfxSource.PlayOneShot(audio.clip, sfxVolume);
         }

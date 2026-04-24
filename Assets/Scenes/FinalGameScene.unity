@@ -20380,6 +20380,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Resume
       objectReference: {fileID: 0}
+    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
+      propertyPath: audioClips.clips.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
+      propertyPath: audioClips.clips.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c65d57e66757004f84e032081878cee, type: 3}
+    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
+      propertyPath: audioClips.clips.Array.data[4].name
+      value: resolve
+      objectReference: {fileID: 0}
     - target: {fileID: 3286608789039637131, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

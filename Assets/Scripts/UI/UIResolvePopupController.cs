@@ -30,6 +30,7 @@ public class UIResolvePopupController : MonoBehaviour
         amountText.text = amount.ToString();
         titleText.text = title;
         _anim.Play("ResolvePopupOpen");
+        SoundManager.Instance.PlaySound("resolve", true);
 
         return _anim;
     }
