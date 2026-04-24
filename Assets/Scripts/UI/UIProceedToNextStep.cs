@@ -10,13 +10,23 @@ public class UIProceedToNextStep : MonoBehaviour
 
     [SerializeField]
     private string showResultText;
+    
+    [SerializeField]
+    private string resolvingText = "Resolving...";
 
     [SerializeField]
     private TextMeshProUGUI text;
 
     [SerializeField]
     private Button button;
-
+    
+    [SerializeField]
+    private int _currentTextIndex = 0;
+    [SerializeField]
+    private float _currentTime = 0f;
+    [SerializeField]
+    private float _textTime = 0.25f;
+    
     public void Start()
     {
         UISlotManager.Instance.OnAnimStateChanged += HandleAnimStateChanged;
@@ -29,13 +39,33 @@ public class UIProceedToNextStep : MonoBehaviour
 
     private void Update()
     {
-        if (IsAcceptState())
+        button.interactable = !IsResolving();
+        
+        
+        if (IsResolving())
         {
+            _currentTime += Time.deltaTime;
+            if (_currentTime >= _textTime)
+            {
+                _currentTime = 0f;
+                _currentTextIndex++;
+                if (_currentTextIndex >= resolvingText.Length)
+                {
+                    _currentTextIndex = 0;
+                }
+            }
+            text.text = resolvingText.Substring(0, _currentTextIndex);
+            return;
+        }else if (IsAcceptState())
+        {
+            
             text.text = showResultText;
         } else
         {
             text.text = sendText;
         }
+        _currentTime = 0f;
+        _currentTextIndex = 0;
     }
 
     public void ProceedToNextStep()
@@ -43,9 +73,14 @@ public class UIProceedToNextStep : MonoBehaviour
         GameManager.Instance.ProceedToNextState();
     }
 
-    public bool IsAcceptState()
+    private bool IsAcceptState()
     {
         return GameManager.Instance.GetTurnState() == TurnState.AcceptState;
+    }
+
+    private bool IsResolving()
+    {
+        return GameManager.Instance.GetTurnState() == TurnState.ResolvingState;
     }
 
     public void HandleAnimStateChanged(bool animating)
