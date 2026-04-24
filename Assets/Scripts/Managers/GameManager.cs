@@ -256,9 +256,12 @@ public class GameManager : MonoBehaviour
             GameSlot oppositeSlot = _gameSlots.FirstOrDefault(s =>
                 s.SlotPosition == gameSlot.SlotPosition && s.PlayerSide != gameSlot.PlayerSide);
             
+            
             gameSlot.OwnModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
+            
             if (oppositeSlot != null)
             {
+                gameSlot.OppositeGameSlot = oppositeSlot;
                 oppositeSlot.OppositeModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
             }
         }
@@ -276,8 +279,6 @@ public class GameManager : MonoBehaviour
                 
                 GameSlot oppositeSlot = _gameSlots.FirstOrDefault(s =>
                     s.SlotPosition == gameSlot.SlotPosition && s.PlayerSide != gameSlot.PlayerSide);
-                
-                gameSlot.OppositeGameSlot = oppositeSlot;
                 
                 _players[gameSlot.PlayerSide].PlayerCards.PlayCard(gameSlot.PlayCardData, gameSlot, oppositeSlot);
 
