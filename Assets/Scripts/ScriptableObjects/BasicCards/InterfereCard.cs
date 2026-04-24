@@ -37,7 +37,8 @@ namespace ScriptableObjects.BasicCards
         public virtual void RespondPlay(GameSlot ownSlot, GameSlot opponent)
         {
             RespondEffect.ApplyEffect(ownSlot, opponent);
-            
+            GameManager.Instance.AddToResolveQueue(new ResolveObject(ResolveType.Interfere, priority, ownSlot, opponent));
+
         }
     }
 }

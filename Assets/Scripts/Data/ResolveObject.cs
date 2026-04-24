@@ -1,21 +1,19 @@
+using System;
+
 namespace Data
 {
     public enum ResolveType
     {
-        Attack,
-        Defend,
         Interfere,
-        ModPhishing,
-        ModBackdoor,
-        ModFirewall,
-        ModBackUp,
-        AttackResolve,
-        DefendResolve,
+        Defend,
+        Attack,
+        Damage,
+        Heal,
         CardDraw,
-        Heal
     }
     
     
+    [Serializable]
     public class ResolveObject
     {
         private GameSlot _ownSlot;

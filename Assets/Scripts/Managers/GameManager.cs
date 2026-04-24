@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public event Action<GameSlot> OnCardRemoved;
     public event Action<GameSlot> OnCardAdded;
     public event Action<ResolveObject> OnResolve;
+    public event Action<bool> OnResolveFinished;
     
     public event Action<PlayerSide> OnPriorityChanged;
     
@@ -90,7 +91,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-
+        
+        OnResolveFinished?.Invoke(false);
         EnemyManager.Instance.CreateNewEnemy();
         
         CreateGameSlots();
@@ -144,11 +146,9 @@ public class GameManager : MonoBehaviour
                 {
                     ProceedToNextState();
                 }
-                ProceedToNextState();
                 break;
             case TurnState.ResolvingState:
                 ResolveSetCards();
-                ProceedToNextState();
                 break;
         }
     }
@@ -205,6 +205,7 @@ public class GameManager : MonoBehaviour
 
     public void NextRound()
     {
+        OnResolveFinished?.Invoke(false);
         _players[PlayerSide.Player].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Player]);
         _players[PlayerSide.Enemy].PlayerCards.DrawUntil(startCardAmount + _cardDrawModifiers[PlayerSide.Enemy]);
         currentTurn++;
@@ -309,22 +310,25 @@ public class GameManager : MonoBehaviour
         _players[PlayerSide.Player].PlayerCards.DiscardHand();
         _players[PlayerSide.Enemy].PlayerCards.DiscardHand();
         
-        //Draw Card
-        foreach (GameSlot gameSlot in stack)
-        {
-            _cardDrawModifiers[gameSlot.PlayerSide] += gameSlot.CardDraw;
-        }
-        
         //Heal
         
         foreach (GameSlot gameSlot in stack)
         {
             if (gameSlot.Heal > 0)
             {
-                _players[gameSlot.PlayerSide].HealLife(gameSlot.Heal);
+                //_players[gameSlot.PlayerSide].HealLife(gameSlot.Heal);
+                AddToResolveQueue(new ResolveObject(ResolveType.Heal, gameSlot.Heal, gameSlot, gameSlot.OppositeGameSlot));
             }
         }
-
+        
+        //Draw Card
+        foreach (GameSlot gameSlot in stack)
+        {
+            _cardDrawModifiers[gameSlot.PlayerSide] += gameSlot.CardDraw;
+            AddToResolveQueue(new ResolveObject(ResolveType.CardDraw, gameSlot.CardDraw, gameSlot, gameSlot.OppositeGameSlot));
+        }
+        
+        OnResolveFinished?.Invoke(true);
         
     }
 

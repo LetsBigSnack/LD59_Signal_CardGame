@@ -11,6 +11,8 @@ namespace ScriptableObjects.BasicCards
         public override void Play(GameSlot ownSlot, GameSlot enemySlot)
         {
             ownSlot.AddDefense(defense);
+            GameManager.Instance.AddToResolveQueue(new ResolveObject(ResolveType.Defend, defense, ownSlot, enemySlot));
+
         }
     
     }

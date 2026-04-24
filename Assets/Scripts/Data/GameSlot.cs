@@ -74,11 +74,12 @@ namespace Data
             if (ownModifierType == ModifierType.Firewall && attack > 0)
             {
                 int blockedDamage = defense - Mathf.Max(defense - attack, 0);
-                GameManager.Instance.GetOppositePlayer(playerSide).TakeDamage(blockedDamage);
+                GameManager.Instance.AddToResolveQueue(new ResolveObject(ResolveType.Damage, blockedDamage, oppositeGameSlot, this));
+                //GameManager.Instance.GetOppositePlayer(playerSide).TakeDamage(blockedDamage);
             }
             
             int damage = oppositeModifierType == ModifierType.Backdoor? attack : attack - defense;
-
+            
             if (damage == 0)
             {
                 return;
@@ -88,7 +89,9 @@ namespace Data
             {
                 // own (opposite) opposite ich bin 
                 
-                GameManager.Instance.Players[playerSide].TakeDamage(damage);
+                //GameManager.Instance.Players[playerSide].TakeDamage(damage);
+                GameManager.Instance.AddToResolveQueue(new ResolveObject(ResolveType.Damage, damage, this, oppositeGameSlot));
+                
                 if (oppositeModifierType == ModifierType.Phising)
                 {
                     oppositeGameSlot.AddHeal(damage);
