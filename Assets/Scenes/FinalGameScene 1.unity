@@ -899,6 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1345288613}
+  disableHoverOnResolve: 0
 --- !u!1 &99339237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 451800912}
+  disableHoverOnResolve: 0
 --- !u!114 &117231750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2194,6 +2196,7 @@ MonoBehaviour:
   cardSlotPrefab: {fileID: 3452922836203720868, guid: 52c787e73090f1847acfbe746873f55e, type: 3}
   cardDeckRemoveablePrefab: {fileID: 1862230118212956728, guid: 241e5290df7501d4287b3dd223c1b7fa, type: 3}
   handContainer: {fileID: 1935563375}
+  drawSpeed: 0.1
   cardTypeSprite:
   - cardType: 0
     sprite: {fileID: 21300000, guid: fc53065eaee2d024d8125a972359b37e, type: 3}
@@ -2609,6 +2612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 209269719}
   slotPosition: 0
+  playerSide: 0
   button: {fileID: 0}
   canHover: 0
 --- !u!1 &226201531
@@ -2980,6 +2984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 850251843}
   slotPosition: 0
+  playerSide: 0
   button: {fileID: 347327002}
   canHover: 1
 --- !u!1 &284380258
@@ -3379,6 +3384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1499189545}
+  disableHoverOnResolve: 0
 --- !u!114 &320393015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3685,6 +3691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1519496672}
+  disableHoverOnResolve: 0
 --- !u!114 &347327006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4424,6 +4431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 122472868}
+  disableHoverOnResolve: 0
 --- !u!1 &409702803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,6 +4584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 896577590}
+  disableHoverOnResolve: 0
 --- !u!114 &421206668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5582,6 +5591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 535008117}
   slotPosition: 1
+  playerSide: 0
   button: {fileID: 0}
   canHover: 0
 --- !u!1 &538684492
@@ -6035,6 +6045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1099932794}
+  disableHoverOnResolve: 0
 --- !u!1 &573946290
 GameObject:
   m_ObjectHideFlags: 0
@@ -6638,6 +6649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 135027417}
+  disableHoverOnResolve: 0
 --- !u!114 &598256365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7107,6 +7119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1141944138}
+  disableHoverOnResolve: 0
 --- !u!114 &625331515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7671,6 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 848830289}
+  disableHoverOnResolve: 0
 --- !u!114 &684728336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10983,6 +10997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 954065015}
+  disableHoverOnResolve: 0
 --- !u!114 &1057537064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12009,6 +12024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1910083033}
+  disableHoverOnResolve: 0
 --- !u!1 &1140394641
 GameObject:
   m_ObjectHideFlags: 0
@@ -12174,6 +12190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 1141419855}
   slotPosition: 2
+  playerSide: 0
   button: {fileID: 0}
   canHover: 0
 --- !u!1 &1141944138
@@ -13005,6 +13022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 147197446}
+  disableHoverOnResolve: 0
 --- !u!114 &1205504634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13019,8 +13037,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   sendText: Send Signal
   showResultText: Resolve
+  resolvingText: Resolving...
   text: {fileID: 1347517505}
   button: {fileID: 1205504630}
+  _currentTextIndex: 0
+  _currentTime: 0
+  _textTime: 0.25
 --- !u!1 &1213934852
 GameObject:
   m_ObjectHideFlags: 0
@@ -14775,6 +14797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 763797944}
   slotPosition: 2
+  playerSide: 0
   button: {fileID: 421206664}
   canHover: 1
 --- !u!1 &1449290866
@@ -16570,6 +16593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 157586764}
+  disableHoverOnResolve: 0
 --- !u!1 &1630336494
 GameObject:
   m_ObjectHideFlags: 0
@@ -16794,6 +16818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 442895478}
+  disableHoverOnResolve: 0
 --- !u!1 &1647459931
 GameObject:
   m_ObjectHideFlags: 0
@@ -17017,6 +17042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 883672170}
+  disableHoverOnResolve: 0
 --- !u!1001 &1685468658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17338,6 +17364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UISlot
   cardParent: {fileID: 2019424306}
   slotPosition: 1
+  playerSide: 0
   button: {fileID: 598256361}
   canHover: 1
 --- !u!1 &1725325436
@@ -17668,6 +17695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1534793360}
+  disableHoverOnResolve: 0
 --- !u!114 &1770058179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18516,6 +18544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1725325436}
+  disableHoverOnResolve: 0
 --- !u!1 &1838480324
 GameObject:
   m_ObjectHideFlags: 0
@@ -19086,6 +19115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 1968974987}
+  disableHoverOnResolve: 0
 --- !u!1001 &1896575239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19094,74 +19124,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 246043920652648506, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_text
-      value: Main Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 746127210991158672, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746127210991158672, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 746127210991158672, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849394079176752627, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849394079176752627, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1849394079176752627, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3081840611257220485, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_text
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 3286608789039637131, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3286608789039637131, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4025148081658376191, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4025148081658376191, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1685468659}
-    - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: StartScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012111987168083885, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012111987168083885, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5418815282858870683, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_Name
       value: PausePopupManager
@@ -19244,18 +19210,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5651061540866395615, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500527934163539476, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500527934163539476, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500527934163539476, guid: b612409589a267542bdb7ab7be59834e, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20023,6 +19977,9 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 5536587452292286550}
   cardVisual: {fileID: 2255553995773500033}
+  cardUIVisual: {fileID: 0}
+  time: 0
+  lerpSpeed: 1
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}
@@ -21431,6 +21388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 846817610}
+  disableHoverOnResolve: 0
 --- !u!1 &2104737659
 GameObject:
   m_ObjectHideFlags: 0
@@ -23800,6 +23758,9 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 5536587451633279644}
   cardVisual: {fileID: 2255553995381813323}
+  cardUIVisual: {fileID: 0}
+  time: 0
+  lerpSpeed: 1
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}
@@ -23868,6 +23829,9 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 5536587452015558923}
   cardVisual: {fileID: 2255553995496707036}
+  cardUIVisual: {fileID: 0}
+  time: 0
+  lerpSpeed: 1
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}

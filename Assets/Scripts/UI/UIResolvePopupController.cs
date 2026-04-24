@@ -25,6 +25,14 @@ public class UIResolvePopupController : MonoBehaviour
     public Animator Setup(Sprite iconSprite, Sprite modifierSprite, int amount, string title)
     {
         resolveParent.SetActive(true);
+        if(modifierSprite == null)
+        {
+            modifierImage.color = new Color(0,0,0,0);
+        } 
+        else
+        {
+            modifierImage.color = new Color(1,1,1,1);
+        }
         iconImage.sprite = iconSprite;
         modifierImage.sprite = modifierSprite;
         amountText.text = amount.ToString();

@@ -2890,7 +2890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Testing.QueueTest
   queueElements: []
-  timeToResolveCard: 0.75
+  timeToResolveCard: 0.6
   timeAfterResolve: 1
   popupTypeIcons:
   - type: 0
@@ -8939,7 +8939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &773204061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13929,7 +13929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonHover
   hoverImage: {fileID: 147197446}
-  disableHoverOnResolve: 0
+  disableHoverOnResolve: 1
 --- !u!114 &1205504634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19450,7 +19450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1816875754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20371,6 +20371,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
+      propertyPath: audioClips.clips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
+      propertyPath: audioClips.clips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fc25c6b6cb90f24d97c8c87addf3c75, type: 3}
+    - target: {fileID: 3196319981330494555, guid: b612409589a267542bdb7ab7be59834e, type: 3}
+      propertyPath: audioClips.clips.Array.data[5].name
+      value: error
+      objectReference: {fileID: 0}
     - target: {fileID: 4782107783052015694, guid: b612409589a267542bdb7ab7be59834e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -23964,6 +23976,7 @@ GameObject:
   - component: {fileID: 4079309803459210757}
   - component: {fileID: 4499723137142804227}
   - component: {fileID: 1968325607}
+  - component: {fileID: 5689976372708755605}
   m_Layer: 5
   m_Name: Card_slot_container
   m_TagString: Untagged
@@ -23983,6 +23996,7 @@ GameObject:
   - component: {fileID: 4079309802995221711}
   - component: {fileID: 4499723137574249929}
   - component: {fileID: 5689976371977331295}
+  - component: {fileID: 5689976371977331296}
   m_Layer: 5
   m_Name: Card_slot_container (1)
   m_TagString: Untagged
@@ -24002,6 +24016,7 @@ GameObject:
   - component: {fileID: 4079309802645612376}
   - component: {fileID: 4499723137956529758}
   - component: {fileID: 6982624985735656965}
+  - component: {fileID: 6982624985735656966}
   m_Layer: 5
   m_Name: Card_slot_container (2)
   m_TagString: Untagged
@@ -25172,6 +25187,28 @@ MonoBehaviour:
   cardCanvas: {fileID: 0}
   canHover: 1
   button: {fileID: 407493026}
+--- !u!95 &5689976371977331296
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452922835086571915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8f1a8dba93dcbc48b00d1238be5b81a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &5689976372708755604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25193,6 +25230,28 @@ RectTransform:
   m_AnchoredPosition: {x: 272.21497, y: -421.01425}
   m_SizeDelta: {x: 256, y: 384}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &5689976372708755605
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452922834405528385}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8f1a8dba93dcbc48b00d1238be5b81a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!222 &5779912216164331189
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25243,6 +25302,28 @@ MonoBehaviour:
   cardCanvas: {fileID: 0}
   canHover: 1
   button: {fileID: 1638323130}
+--- !u!95 &6982624985735656966
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452922835202349596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8f1a8dba93dcbc48b00d1238be5b81a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &7143190599911718527
 RectTransform:
   m_ObjectHideFlags: 0

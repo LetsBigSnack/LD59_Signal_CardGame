@@ -345,23 +345,25 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
+    public bool SetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
     {
 
         GameSlot gameSlot = _gameSlots.FirstOrDefault(slot => slot.SlotPosition == position && slot.PlayerSide == side);
 
         if (gameSlot == null || gameSlot.PlayCardData != null)
         {
-            return;
+            return false;
         }
         
         
         if (_players[side].PlayerCards.SetCard(card))
         { 
             gameSlot.PlayCardData = card;
+            OnCardAdded?.Invoke(gameSlot);
+            return true;
         }
 
-        OnCardAdded?.Invoke(gameSlot);
+        return false;
     }
     
     //TODO: remove form Card Slot

@@ -89,7 +89,6 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         cardNameTxt.text = playCardData.GetCardName();
         cardDiscTxt.text = playCardData.GetCardDescription();
         cardTypeTxt.text = playCardData.GetCardType().ToString();
-
         cardType = playCardData.GetCardType();
 
         cardImg.sprite = sprite;

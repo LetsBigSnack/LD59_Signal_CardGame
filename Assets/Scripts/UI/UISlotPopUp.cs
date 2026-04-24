@@ -60,9 +60,11 @@ public class UISlotPopUp : MonoBehaviour
 
     public void AddToSlot(int slotIndex)
     {
-        if (currentCard == null) return;
-
-        GameManager.Instance.SetCardToSlot(currentCard, PlayerSide.Player, (SlotPosition)slotIndex);
+        if (!GameManager.Instance.SetCardToSlot(currentCard, PlayerSide.Player, (SlotPosition)slotIndex))
+        {
+            SoundManager.Instance.PlaySound("error");
+            return;
+        }
 
         CloseSlotPopUp();
     }
