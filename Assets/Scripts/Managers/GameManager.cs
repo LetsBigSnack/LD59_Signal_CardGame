@@ -264,6 +264,10 @@ public class GameManager : MonoBehaviour
                 gameSlot.OppositeGameSlot = oppositeSlot;
                 oppositeSlot.OppositeModifierType = gameSlot.PlayCardData.Modifier.ModifierType;
             }
+            else
+            {
+                throw new Exception("No Opposite Slot");
+            }
         }
         
         //Stack Resolve
