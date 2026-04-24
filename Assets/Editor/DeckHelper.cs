@@ -44,7 +44,7 @@ class DeckHelper : Editor {
             GUILayout.Label(slot.PlayCardData?.GetCardName());
             
             if (GUILayout.Button("Unset"))
-                gameManager.UnsetCardToSlot(slot.PlayCardData, slot.PlayerSide, slot.SlotPosition);
+                gameManager.UnsetCardToSlot(slot.PlayerSide, slot.SlotPosition);
             
             EditorGUILayout.EndHorizontal();
         }

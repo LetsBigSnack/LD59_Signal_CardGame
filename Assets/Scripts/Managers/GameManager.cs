@@ -355,9 +355,28 @@ public class GameManager : MonoBehaviour
         OnCardAdded?.Invoke(gameSlot);
     }
     
-    public bool UnsetCardToSlot(PlayCardData card, PlayerSide side, SlotPosition position)
+    //TODO: remove form Card Slot
+    public bool UnsetCardToSlot(PlayerSide side, SlotPosition position)
     {
-        if (currentState == TurnState.AcceptState)
+        if (!CanUnset(side, position))
+        {
+            return false;
+        }
+        
+        GameSlot gameSlot = _gameSlots.FirstOrDefault(slot => slot.SlotPosition == position && slot.PlayerSide == side);
+        
+        if (_players[side].PlayerCards.UnsetCard(gameSlot.PlayCardData))
+        {
+            OnCardRemoved?.Invoke(gameSlot);
+            gameSlot.PlayCardData = null;
+            return true;
+        }
+        return false;
+    }
+
+    public bool CanUnset(PlayerSide side, SlotPosition position)
+    {
+        if (currentState == TurnState.AcceptState || currentState == TurnState.ResolvingState)
         {
             return false;
         }
@@ -368,13 +387,8 @@ public class GameManager : MonoBehaviour
             return false;
         }
         
-        if (_players[side].PlayerCards.UnsetCard(card))
-        {
-            OnCardRemoved?.Invoke(gameSlot);
-            gameSlot.PlayCardData = null;
-            return true;
-        }
-        return false;
+        return true;
+
     }
     
 
@@ -409,4 +423,13 @@ public class GameManager : MonoBehaviour
         OnResolve?.Invoke(resolveObject);
     }
 
+    public PlayCardData GetCardOnSlot(PlayerSide playerSide, SlotPosition slotPosition)
+    {
+        GameSlot gameSlot = _gameSlots.FirstOrDefault(slot => slot.SlotPosition == slotPosition && slot.PlayerSide == playerSide);
+        if (gameSlot == null || gameSlot.PlayCardData == null)
+        {
+            return null;
+        }
+        return gameSlot.PlayCardData;
+    }
 }

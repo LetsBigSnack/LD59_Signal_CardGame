@@ -6,10 +6,11 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Transform cardParent;
     [SerializeField] private SlotPosition slotPosition;
+    [SerializeField] private PlayerSide playerSide;
     [SerializeField] private GameObject button;
     [SerializeField] private bool canHover = false;
     
-    private PlayCardData cardData;
+    //private PlayCardData cardData;
 
     private UICard currentCardUI;
 
@@ -18,8 +19,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void SetCard(PlayCardData card)
     {
         if (IsOccupied) return;
-
-        cardData = card;
+        
         GameObject cardObj = UICardManager.Instance.CreateSlotCardUI(card, cardParent);
         currentCardUI = cardObj.GetComponent<UICard>();
     }
@@ -40,23 +40,32 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void ReturnCardToHand()
     {
-        if(canHover && cardData != null && GameManager.Instance.UnsetCardToSlot(cardData,PlayerSide.Player, slotPosition))
+        PlayCardData cardData = GameManager.Instance.GetCardOnSlot(playerSide, slotPosition);
+        if(canHover && cardData != null && GameManager.Instance.UnsetCardToSlot(PlayerSide.Player, slotPosition))
         {
             ClearSlot();
-            cardData = null;
             this.button.SetActive(false);
         }
     }
 
     public void Update()
     {
-        if(button != null && cardData == null) button.SetActive(false);
+        if (!GameManager.Instance.CanUnset(playerSide, slotPosition))
+        {
+            canHover = false;
+        }
+        else
+        {
+            canHover = true;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!canHover) return;
-
+        if(!canHover || button == null) return;
+        
+        PlayCardData cardData = GameManager.Instance.GetCardOnSlot(playerSide, slotPosition);
+        
         if (cardData != null)
         {
             button.SetActive(true);
@@ -69,7 +78,7 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(!canHover) return;
+        if(!canHover || button == null) return;
         button.SetActive(false);
     }
 }
