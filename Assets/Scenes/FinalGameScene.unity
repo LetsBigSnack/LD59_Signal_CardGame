@@ -22758,8 +22758,8 @@ RectTransform:
   - {fileID: 423758530}
   - {fileID: 2013601682}
   - {fileID: 1935563375}
-  - {fileID: 1060537122}
   - {fileID: 1828423981}
+  - {fileID: 1060537122}
   - {fileID: 1620386171}
   - {fileID: 1229335750}
   m_Father: {fileID: 0}
