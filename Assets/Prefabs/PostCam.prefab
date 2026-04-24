@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 692545559351371199}
   - component: {fileID: 7040310118303904098}
-  - component: {fileID: 3798003906633246490}
   - component: {fileID: 7978553500953388087}
   m_Layer: 0
   m_Name: PostCam
@@ -85,14 +84,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3798003906633246490
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460117945969810817}
-  m_Enabled: 1
 --- !u!114 &7978553500953388087
 MonoBehaviour:
   m_ObjectHideFlags: 0

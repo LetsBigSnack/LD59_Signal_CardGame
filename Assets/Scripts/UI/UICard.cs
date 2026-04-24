@@ -1,5 +1,6 @@
 using Data;
 using ScriptableObjects.Deck;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,16 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     [SerializeField] 
     private RectTransform cardVisual;
+
+    [SerializeField]
+    private RectTransform cardUIVisual;
+
+    [SerializeField]
+    private float time = 0f;
+
+    [SerializeField]
+    private int lerpSpeed = 1;
+
     private Vector3 originalScale;
     private Vector3 originalPosition;
     [SerializeField] 
@@ -56,18 +67,16 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
         isHovered = true;
-        UpdateVisual();
     }
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
         isHovered = false;
-        UpdateVisual();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (eventData.button == PointerEventData.InputButton.Right || eventData.button == PointerEventData.InputButton.Left)
         {
             UISlotPopUp.Instance.OpenSlotPopup(this, gameObject.transform.position);
         }
@@ -86,6 +95,11 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         cardImg.sprite = sprite;
     }
 
+    public void Update()
+    {
+        UpdateVisual();
+    }
+
     public void SetSelected(bool value)
     {
         isSelected = value;
@@ -96,20 +110,32 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         if (!canHover) return;
 
+        time += Time.deltaTime * lerpSpeed;
+
         if (isHovered || isSelected)
         {
-            cardCanvas.overrideSorting = true;
-            cardCanvas.sortingOrder = 100;
+            if (cardCanvas != null)
+            {
+                cardCanvas.overrideSorting = true;
+                cardCanvas.sortingOrder = 100;
+            }
 
-            cardVisual.localScale = originalScale * hoverScale;
-            cardVisual.localPosition = originalPosition + new Vector3(0, hoverHeight, 0);
+            cardVisual.localScale = Vector3.Lerp(originalScale, originalScale * hoverScale, time);
+            cardVisual.localPosition = Vector3.Lerp(originalPosition , originalPosition + new Vector3(0, hoverHeight, 0), time);
+            cardUIVisual.localScale = Vector3.Lerp(originalScale, originalScale * hoverScale, time);
+            cardUIVisual.localPosition = Vector3.Lerp(originalPosition, originalPosition + new Vector3(0, hoverHeight, 0), time);
         }
         else
         {
-            cardCanvas.overrideSorting = false;
-
+            if (cardCanvas != null)
+            {
+                cardCanvas.overrideSorting = false;
+            }
+            time = 0;
             cardVisual.localScale = originalScale;
             cardVisual.localPosition = originalPosition;
+            cardUIVisual.localScale = originalScale;
+            cardUIVisual.localPosition = originalPosition;
         }
     }
 }

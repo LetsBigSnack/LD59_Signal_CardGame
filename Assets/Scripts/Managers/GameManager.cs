@@ -362,7 +362,8 @@ public class GameManager : MonoBehaviour
         }
         
         if (_players[side].PlayerCards.UnsetCard(card))
-        { 
+        {
+            OnCardRemoved?.Invoke(gameSlot);
             gameSlot.PlayCardData = null;
         }
         

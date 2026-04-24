@@ -311,6 +311,8 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 6000827825715832977}
   cardVisual: {fileID: 7645744365259811639}
+  cardUIVisual: {fileID: 7645744365259811639}
+  lerpSpeed: 0
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}

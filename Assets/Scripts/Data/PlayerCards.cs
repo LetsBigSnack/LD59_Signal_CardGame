@@ -56,7 +56,7 @@ namespace Data
             get => graveyard;
         }
 
-        public event Action OnHandChange;
+        public event Action<bool> OnHandChange;
 
 
         public List<PlayCardData> Set
@@ -98,8 +98,8 @@ namespace Data
                 }
                 cardDrawn = deck.Pop();
                 hand.Add(cardDrawn);
-                OnHandChange?.Invoke();
             }
+            OnHandChange?.Invoke(true);
         }
 
         public bool SetCard(PlayCardData setCard)
@@ -112,7 +112,7 @@ namespace Data
             hand.Remove(setCard);
             set.Add(setCard);
 
-            OnHandChange?.Invoke();
+            OnHandChange?.Invoke(false);
 
             return true;
         }
@@ -127,7 +127,7 @@ namespace Data
             set.Remove(unsetCard);
             hand.Add(unsetCard);
 
-            OnHandChange?.Invoke();
+            OnHandChange?.Invoke(false);
 
             return true;
         }

@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 36611638}
   - component: {fileID: 36611637}
   - component: {fileID: 36611639}
+  - component: {fileID: 36611640}
   m_Layer: 5
   m_Name: Life (2)
   m_TagString: Untagged
@@ -495,6 +496,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &36611640
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36611635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &41517684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1294,7 @@ GameObject:
   - component: {fileID: 126295842}
   - component: {fileID: 126295841}
   - component: {fileID: 126295843}
+  - component: {fileID: 126295844}
   m_Layer: 5
   m_Name: Life (6)
   m_TagString: Untagged
@@ -1348,6 +1372,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
+--- !u!95 &126295844
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126295839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &135027417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,6 +1658,7 @@ GameObject:
   - component: {fileID: 136515808}
   - component: {fileID: 136515807}
   - component: {fileID: 136515809}
+  - component: {fileID: 136515810}
   m_Layer: 5
   m_Name: Life (5)
   m_TagString: Untagged
@@ -1689,6 +1736,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
+--- !u!95 &136515810
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136515805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &147197446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,6 +2263,7 @@ MonoBehaviour:
   cardSlotPrefab: {fileID: 3452922836203720868, guid: 52c787e73090f1847acfbe746873f55e, type: 3}
   cardDeckRemoveablePrefab: {fileID: 1862230118212956728, guid: 241e5290df7501d4287b3dd223c1b7fa, type: 3}
   handContainer: {fileID: 1935563375}
+  drawSpeed: 0.1
   cardTypeSprite:
   - cardType: 0
     sprite: {fileID: 21300000, guid: fc53065eaee2d024d8125a972359b37e, type: 3}
@@ -2623,6 +2693,7 @@ GameObject:
   - component: {fileID: 226201534}
   - component: {fileID: 226201533}
   - component: {fileID: 226201535}
+  - component: {fileID: 226201536}
   m_Layer: 5
   m_Name: Life (3)
   m_TagString: Untagged
@@ -2700,6 +2771,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &226201536
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226201531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &234819424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,6 +2944,7 @@ GameObject:
   - component: {fileID: 271180108}
   - component: {fileID: 271180107}
   - component: {fileID: 271180109}
+  - component: {fileID: 271180110}
   m_Layer: 5
   m_Name: Life (1)
   m_TagString: Untagged
@@ -2928,6 +3022,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &271180110
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271180105}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &271234818
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3227,7 @@ GameObject:
   - component: {fileID: 312212310}
   - component: {fileID: 312212309}
   - component: {fileID: 312212311}
+  - component: {fileID: 312212312}
   m_Layer: 5
   m_Name: Life (1)
   m_TagString: Untagged
@@ -3188,6 +3305,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &312212312
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312212307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &318481215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,6 +5287,7 @@ GameObject:
   - component: {fileID: 465455559}
   - component: {fileID: 465455558}
   - component: {fileID: 465455560}
+  - component: {fileID: 465455561}
   m_Layer: 5
   m_Name: Life (7)
   m_TagString: Untagged
@@ -5225,6 +5365,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
+--- !u!95 &465455561
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465455556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &494852673
 GameObject:
   m_ObjectHideFlags: 0
@@ -6929,7 +7091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -472}
+  m_AnchoredPosition: {x: 960, y: -423}
   m_SizeDelta: {x: 1200, y: 772}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &620560598
@@ -9373,6 +9535,7 @@ GameObject:
   - component: {fileID: 851522166}
   - component: {fileID: 851522165}
   - component: {fileID: 851522167}
+  - component: {fileID: 851522168}
   m_Layer: 5
   m_Name: Life (6)
   m_TagString: Untagged
@@ -9450,6 +9613,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
+--- !u!95 &851522168
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851522163}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &870556546
 GameObject:
   m_ObjectHideFlags: 0
@@ -10032,6 +10217,7 @@ GameObject:
   - component: {fileID: 907179728}
   - component: {fileID: 907179727}
   - component: {fileID: 907179729}
+  - component: {fileID: 907179730}
   m_Layer: 5
   m_Name: Life (2)
   m_TagString: Untagged
@@ -10109,6 +10295,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &907179730
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907179725}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &926838098
 GameObject:
   m_ObjectHideFlags: 0
@@ -10363,6 +10571,7 @@ GameObject:
   - component: {fileID: 944076275}
   - component: {fileID: 944076274}
   - component: {fileID: 944076276}
+  - component: {fileID: 944076277}
   m_Layer: 5
   m_Name: Life (8)
   m_TagString: Untagged
@@ -10440,6 +10649,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
+--- !u!95 &944076277
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944076272}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &944614126
 GameObject:
   m_ObjectHideFlags: 0
@@ -10873,6 +11104,7 @@ GameObject:
   - component: {fileID: 1039018361}
   - component: {fileID: 1039018360}
   - component: {fileID: 1039018362}
+  - component: {fileID: 1039018363}
   m_Layer: 5
   m_Name: Life (3)
   m_TagString: Untagged
@@ -10950,6 +11182,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &1039018363
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039018358}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1057537062
 GameObject:
   m_ObjectHideFlags: 0
@@ -11435,8 +11689,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279178758
-  m_fontColor: {r: 0.023529412, g: 0.08627451, b: 0.05882353, a: 1}
+    rgba: 4283391058
+  m_fontColor: {r: 0.32156864, g: 0.36078432, b: 0.30980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12642,6 +12896,7 @@ GameObject:
   - component: {fileID: 1194373629}
   - component: {fileID: 1194373628}
   - component: {fileID: 1194373630}
+  - component: {fileID: 1194373631}
   m_Layer: 5
   m_Name: Life (7)
   m_TagString: Untagged
@@ -12719,6 +12974,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
+--- !u!95 &1194373631
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194373626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1202563624
 GameObject:
   m_ObjectHideFlags: 0
@@ -13645,6 +13922,7 @@ GameObject:
   - component: {fileID: 1325811907}
   - component: {fileID: 1325811906}
   - component: {fileID: 1325811908}
+  - component: {fileID: 1325811909}
   m_Layer: 5
   m_Name: Life (4)
   m_TagString: Untagged
@@ -13722,6 +14000,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
+--- !u!95 &1325811909
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325811904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1333637168
 GameObject:
   m_ObjectHideFlags: 0
@@ -14646,6 +14946,7 @@ GameObject:
   - component: {fileID: 1425521224}
   - component: {fileID: 1425521223}
   - component: {fileID: 1425521225}
+  - component: {fileID: 1425521226}
   m_Layer: 5
   m_Name: Life (4)
   m_TagString: Untagged
@@ -14723,6 +15024,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
+--- !u!95 &1425521226
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425521221}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1439996624
 GameObject:
   m_ObjectHideFlags: 0
@@ -15126,6 +15449,7 @@ GameObject:
   - component: {fileID: 1460339721}
   - component: {fileID: 1460339720}
   - component: {fileID: 1460339722}
+  - component: {fileID: 1460339723}
   m_Layer: 5
   m_Name: Life (9)
   m_TagString: Untagged
@@ -15203,6 +15527,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
+--- !u!95 &1460339723
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460339718}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1489301599
 GameObject:
   m_ObjectHideFlags: 0
@@ -15723,6 +16069,7 @@ GameObject:
   - component: {fileID: 1551850573}
   - component: {fileID: 1551850572}
   - component: {fileID: 1551850574}
+  - component: {fileID: 1551850575}
   m_Layer: 5
   m_Name: Life (5)
   m_TagString: Untagged
@@ -15800,6 +16147,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.6901961, g: 0.7019608, b: 0.6509804, a: 1}
+--- !u!95 &1551850575
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551850570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1553718505
 GameObject:
   m_ObjectHideFlags: 0
@@ -15964,6 +16333,7 @@ GameObject:
   - component: {fileID: 1565946076}
   - component: {fileID: 1565946075}
   - component: {fileID: 1565946077}
+  - component: {fileID: 1565946078}
   m_Layer: 5
   m_Name: Life (9)
   m_TagString: Untagged
@@ -16041,6 +16411,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
+--- !u!95 &1565946078
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565946073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1571193674
 GameObject:
   m_ObjectHideFlags: 0
@@ -18528,6 +18920,7 @@ GameObject:
   - component: {fileID: 1838480327}
   - component: {fileID: 1838480326}
   - component: {fileID: 1838480328}
+  - component: {fileID: 1838480329}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -18605,6 +18998,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &1838480329
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838480324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1855197857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19566,6 +19981,7 @@ GameObject:
   - component: {fileID: 1918229442}
   - component: {fileID: 1918229441}
   - component: {fileID: 1918229443}
+  - component: {fileID: 1918229444}
   m_Layer: 5
   m_Name: Life (8)
   m_TagString: Untagged
@@ -19643,6 +20059,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.3254902, g: 0.35686275, b: 0.3019608, a: 1}
+--- !u!95 &1918229444
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918229439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1928056492
 GameObject:
   m_ObjectHideFlags: 0
@@ -19741,8 +20179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 1600, y: 200}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 1536, y: 384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935563376
 MonoBehaviour:
@@ -19757,14 +20195,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.023529412, g: 0.08627451, b: 0.05882353, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4221621475794917162, guid: a1b38dbfa4823684d8cc1f20491fc71e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20023,6 +20461,9 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 5536587452292286550}
   cardVisual: {fileID: 2255553995773500033}
+  cardUIVisual: {fileID: 2255553995773500033}
+  time: 0
+  lerpSpeed: 0
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}
@@ -21207,6 +21648,7 @@ GameObject:
   - component: {fileID: 2069319386}
   - component: {fileID: 2069319385}
   - component: {fileID: 2069319387}
+  - component: {fileID: 2069319388}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -21284,6 +21726,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UILifeBarElement
   color: {r: 0.93725497, g: 0.9333334, b: 0.909804, a: 1}
+--- !u!95 &2069319388
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069319383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a56f08e829270441affd53795988538, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2072019291
 GameObject:
   m_ObjectHideFlags: 0
@@ -23800,6 +24264,9 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 5536587451633279644}
   cardVisual: {fileID: 2255553995381813323}
+  cardUIVisual: {fileID: 2255553995381813323}
+  time: 0
+  lerpSpeed: 0
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}
@@ -23868,6 +24335,9 @@ MonoBehaviour:
   cardType: 0
   cardImg: {fileID: 5536587452015558923}
   cardVisual: {fileID: 2255553995496707036}
+  cardUIVisual: {fileID: 2255553995496707036}
+  time: 0
+  lerpSpeed: 0
   hoverScale: 0
   hoverHeight: 0
   cardCanvas: {fileID: 0}
