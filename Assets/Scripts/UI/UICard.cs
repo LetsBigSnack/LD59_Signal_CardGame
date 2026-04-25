@@ -52,6 +52,8 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     [SerializeField]
     private bool canHover = true;
 
+    [SerializeField]
+    private bool canClick = true;
 
     public PlayCardData GetCardData()
     {
@@ -76,7 +78,7 @@ public class UICard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (eventData.button == PointerEventData.InputButton.Right || eventData.button == PointerEventData.InputButton.Left)
+        if (canClick && eventData.button == PointerEventData.InputButton.Right || eventData.button == PointerEventData.InputButton.Left)
         {
             UISlotPopUp.Instance.OpenSlotPopup(this, gameObject.transform.position);
         }

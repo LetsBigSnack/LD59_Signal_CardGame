@@ -21266,6 +21266,7 @@ MonoBehaviour:
   hoverHeight: 0
   cardCanvas: {fileID: 0}
   canHover: 1
+  canClick: 0
   button: {fileID: 1890134615}
 --- !u!1 &1968974987
 GameObject:
@@ -25186,6 +25187,7 @@ MonoBehaviour:
   hoverHeight: 0
   cardCanvas: {fileID: 0}
   canHover: 1
+  canClick: 0
   button: {fileID: 407493026}
 --- !u!95 &5689976371977331296
 Animator:
@@ -25301,6 +25303,7 @@ MonoBehaviour:
   hoverHeight: 0
   cardCanvas: {fileID: 0}
   canHover: 1
+  canClick: 0
   button: {fileID: 1638323130}
 --- !u!95 &6982624985735656966
 Animator:
