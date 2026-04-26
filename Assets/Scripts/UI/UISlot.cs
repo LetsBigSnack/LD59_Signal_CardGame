@@ -13,7 +13,8 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     //private PlayCardData cardData;
 
     private UICard currentCardUI;
-
+    private bool _isPointerOver = false;
+    
     public bool IsOccupied => currentCardUI != null;
 
     public void SetCard(PlayCardData card)
@@ -58,15 +59,26 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             canHover = true;
         }
+
+        if (_isPointerOver)
+        {
+            HandlePointer();
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!canHover || button == null) return;
+        _isPointerOver = true;
+        HandlePointer();
+    }
+
+    private void HandlePointer()
+    {
+        if(button == null) return;
         
         PlayCardData cardData = GameManager.Instance.GetCardOnSlot(playerSide, slotPosition);
         
-        if (cardData != null)
+        if (cardData != null && canHover)
         {
             button.SetActive(true);
         }
@@ -75,9 +87,10 @@ public class UISlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             button.SetActive(false);
         }
     }
-
+    
     public void OnPointerExit(PointerEventData eventData)
     {
+        _isPointerOver = false;
         if(!canHover || button == null) return;
         button.SetActive(false);
     }
